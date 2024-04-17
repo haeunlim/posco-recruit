@@ -1,0 +1,295 @@
+
+<!--
+/*===============================================
+*Copyright(c) 2021 POSCO/POSCOICT
+*
+*@ProcessChain  	: H22
+*@File          	: H22AM000.html
+*@FileName      	: 로그인화면 (모바일Page)
+*
+*Change history
+*@LastModifier : KSJ
+*@수정 날짜;		SCR_NO;		수정자;		수정내용
+* 2022-03-23;	V1.0;		KSJ;		최초
+===============================================*/ 
+-->
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1" />
+        <title></title>
+		<script src="static/js/mobileInclude.js"></script>
+		<script src="static/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+		<script src="static/js/kakao_1.41.2.js"></script>
+		<script src="static/js/api_client.js"></script>
+		<script>
+			var _obj = {	   
+				setEventHandler : function() {
+		            $("#btnLogin").click(function () {
+						_obj.fn.login();
+					});
+					
+					$("#EMAIL_ADDRESS, #PASS_WORD").keydown(function (event) {
+						if (event.keyCode === 13) {
+							_obj.fn.login();
+						};
+					});
+					$("#saveId").change(function () {
+						if ($("#saveId").is(":checked")) {
+							setCookie("poscoRecuId", $("#EMAIL_ADDRESS").val(), 7); // 7일 동안 쿠키 보관
+						} else {
+							deleteCookie("poscoRecuId");
+						}
+					});
+		        },
+				fn : {
+					initPage: function () {
+						$("#EMAIL_ADDRESS").val(getCookie("poscoRecuId"));
+						if ($("#EMAIL_ADDRESS").val()) {
+							$("#saveId").prop("checked", true);
+						}
+						
+						var params = {
+							StandardEnglishId: "SNS_API"
+						};
+						h22Common.submitAjax(
+							"/H22Common/selectCodes"
+							, "POST"
+							, "json"
+							, JSON.stringify(params)
+							, true
+							, function (res) {
+								if (res["SNS_API"].length > 0) {
+									var map = res["SNS_API"][0];	
+									var snsYn = h22Common.nvl(map.CD_V);
+									var appKey1 = h22Common.nvl(map.CD_EXPL1);
+									var appKey2 = h22Common.nvl(map.CD_EXPL2);
+									var appKey3 = h22Common.nvl(map.CD_EXPL3);
+									if (snsYn == "Y" && appKey1 != "" && appKey2 != "" && appKey3 != "") {
+										$(".others").show();
+										_obj.fn.snsInit(appKey1, appKey2, appKey3);
+									}
+								}	
+							}
+						);
+					},
+					snsInit: function (appKey1, appKey2, appKey3) {
+						var naverLogin = new naver.LoginWithNaverId({
+							clientId: appKey1,
+							callbackUrl: "https://drecruit.posco.com/h22a01-front/H22A0000C01.html",
+							isPopup: true,
+							loginButton: {color: "green", type: 3, height: 45}
+						});
+
+						naverLogin.init();
+
+						Kakao.init(appKey2);
+
+						gapi.load('auth2', function () {
+							// Retrieve the singleton for the GoogleAuth library and set up the client.
+							auth2 = gapi.auth2.init({
+								client_id: appKey3,
+								cookiepolicy: 'single_host_origin',
+								// Request scopes in addition to 'profile' and 'email'
+								scope: 'email profile openid'
+							});
+							attachSignin(document.getElementById('btnGoogleLogin'));
+						});
+						
+						$("#btnNaverLogin").click(function () {
+							var naverLogin = document.getElementById("naverIdLogin").firstChild;
+							naverLogin.click();
+						});
+						$("#btnKakaoLogin").click(function () {
+							Kakao.Auth.login({
+								success: function (response) {
+									Kakao.API.request({
+										url: '/v2/user/me',
+										success: function (response) {
+											var params = {
+												SNS_TYPE: "k",
+												SNS_EMAIL: response.kakao_account.email
+											};
+											snsLoginProc(params);
+										},
+										fail: function (error) {
+											alert("카카오 로그인 인증에 실패하였습니다.");
+										},
+									})
+								},
+								fail: function (error) {
+									alert("카카오 로그인 인증에 실패하였습니다.");
+								},
+							});
+						});
+					},					
+					login: function () {
+						if (!$("#EMAIL_ADDRESS").val()) {
+							alert("이메일주소를 입력해주세요.");
+							$("#EMAIL_ADDRESS").focus();
+							return false;
+						}
+						if (!$("#PASS_WORD").val()) {
+							alert("비밀번호를 입력해주세요.");
+							$("#PASS_WORD").focus();
+							return false;
+						}
+						if ($("#saveId").is(":checked")) {
+							setCookie("poscoRecuId", $("#EMAIL_ADDRESS").val(), 7); // 7일 동안 쿠키 보관
+						}
+						var params = {
+							EMAIL_ADDRESS: $("#EMAIL_ADDRESS").val(),
+							PASS_WORD: $("#PASS_WORD").val()
+						};
+						h22Common.submitAjax(
+							"/H22Common/login"
+							, "POST"
+							, "json"
+							, JSON.stringify(params)
+							, true
+							, function (res) {
+								if (res.result == "success") {
+									if (res.pwdChangeYN == "Y") {
+										//비밀번호 변경 6개월
+										openModal("H22AM000P01.html");
+									} else {
+										location.href = "H22AMMain.html";
+									}
+								} else {
+									if (res.result == "E003") { //휴면회원
+										location.href = "H22AM010.html?id="+$("#EMAIL_ADDRESS").val();
+									} else if (res.result == "E004") {
+										alert("비밀번호 오류가 5회 발생하였습니다.\n비밀번호 재설정 후 다시 시도해 주세요.");
+									} else {
+										alert("로그인이 실패하였습니다.\n아이디 혹은 비밀번호를 확인해 주세요.");
+									}
+								}
+							}
+						);
+			        }	
+				},
+				init : function() {
+					_obj.setEventHandler();
+					_obj.fn.initPage();
+				}
+			};	
+			$(function() {
+				h22Common.getMobileHeader();
+				h22Common.getMobileFooter();
+				_obj.init();
+			});
+			
+			function attachSignin(element) {
+				auth2.attachClickHandler(element, {},
+					function (googleUser) {
+						var params = {
+							SNS_TYPE: "g",
+							SNS_EMAIL: googleUser.getBasicProfile().getEmail()
+						};
+						snsLoginProc(params);
+					}, function (error) {
+						//alert(JSON.stringify(error, undefined, 2));
+						alert("구글 로그인 인증에 실패하였습니다.");
+					}
+				);
+			}
+			
+			function snsLoginProc(p) {
+				h22Common.submitAjax(
+					"/H22Common/snsCheck"
+					, "POST"
+					, "json"
+					, JSON.stringify(p)
+					, true
+					, function (res) {
+						if (res.result == "success") {
+							if (res.pwdChangeYN == "Y") {
+								//비밀번호 변경 6개월
+								$("#EMAIL_ADDRESS").val(res.userEmail);
+								openModal("H22AM000P01.html");
+							} else {
+								location.href = "H22AMMain.html";
+							}
+						} else {
+							if (res.result == "E003") { //휴면회원
+								location.href = "H22AM010.html?id="+res.userEmail;
+							} else if (res.result == "E004") {
+								alert("비밀번호 오류가 5회 발생하였습니다.\n비밀번호 재설정 후 다시 시도해 주세요.");
+								location.href = "H22AM051.html?id="+res.userEmail;
+							} else {
+								location.href = "H22AM001.html?t="+p.SNS_TYPE+"&e="+p.SNS_EMAIL;
+							}
+						}
+					}
+				);
+			}
+			
+			function pwdModal(val) {
+				$("#EMAIL_ADDRESS").val(val);
+				openModal("H22AM000P01.html");
+			}
+		</script>
+    </head>
+    <body>
+    	<!-- #wrap -->
+    	<div id="wrap">
+    		<div id="headline" class="e00"></div>
+    	
+			<!-- #container -->
+			<div id="container">
+				<!-- .inner -->
+				<div class="inner">
+					<!-- #content section -->
+					<section id="content">
+						<div class="login-box">
+							<h1>로그인</h1>
+							<input type="text" name="EMAIL_ADDRESS" id="EMAIL_ADDRESS" placeholder="이메일주소를 입력해주세요." />
+							<input type="password" name="PASS_WORD" id="PASS_WORD" placeholder="비밀번호를 입력해주세요." />
+							<button type="button" class="btn-lg btn-primary" id="btnLogin">로그인</button>
+							<span class="options">
+								<label style="cursor:pointer">
+									<span class="input-checkbox">
+										<input type="checkbox" name="saveId" id="saveId">
+										<i></i>
+									</span>
+									<span class="label">아이디 기억</span>
+								</label>
+								<ul>
+									<li><a href="H22AM050.html">비밀번호 찾기</a></li>
+								</ul>
+								<span class="others" style="display: none;">
+									<div id="naverIdLogin" style="display:none;"></div>
+									<button type="button" class="naver" id="btnNaverLogin">네이버</button>
+				                    <button type="button" class="kakao" id="btnKakaoLogin">카카오</button>
+				                    <button type="button" class="google" id="btnGoogleLogin">구글</button>
+								</span>
+							</span>
+							<span class="join">
+								<i>
+									회원이 아니시라면<br>
+									지금 가입하세요.
+								</i>
+								<a href="H22AM020.html" class="btn-md">회원가입</a>
+							</span>
+						</div>
+					</section>
+					<!-- //#content section -->
+				</div>
+				<!-- //.inner -->
+			</div>
+			<!-- //#container -->
+			
+			<div class="util-bottom">
+				<div class="inner">
+					<a class="btn-top" href="#wrap" onclick="$(window).scrollTop(0); return false;">위로</a>
+				</div>
+			</div>
+    	</div>
+    	<!-- //#wrap -->
+	</body>
+</html>

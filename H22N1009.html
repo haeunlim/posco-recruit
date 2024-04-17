@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./static/img/common/favicon.ico"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="format-detection"
+      content="telephone=no, address=no, email=no"
+    />
+    <meta name="title" content="POSCO RECRUIT | 포스코채용" />
+    <meta name="description" content="About POSCO Group, POSCO jobs, POSCO Life, Apply, MY 채용 - POSCO RECRUIT | 포스코채용 - POSCO RECRUIT | 포스코채용" />
+    <meta name="keywords" content="About POSCO Group, POSCO jobs, POSCO Life, Apply, MY 채용 - POSCO RECRUIT | 포스코채용 - POSCO RECRUIT | 포스코채용" />
+    <meta name="author" content="POSCO RECRUIT | 포스코채용" />
+    <meta itemprop="name" content="POSCO RECRUIT | 포스코채용" />
+    <meta itemprop="url" content="https://recruit.posco.com/" />
+    <meta itemprop="image" content="https://recruit.posco.com/static/img/og_img.png" />
+    <meta
+      itemprop="description"
+      content="About POSCO Group, POSCO jobs, POSCO Life, Apply, MY 채용 - POSCO RECRUIT | 포스코채용 - POSCO RECRUIT | 포스코채용"
+    />
+    <meta property="og:locale" content="ko">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="POSCO RECRUIT | 포스코채용" />
+    <meta property="og:url" content="https://recruit.posco.com/">
+    <meta property="og:image" content="https://recruit.posco.com/static/img/og_img.png">
+    <meta
+      property="og:description"
+      content="About POSCO Group, POSCO jobs, POSCO Life, Apply, MY 채용 - POSCO RECRUIT | 포스코채용"
+    />
+
+    <title>POSCO RECRUIT | 포스코채용</title>
+    <script src="static/js/homeInclude.js"></script>
+    <script>
+	   
+    
+      $(function () {
+        h22Common.getHomeHeader();
+        h22Common.getHomeFooter();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+    <form name="searchForm" id="searchForm">
+  		<input type="hidden" name="sessionCode" id="sessionCode" value="JOB_INTRODUCTION01" />
+  		<input type="hidden" name="codeValue" id="codeValue" value="posco"/>
+  		<input type="hidden" name="codeNum" id="codeNum" value="30"/>
+		<input type="hidden" name="standardId" id="standardId" value="JOB_INTRODUCTION" />
+		<input type="hidden" name="rowNum" id="rowNum" value="" />
+	</form>
+      <!-- interviews -->
+      <script src="./static/js/interviews.js"></script>
+      <div id="common_container" class="sub interviews" data-page-name="jobs">
+        <div class="common_inner">
+          <ol class="breadcrumb flex_e_c">
+            <li class="breadcrumb-item home"><a href="#!">home</a></li>
+            <li class="breadcrumb-item"><a href="#!">POSCO Jobs</a></li>
+            <li class="breadcrumb-item"><a href="#!"> 직무 인터뷰 </a></li>
+            <li class="breadcrumb-item active">포스코</li>
+          </ol>
+          <div class="depth3_wrap flex_c_c flex1" id="sessionArea">
+            <button type="button" value="posco" class="active">포스코</button>
+            <button type="button" value="poscointl">포스코인터내셔널</button>
+            <button type="button" value="poscoenc">포스코이앤씨</button>
+            <button type="button" value="poscofuturem">포스코퓨처엠</button>
+          </div>
+        </div>
+        <div class="contents_area flex">
+          <div class="left">
+            <ul class="interview_thumb_list flex flex_w" id="inter_thumb_list">
+             <!-- static/js/interviews.js 
+               SetThumbList() -->
+           
+            </ul>
+          </div>
+          <ul class="right" id="visual_list">
+           <!-- static/js/interviews.js 
+               SetDetailViewData() -->
+          </ul>
+        </div>
+        <div class="control_box item_control_box">
+          <button type="button" class="interview_back_btn flex__c" onclick="EventBindViewDetailBtn()">
+          <i></i> 뒤로 돌아가기
+          </button>
+          <div class="control_inner flex_c_c">
+            <button type="button" class="prev flex__c" disabled onclick="HandleChangeFocusItem('prev')">
+              <img src="./static/img/btn/interview_prev2.png" alt="인터뷰 이전 사람 보기"/>
+              <span class="btn_name">이전</span>
+              <span class="work_name" id="prevVal">사회공헌직</span>
+            </button>
+            <div class="fraction flex__c">
+              <div class="current_num" id="numPrev"></div>
+              <strong>/</strong>
+              <div class="total_num"></div>
+            </div>
+            <button type="button" class="next flex__c" onclick="HandleChangeFocusItem('next')">
+              <span class="btn_name">다음</span>
+              <span class="work_name" id="nextVal">마케팅 기획직</span>
+              <img src="./static/img/btn/interview_next2.png" alt="인터뷰 다음 사람 보기"/>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- container -->
+      <button type="button" class="btn_top_fix" aria-label="맨 위로 올라가기"> <img src="./static/img/common/top_btn.png" alt="위 화살표" />
+      </button>
+    </div>
+    <!-- //#wrap -->
+  </body>
+</html>

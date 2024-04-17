@@ -1,0 +1,234 @@
+      <!-- Header -->
+      <div class="common_inner flex_b_c">
+        <h1 class="logo">
+          <a href="./H22AMMain.html"
+            >
+            <span class="logo_img"></span>
+            <span class="logo_text">Recruit</span></a
+          >
+        </h1>
+        <button class="menu_btn flex_c_c"  aria-label="전체메뉴" onclick="gnbMenu();">
+          <div class="line">
+            <span class="line_01"></span>
+            <span class="line_02"></span>
+          </div>
+        </button>
+        <div class="util_menu">
+          <a href="./H22AM000.html"> LOGIN </a>
+        </div>
+      </div>
+      <div class="wrap_dep2">
+        <div class="depth2">
+        </div>
+      </div>
+      <nav id="nav">
+        <div class="common_inner">
+          <aside class="menu_container">
+            <div class="depth1">
+              <ul>
+                <li data-page-name="about">
+                  <a href="#!">About POSCO Group</a>
+                  <div class="depth2">
+                    <ul>
+                      <li>
+                        <a href="./H22NM002.html">경영이념 </a>
+                      </li>
+                      <li>
+                        <a href="./H22NM003.html">기업시민 </a>
+                      </li>
+                      <li><a href="./H22NM004.html">사업영역 </a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li data-page-name="jobs">
+                  <a href="#!">POSCO Jobs</a>
+                  <div class="depth2">
+                    <ul>
+                      <li><a href="./H22NM008.html">직무소개</a></li>
+                      <li>
+                        <a href="./H22NM009.html">직무인터뷰</a>
+                      </li>
+                      <li><a href="./H22AM240.html">포스코人 스토리</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li data-page-name="life">
+                  <a href="#!">POSCO Life</a>
+                  <div class="depth2">
+                    <ul>
+                      <li><a href="./H22NM005.html">Careers</a></li>
+                      <li><a href="./H22NM006.html">Benefit</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li data-page-name="apply">
+                  <a href="#!">Apply</a>
+                  <div class="depth2">
+                    <ul>
+                      <li><a href="./H22NM007.html">채용 프로세스</a></li>
+                      <li><a href="./H22AM000.html">채용공고</a></li>
+                      <li><a href="./H22AM310.html">공지사항</a></li>
+                      <li><a href="./H22AM320.html">FAQ</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li data-page-name="recruit">
+                  <a href="#!">MY 채용</a>
+                  <div class="depth2">
+                    <ul>
+                      <li><a href="./H22A6010.html">지원현황</a></li>
+                      <li><a href="./H22A6014.html">지원결과</a></li>
+                      <li><a href="./H22A0060.html">나의정보</a></li>
+                      <li><a href="./H22AM800.html">1:1문의</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </aside>
+      
+          <div class="common_inner">
+            <div class="btn_eagroup">
+              <div>
+                <a
+                  href="https://www.posco-inc.com:4453/poscoinc/v4/kor/"
+                  target="_blank"
+                  >포스코 홀딩스
+                  <i><img src="./static/img/common/mo_ico_link.png" alt="" /></i
+                ></a>
+              </div>
+              <div>
+                <a href="https://newsroom.posco.com/kr/" target="_blank"
+                  >NEWS ROOM
+                  <i><img src="./static/img/common/mo_ico_link.png" alt="" /></i
+                ></a>
+              </div>
+              <div>
+                <a
+                  href="http://corporatecitizenship.posco.com/citizen/kor/s919w00000000.jsp"
+                  target="_blank"
+                  >기업시민
+                  <i><img src="./static/img/common/mo_ico_link.png" alt="" /></i
+                ></a>
+              </div>
+            </div>
+            <div class="sns_list flex__c">
+              <h4 class="sns_ttl">SNS채널</h4>
+              <ul class="flex__c">
+                <li>
+                  <a
+                    href="https://www.instagram.com/hello_posco/
+                  "
+                    target="_blank"
+                    ><img
+                      src="./static/img/common/mo_ico_ist.png"
+                      alt="인스타그램"
+                  /></a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/c/posco" target="_blank"
+                    ><img src="./static/img/common/mo_ico_ytb.png" alt="유튜브"
+                  /></a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/HELLOPOSCO" target="_blank"
+                    ><img src="./static/img/common/mo_ico_fb.png" alt="페이스북"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!-- Header -->
+<script>
+   $(document).ready(function(){
+    SetDepth2();
+    SubDepth2Active();
+    navMouseOver();
+    setNewHtmlName();
+    setSubPageHtmlName();
+    setTimeout(() => {
+    $("[id*='container'].sub").css("opacity", "1");
+  }, 300);
+   
+  })  
+
+  function setNewHtmlName(){
+  if($('#common_container').length > 0){
+    $('html').addClass('new_html');
+  }
+}
+  function setSubPageHtmlName() {
+  const subPage = $("[id*='container']").hasClass("sub");
+
+  if (subPage) {
+    $("html").addClass("subPage");
+    $("#header").addClass("bg_white");
+  }
+  
+}
+
+  
+function SubDepth2Active() {
+  const SetNavEl = $("#header .wrap_dep2 .depth2");
+  SetNavEl.find("a").each(function () {
+    let href = $(this).attr("href");
+    href = href.substring(2);
+    let pageUrl = window.location.href.split(/[?#]/)[0];
+
+  
+    if (pageUrl.includes(href) == true) {
+      SetNavEl.find("li").removeClass("active");
+      $(this).parent("li").addClass("active");
+    }else if(pageUrl.includes('H22NM008-view') == true){
+      SetNavEl.find("li").removeClass("active");
+      $(".wrap_dep2 .depth2 li a[href='./H22NM008.html']").parent('li').addClass("active");
+    }  
+  });
+}
+
+function SetDepth2() {
+  const SetNavEl = $("#header .wrap_dep2 .depth2");
+  const containerName = $("[id*='container']").data("page-name");
+  const mainPage =$("[id*='container']").hasClass("main");
+
+  const FindEL = $(
+    '#nav .menu_container .depth1 li[data-page-name="' +
+      containerName +
+      '"] .depth2 ul'
+  );
+  const InputVal = FindEL.clone();
+  SetNavEl.html(InputVal);
+  
+  if (
+    mainPage ||
+    containerName == null ||
+    containerName == undefined ||
+    containerName == ""
+  ) {
+    $("#header .wrap_dep2").css("display", "none");
+    $("#header .wrap_dep2 .depth2").removeClass("active");
+    
+  } else {
+    $("#header .wrap_dep2 .depth2").addClass("active");
+  }
+}
+
+
+function navMouseOver(){
+  $('#nav .depth1 > ul > li > a').off('click').on('click', function(e) {
+    if(!$(this).is('[target]')){
+
+        
+        if(!$(this).closest('li').hasClass('active')){
+            e.preventDefault();
+            $(this).closest('li').siblings().removeClass('active').end().addClass('active');
+        }else{
+            //$(this).closest('li').removeClass('active');
+        }
+    }
+});
+}
+
+</script>

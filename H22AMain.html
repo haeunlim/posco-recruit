@@ -1,0 +1,332 @@
+
+<!--
+/*===============================================
+*Copyright(c) 2021 POSCO/POSCOICT
+*
+*@ProcessChain  	: H22
+*@File          	: H22AMain.html
+*@FileName      	: 메인화면 (홈Page)
+*
+*Change history
+*@LastModifier : KSJ
+*@수정 날짜;		SCR_NO;		수정자;		수정내용
+* 2022-03-03;	V1.0;		KSJ;		최초
+===============================================*/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./static/img/common/favicon.ico"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="format-detection"
+      content="telephone=no, address=no, email=no"
+    />
+    <meta name="title" content="POSCO RECRUIT | 포스코채용" />
+    <meta name="description" content="About POSCO Group, POSCO jobs, POSCO Life, Apply, MY 채용 - POSCO RECRUIT | 포스코채용 - POSCO RECRUIT | 포스코채용" />
+    <meta name="keywords" content="About POSCO Group, POSCO jobs, POSCO Life, Apply, MY 채용 - POSCO RECRUIT | 포스코채용 - POSCO RECRUIT | 포스코채용" />
+    <meta name="author" content="POSCO RECRUIT | 포스코채용" />
+    <meta itemprop="name" content="POSCO RECRUIT | 포스코채용" />
+    <meta itemprop="url" content="https://recruit.posco.com/" />
+    <meta itemprop="image" content="https://recruit.posco.com/static/img/og_img.png" />
+    <meta
+      itemprop="description"
+      content="About POSCO Group, POSCO jobs, POSCO Life, Apply, MY 채용 - POSCO RECRUIT | 포스코채용 - POSCO RECRUIT | 포스코채용"
+    />
+    <meta property="og:locale" content="ko">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="POSCO RECRUIT | 포스코채용" />
+    <meta property="og:url" content="https://recruit.posco.com/">
+    <meta property="og:image" content="https://recruit.posco.com/static/img/og_img.png">
+    <meta
+      property="og:description"
+      content="About POSCO Group, POSCO jobs, POSCO Life, Apply, MY 채용 - POSCO RECRUIT | 포스코채용"
+    />
+
+    <title>POSCO RECRUIT | 포스코채용</title>
+		<script src="static/js/homeInclude.js"></script>
+		<script>
+			$(function() {
+				h22Common.getHomeHeader();
+				h22Common.fullpageHomeFooter();
+			});
+		</script>
+    </head>
+    <body class="main">
+    	<!-- #wrap -->
+        	
+    	<div id="wrap">
+	
+          <link
+          rel="stylesheet"
+          href="./static/css/fullpage.css"
+          type="text/css"
+        />
+        <link rel="stylesheet" href="./static/css/pc/main.css" type="text/css" />
+        <script
+          type="text/javascript"
+          src="./static/vendor/fullpage.js"
+        ></script>
+        <script
+          type="text/javascript"
+          src="./static/vendor/scrolloverflow.min.js"
+        ></script>
+  
+        <script src="./static/js/main.js"></script>
+        <!-- container -->
+        <div id="common_container" class="main">
+          <div id="fullpage">
+            <div class="section" id="section01">
+              <section class="spot_main">
+                <div class="main_cont flex_c dr_col flex_w">
+                  <div class="visual_top">
+                    <div class="m_txt">
+                      <p class="ttl01">
+                        <strong class="rows">
+                          <span class="t">인류의</span>
+                          <span class="t">지속가능한</span>
+                          <span class="t">미래를</span>
+                        </strong>
+                        <strong class="rows">
+                          <span class="t">선도하는</span>
+                          <span class="t">글로벌 비즈니스 리더</span>
+                        </strong>
+                      </p>
+                      <p class="ttl02">
+                        <strong class="rows n1">
+                          <span class="t">포스코그룹이 </span>
+                        </strong>
+                        <strong class="rows n2">
+                          <span class="t">친환경</span>
+                          <span class="t">미래소재</span>
+                          <span class="t">대표기업으로</span>
+                          <!-- <span class="t">친환경 미래소재 대표기업으로 </span> -->
+                        </strong>
+                        <strong class="rows n3">
+                          <span class="t">나아갑니다</span>
+                        </strong>
+                      </p>
+                      <p class="ttl03">
+                        <strong class="rows">
+                          <span class="t">세상에</span>
+                          <span class="t">가치를</span>
+                          <span class="t">더합니다</span>
+                        </strong>
+                        <strong class="rows">
+                          <span class="t visual-logo">
+                            <img src="./static/img/main/gt_posco_logo.png" alt="" />
+                          </span>
+                        </strong>
+                      </p>
+                    </div>
+                    <div class="swiper-nav-wrap flex_c_c">
+                      <div class="swiper-pagination flex_c_c"></div>
+                      <button type="button" class="pause_btn" aria-label="슬라이드 일시 정지 "></button>
+                    </div>
+                  </div>
+                  <div class="main_search_box">
+                    <div class="scrolldown">
+                    </div>
+                    <div class="common_inner flex_c_c">
+                      <strong class="search_ttl">공고찾기</strong>
+                      <form action="./H22A1000.html" method="POST" class="flex__c" id="search1000">
+                        <div class="input_row flex__c">
+                          <input id="SEARCH_VALUE" name="SEARCH_VALUE" type="text"
+                            class="bs-input"
+                            placeholder="회사, 직군, 직무를 입력 해주세요."
+                          />
+                          <button type="submit" class="search_btn" aria-label="공고 찾기 "></button>
+                        </div>
+                        <button type="button" class="quick_look arrow_text" onclick="location.href='./H22A1000.html'" style="--pe: 30px" >
+                          <span>진행중 공고</span>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div id="main_section_visual">
+                  <div class="swiper-container" id="mainVisual">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <figure class="first">
+                          <img src="./static/img/main/main_visual01.jpg" alt="" />
+                        </figure>
+                      </div>
+                      <div class="swiper-slide">
+                        <figure>
+                          <img src="./static/img/main/main_visual02.jpg" alt="" />
+                        </figure>
+                      </div>
+  
+                      <div class="swiper-slide">
+                        <figure>
+                          <img src="./static/img/main/main_visual03.jpg" alt="" />
+                        </figure>
+                      </div>
+                      <div class="swiper-slide">
+                        <figure>
+                          <img src="./static/img/main/main_visual04.jpg" alt="" />
+                        </figure>
+                      </div>
+  
+                      <div class="swiper-slide">
+                        <figure>
+                          <img src="./static/img/main/main_visual05.jpg" alt="" />
+                        </figure>
+                      </div>
+                      <div class="swiper-slide">
+                        <figure>
+                          <img src="./static/img/main/main_visual06.jpg" alt="" />
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slide-control">
+                
+                  <button type="button" class="next" aria-label="슬라이드 다음 ">
+                    <span class="num"></span>
+                  </button>
+                  <button type="button" class="prev" aria-label="슬라이드 이전 ">
+                    <span class="num"></span>
+                  </button>
+                </div>
+                
+              </section>
+            </div>
+            <div class="section" id="section02">
+              <section class="about_posco">
+                <div class="common_inner">
+                  <div class="main-ttl-box tac ani_el fade-up">
+                    <h2 class="main-ttl">
+                      포스코그룹은 지속가능한 미래가치를 실현하는<br />
+                      <span class="wrap_bg_mo">친환경 미래소재 대표기업</span
+                      >입니다
+                    </h2>
+                  </div>
+                  <div class="main_cont flex ani_el fade-up" data-ani-delay="300">
+                    <div class="left_cont flex_b dr-col">
+                      <a href="./H22N1002.html" class="about_item about_item01 active">
+                        <div class="bg"></div>
+                        <h3 class="ttl">
+                          <span>About POSCO Group</span>
+                          <span class="move_arrow"
+                            ><img
+                              src="./static/img/ico/ico_about_arrow.png"
+                              alt=""
+                          /></span>
+                        </h3>
+                      </a>
+                      <a href="./H22N1007.html" class="about_item about_item02">
+                        <div class="bg"></div>
+                        <h3 class="ttl">
+                          <span>Apply</span
+                          ><span class="move_arrow"
+                            ><img
+                              src="./static/img/ico/ico_about_arrow.png"
+                              alt=""
+                          /></span>
+                        </h3>
+                      </a>
+                    </div>
+                    <div class="right_cont flex_b dr-col">
+                      <a href="./H22N1008.html" class="about_item about_item03">
+                        <div class="bg"></div>
+                        <h3 class="ttl">
+                          <span>POSCO Jobs</span
+                          ><span class="move_arrow"
+                            ><img
+                              src="./static/img/ico/ico_about_arrow.png"
+                              alt=""
+                          /></span>
+                        </h3>
+                      </a>
+                      <a href="./H22N1005.html" class="about_item about_item04">
+                        <div class="bg"></div>
+                        <h3 class="ttl">
+                          <span>POSCO Life </span
+                          ><span class="move_arrow"
+                            ><img
+                              src="./static/img/ico/ico_about_arrow.png"
+                              alt=""
+                          /></span>
+                        </h3>
+                      </a>
+                      <a href="./H22A6010.html" class="about_item about_item05">
+                        <div class="bg"></div>
+                        <h3 class="ttl">
+                          <span>My 채용 </span
+                          ><span class="move_arrow"
+                            ><img
+                              src="./static/img/ico/ico_about_arrow.png"
+                              alt=""
+                          /></span>
+                        </h3>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="section fp-noscroll" id="section03">
+              <section class="interviewer_sect">
+                <div class="common_inner">
+                  <div class="visual ani_el fade-up">
+                    <a href="#!">
+                      <div class="bg ani_el fade-down" data-ani-delay="600"></div>
+                      <figure
+                        class="people ani_el fade-up flex__e dr_col"
+                        data-ani-daley="300"
+                      >
+                      <img src="./static/img/interview/posco01_img03.png" alt="" />
+                      </figure>
+                    </a>
+                  </div>
+                  <div class="interviewer_text ani_el fade-up">
+                  	<input type="hidden" id="SEQ_NO" name="SEQ_NO" value=""/>
+                  	<input type="hidden" id="GCS_COMP_CODE" name="GCS_COMP_CODE" value=""/>
+                    <div class="main-ttl-box sm text-dark">
+                      <strong class="top-txt" id= "oneTitle">We are POSCO PEOPLE</strong>
+                      <h2 class="main-ttl sm" id= "twoTitle">
+                        공정하고 다양한 방식으로 인정받을 수 있는 곳 매일 매일
+                        설레이는 곳
+                      </h2>
+                    </div>
+                    <div class="people_info" id="people_info">
+                      포스코 / 기획&재무<br />임정우 대리
+                    </div>
+                    <button type="button" onclick="location.href='./H22N1009.html'" class="more_story" id ="interview_btn"
+                      ><span>더 많은 이야기 보기</span>
+                      <span class="move_arrow"
+                        ><img
+                          src="./static/img/ico/ico_about_arrow.png"
+                          alt="" /></span
+                    ></buttona>             
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="section fp-auto-height" id="footer_sect">
+
+            </div>
+          </div>
+          <!-- fullpage -->
+        </div>
+    <!-- container -->
+        <button type="button" class="btn_top_fix" aria-label="맨위로 올라가기 ">
+          <img src="./static/img/common/top_btn.png" alt="위 화살표 " />
+        </button>
+      
+
+    	</div>
+    	<!-- //#wrap -->
+    
+	</body>
+</html>

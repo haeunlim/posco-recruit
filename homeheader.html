@@ -1,0 +1,296 @@
+
+<!-- Header -->
+<div class="common_inner flex_b_c">
+	<h1 class="logo">
+		<a href="./H22AMain.html" class="flex"><span class="logo_img"></span>
+			<span class="logo_text">Recruit</span></a>
+	</h1>
+	<button class="menu_btn flex_c_c" aria-label="전체메뉴" onclick="gnbMenu();">
+		<div class="line">
+			<span class="line_01"></span>
+			<span class="line_02"></span>
+		</div>
+	</button>
+	<div class="util_menu">
+		<span class="rec_lo"><a href="./H22A0000.html"> LOGIN </a></span>
+		<!--<span class="rec_li"><span class="login" id="unm"></span></span> &ensp;
+            <span class="rec_li"><a href="H22A0060.html" class="mypage">내정보</a></span> &nbsp;-->
+		<span class="rec_li"><a href="javascript:logout()" class="logout">LOGOUT</a></span>
+	</div>
+</div>
+<div class="wrap_dep2">
+	<div class="depth2">
+	</div>
+</div>
+<nav id="nav">
+	<div class="bg-pos" style="background-image: url(./static/img/common/bg_allmenu.jpg)"></div>
+	<div class="common_inner">
+		<aside class="menu_container">
+			<div class="depth1">
+				<ul class="flex__s flex_w">
+					<li data-page-name="about">
+						<a href="#!">About POSCO Group</a>
+						<div class="depth2">
+							<ul>
+								<li>
+									<a href="./H22N1002.html">경영이념 </a>
+								</li>
+								<li>
+									<a href="./H22N1003.html">기업시민 </a>
+								</li>
+								<li><a href="./H22N1004.html">사업영역 </a></li>
+							</ul>
+						</div>
+					</li>
+					<li data-page-name="jobs">
+						<a href="#!">POSCO Jobs</a>
+						<div class="depth2">
+							<ul>
+								<li><a href="./H22N1008.html">직무소개</a></li>
+								<li>
+									<a href="./H22N1009.html">직무인터뷰</a>
+								</li>
+								<li><a href="./H22A1240.html">포스코人 스토리</a></li>
+							</ul>
+						</div>
+					</li>
+					<li data-page-name="life">
+						<a href="#!">POSCO Life</a>
+						<div class="depth2">
+							<ul>
+								<li><a href="./H22N1005.html">Careers</a></li>
+								<li><a href="./H22N1006.html">Benefit</a></li>
+							</ul>
+						</div>
+					</li>
+					<li data-page-name="apply">
+						<a href="#!">Apply</a>
+						<div class="depth2">
+							<ul>
+								<li><a href="./H22N1007.html">채용 프로세스</a></li>
+								<li><a href="./H22A1000.html">채용공고</a></li>
+								<li><a href="./H22A1310.html">공지사항</a></li>
+								<li><a href="./H22A1320.html">FAQ</a></li>
+							</ul>
+						</div>
+					</li>
+					<li data-page-name="recruit">
+						<a href="#!">MY 채용</a>
+						<div class="depth2">
+							<ul>
+								<li><a href="./H22A6010.html">지원현황</a></li>
+								<li><a href="./H22A6014.html">지원결과</a></li>
+								<li><a href="./H22A0060.html">나의정보</a></li>
+								<li><a href="./H22A1800.html">1:1문의</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<div class="sns_list flex">
+			<h4 class="sns_ttl">SNS채널</h4>
+			<ul class="flex__c">
+				<li>
+					<a href="https://www.instagram.com/hello_posco/ 
+                  " target="_blank"><img src="./static/img/common/ico_ist.png" alt="인스타그램" /></a>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/c/posco" target="_blank"><img src="./static/img/common/ico_ytb.png"
+							alt="유튜브" /></a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/HELLOPOSCO" target="_blank"><img
+							src="./static/img/common/ico_fb.png" alt="페이스북" /></a>
+				</li>
+			</ul>
+		</div>
+		<div class="btn_eagroup">
+			<div>
+				<a href="https://www.posco-inc.com:4453/poscoinc/v4/kor/" target="_blank">포스코 홀딩스
+					<i><img src="./static/img/common/ico_link.png" alt="바로가기 이미지" /></i></a>
+			</div>
+			<div>
+				<a href="https://newsroom.posco.com/kr/" target="_blank">News Room
+					<i><img src="./static/img/common/ico_link.png" alt="바로가기 이미지" /></i></a>
+			</div>
+			<div>
+				<a href="http://corporatecitizenship.posco.com/citizen/kor/s919w00000000.jsp" target="_blank">기업시민
+					<i><img src="./static/img/common/ico_link.png" alt="바로가기 이미지" /></i></a>
+			</div>
+		</div>
+	</div>
+</nav>
+<!-- Header -->
+
+<script>
+	$(document).ready(function () {
+		SetDepth2();
+		SubDepth2Active();
+		SetSubPageHtmlName();
+    HandleSubDepth3Click();
+    scrollAnimation();
+	HandleTopBtn();
+	})
+
+
+// 서브 페이지 일 경우 html에 클래스명 추가, 비지니스 페이지 클래스 추가 
+function SetSubPageHtmlName() {
+  const subPage = $("[id*='container']").hasClass("sub");
+
+  const businessPage = $("html").hasClass("businessPage");
+
+  if (subPage) {
+    $("html").addClass("subPage");
+    $("#header").addClass("bg_white");
+  }
+  if (businessPage) {
+    $("#header").addClass("bg_white");
+  }
+  $("[id*='container'].sub").css("opacity", "1");
+}
+
+// depth3클릭 이벤트
+	function HandleSubDepth3Click() {
+  const InterviewsPage = $("#common_container").hasClass("interviews");
+  const businessPage = $("html").hasClass("businessPage");
+  if (!InterviewsPage || !businessPage) {
+    $(".depth3_wrap button").on("click", function () {
+      const Text = $(this).text();
+      const breadcrumbItem = $(".breadcrumb-item.active");
+      breadcrumbItem.text(Text);
+      addRemove($(this));
+    });
+  }
+}
+
+	// 위로 가기 버튼 
+function HandleTopBtn() {
+  const isFullPage = $("html").hasClass("fp-enabled");
+
+  $(".btn_top_fix").on("click", function () {
+    if (isFullPage) {
+      fullpage_api.moveTo(1);
+      headerAni();
+    } else {
+      $("html, body").stop().animate({ scrollTop: 0 });
+    }
+    $(this).removeClass("show");
+  });
+}
+
+//컨텐츠 애니메이션
+	function scrollAnimation() {
+  var aniDiv = document.querySelectorAll(".ani_el");
+  var aniDivArry = new Array();
+  $(".first_ani *.ani_el").addClass("move");
+  Array.prototype.forEach.call(aniDiv, function (ele) {
+    aniDivArry.push(ele);
+  });
+
+  $(window).on("scroll", function () {
+    var scrollTop = $(window).scrollTop(),
+      windowH = ($(window).height() / 4) * 3;
+    var scrollBottom =
+      $(document).height() - $(window).height() - $(window).scrollTop();
+
+    if (scrollBottom <= 0) {
+      $(".ani_el").addClass("move");
+    }
+    // section animate
+    for (var i = 0; i < aniDivArry.length; i++) {
+      if ($(aniDivArry[i]).offset().top < scrollTop + windowH) {
+        $(aniDivArry[i]).addClass("move");
+        aniDivArry.splice(i, 1);
+      }
+    }
+  });
+}
+
+
+
+	function SetDepth2() {
+		const SetNavEl = $("#header .wrap_dep2 .depth2");
+		const GetNavEl = $("#nav .menu_container .depth1");
+		const containerName = $("[id*='container']").data("page-name");
+		const mainPage = $("[id*='container']").hasClass("main");
+
+		const FindEL = $(
+			'#nav .menu_container .depth1 li[data-page-name="' +
+			containerName +
+			'"] .depth2 ul'
+		);
+		const InputVal = FindEL.clone();
+		SetNavEl.html(InputVal);
+
+		if (
+			mainPage ||
+			containerName == null ||
+			containerName == undefined ||
+			containerName == ""
+		) {
+			$("#header .wrap_dep2").css("display", "none");
+			$("#header .wrap_dep2 .depth2").removeClass("active");
+		} else {
+			$("#header .wrap_dep2 .depth2").addClass("active");
+		}
+	}
+
+	function SubDepth2Active() {
+		const SetNavEl = $("#header .wrap_dep2 .depth2");
+		SetNavEl.find("a").each(function () {
+			let href = $(this).attr("href");
+			href = href.substring(2);
+			let pageUrl = window.location.href.split(/[?#]/)[0];
+			if (pageUrl.includes(href) == true) {
+				SetNavEl.find("li").removeClass("active");
+				$(this).parent("li").addClass("active");
+			} else if (pageUrl.includes('H22A6011') == true || pageUrl.includes('H22A6012') == true) {
+				$('.wrap_dep2 .depth2 li a[href="./H22A6010.html"]').closest('li').addClass('active');
+			} else if (pageUrl.includes('H22A1801') == true) {
+				$('.wrap_dep2 .depth2 li a[href="./H22A1800.html"]').closest('li').addClass('active');
+			} else if (pageUrl.includes('H22A1311') == true) {
+				$('.wrap_dep2 .depth2 li a[href="./H22A1310.html"]').closest('li').addClass('active');
+			} else if (pageUrl.includes('H22A1001') == true) {
+				$('.wrap_dep2 .depth2 li a[href="./H22A1000.html"]').closest('li').addClass('active');
+			} else if (pageUrl.includes('H22A0061') == true || pageUrl.includes('H22A0062') == true || pageUrl.includes('H22A0063') == true || pageUrl.includes('H22A0064') == true) {
+				$('.wrap_dep2 .depth2 li a[href="./H22A0060.html"]').closest('li').addClass('active')
+			}
+		});
+	}
+
+
+// Gnb Menu
+function gnbMenu() {
+  const isFullPage = $("html").hasClass("fp-enabled");
+  const StateOpenGnb = $("html").hasClass("openGnb");
+
+  if (!StateOpenGnb) {
+    if ($("#gnb_bg").length === 0) {
+      $("html").append('<div id="gnb_bg"></div>');
+    }
+    $("#nav .menu_container .depth1 > ul > li")
+      .off("mouseover")
+      .on("mouseover", function (e) {
+        addRemove($(this));
+      });
+    $("html").addClass("openGnb");
+    if (isFullPage) {
+      $("body").on("scroll touchmove mousewheel", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      });
+    }
+  } else {
+    $("html").removeClass("openGnb");
+    $("#gnb_bg").remove();
+    $("#header .menu_btn").focus();
+    if (isFullPage) {
+      $("body").off("scroll touchmove mousewheel");
+    }
+  }
+}
+
+
+</script>

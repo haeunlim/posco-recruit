@@ -1,0 +1,361 @@
+.modal-pop{
+  max-width: 960px;
+}
+.new-modal-pop {
+  padding: 40px 0 20px;
+  position: relative;
+  scroll-behavior: smooth;
+  font-size: 1rem;
+  max-width: 960px;
+}
+.new-modal-pop a:hover,
+.new-modal-pop a {
+  text-decoration: none !important;
+  text-transform: none !important;
+  color: inherit;
+}
+.new-modal-pop .pop-head {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  border-bottom: none;
+}
+.new-modal-pop > .close {
+  width: 24px;
+  height: 24px;
+  margin-left: 12px;
+  text-indent: -9999px;
+  background: url(../../img/mo_icons.png)
+    no-repeat -384px 0;
+  background-size: auto 32px;
+  position: absolute;
+  right: 1.071425rem;
+  top: 1.071425rem;
+}
+.new-modal-pop .pop-head .title {
+  font-size: 30px;
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: 1;
+  text-align: left;
+}
+.mt10 {
+  display: block;
+  margin-top: 10px;
+}
+.text-sm {
+  font-size: 0.95em;
+}
+
+.new-modal-pop .terms h3,
+.new-modal-pop .terms h4,
+.new-modal-pop .terms h5 {
+  margin: 0;
+}
+
+.new-modal-pop .terms p {
+  margin-top: 40px;
+}
+.new-modal-pop .terms p.sizeup {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.new-modal-pop .terms dl dt {
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+  padding-top: 20px;
+}
+.new-modal-pop .terms dl dd {
+  margin-top: 20px;
+  line-height: 1.333;
+  padding-left: 20px;
+}
+.new-modal-pop .terms .list-style01,
+.new-modal-pop .terms .list-style04 {
+  margin: 15px 0 25px;
+}
+.new-modal-pop .terms .btn-select a,
+.new-modal-pop .terms .btn-select button {
+  display: inline-block;
+  line-height: 45px;
+  background: #005891;
+  color: #fff;
+  padding: 0 20px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.new-modal-pop .terms .media-more-foot {
+  margin-top: 100px;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 30px;
+}
+.new-modal-pop .terms .media-more-foot a {
+  line-height: 43px;
+  font-weight: 600;
+  padding: 0 30px;
+  border: 1px solid #666;
+  display: inline-block;
+}
+.new-modal-pop .terms .media-more-foot a img {
+  margin-left: 10px;
+}
+
+.new-modal-pop .terms h3 {
+  font-size: 26px;
+  color: #333;
+  font-weight: 500;
+  padding-top: 60px;
+}
+.new-modal-pop .terms > div:first-child h3 {
+  padding-top: 0px;
+}
+.new-modal-pop .terms h4 {
+  font-size: 20px;
+  color: #005891;
+  font-weight: 700;
+  padding-top: 40px;  
+}
+
+.new-modal-pop .terms .list-style01 {
+  margin-top: 20px;
+}
+.new-modal-pop .terms .list-style01 > li {
+  line-height: 1.3333;
+  padding-left: 10px;
+  text-align: left;
+  background: url("../images/common/bu_line.png") no-repeat 0 12px;
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.new-modal-pop .terms .list-style02 {
+  margin-top: 20px;
+}
+.new-modal-pop .terms .list-style02 > li {
+  line-height: 1.3333;
+  padding-left: 10px;
+  text-align: left;
+  background: url("../mages/common/bu_box.png") no-repeat 0 12px;
+  font-size: 15px;
+  color: #444;
+}
+.new-modal-pop .terms .list-style02 > li p {
+  font-weight: normal;
+  line-height: 1.333;
+  margin-bottom: 10px;
+}
+
+.new-modal-pop .terms .list-style03 {
+  margin-top: 40px;
+}
+.new-modal-pop .terms .list-style03 > li {
+  list-style: decimal;
+  margin-left: 20px;
+  line-height: 1.3333;
+  margin-bottom: 10px;
+}
+
+.new-modal-pop .terms .list-style04 {
+  margin-top: 20px;
+}
+.new-modal-pop .terms .list-style04 > li {
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.33332;
+  font-size: 15px;
+}
+.new-modal-pop .terms .list-style04 > li span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+}
+
+.new-modal-pop .terms table {
+  border-top: 2px solid #333;
+  width: 100%;
+  margin-top: 30px;
+  font-size: 1rem;
+}
+.new-modal-pop .terms table th {
+  border-bottom: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  padding: 1.0714rem 1.4286rem;
+  color: #333;
+  font-weight: 700;
+  background: #f5f5f5;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1.3333;
+}
+.new-modal-pop .terms table tbody th {
+  background: none;
+}
+.new-modal-pop .terms table tbody th.bg {
+  background: rgba(0, 88, 145, 0.08);
+}
+.new-modal-pop .terms table tbody th.left {
+  text-align: left;
+}
+.new-modal-pop .terms table td {
+  border-bottom: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  padding: 1.0714rem 0.8929rem;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1.333;
+}
+.new-modal-pop .terms table td .stroke {
+  display: inline-block;
+  line-height: 43px;
+  border: 1px solid #005891;
+  color: #005891;
+  font-weight: 700;
+  padding: 0 30px;
+  float: right;
+}
+.new-modal-pop .terms table td.bg {
+  background: rgba(0, 88, 145, 0.08);
+}
+.new-modal-pop .terms table td.title {
+  text-align: left;
+  font-weight: 700;
+  color: #333;
+}
+.new-modal-pop .terms table td.left {
+  text-align: left;
+  padding: 20px 30px;
+}
+.new-modal-pop .terms table th:last-child,
+table td:last-child {
+  border-right: none;
+}
+.new-modal-pop .terms table th.boR,
+table td.boR {
+  border-right: 1px solid #e5e5e5;
+}
+.new-modal-pop .terms table td.bdright {
+  border-right: 1px solid #e5e5e5;
+}
+.new-modal-pop .terms table tfoot td {
+  background: rgba(0, 88, 145, 0.08);
+}
+.new-modal-pop .terms table caption {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.new-modal-pop .terms table.investor td {
+  text-align: right;
+  padding: 20px 20px;
+}
+.new-modal-pop .terms table.investor-meet {
+  border: 1px solid #666666;
+}
+.new-modal-pop .terms table.investor-meet td {
+  text-align: center;
+  border: 1px solid #666666;
+}
+.new-modal-pop .terms table.investor-meet th {
+  font-weight: 400;
+  border: 1px solid #666666;
+}
+
+.new-modal-pop .terms table.row th {
+  background: #f5f5f5;
+}
+.new-modal-pop .terms table.row td {
+  text-align: left;
+  padding: 20px 30px;
+}
+
+.new-modal-pop .terms .table_inner.scroll {
+  overflow-x: auto;
+}
+.new-modal-pop .terms .table_inner.scroll table {
+  min-width: 750px;
+}
+
+.new-modal-pop .terms .btn-select {
+  display: flex;
+  max-width: 320px;
+}
+.new-modal-pop .terms .btn-solid {
+  width: 120px;
+  flex: none;
+}
+
+/* 230613 개인정보처리방침 */
+.new-modal-pop .terms {
+  font-weight: 400;
+}
+.new-modal-pop .terms h5 {
+  padding-top: 50px;
+}
+.new-modal-pop .terms p {
+  margin-top: 20px;
+}
+.new-modal-pop .terms ul {
+  margin-top: 20px;
+}
+.new-modal-pop .terms .btn-select {
+  padding-top: 60px;
+}
+.new-modal-pop .terms .point {
+  color: #005891;
+}
+.new-modal-pop .terms table {
+  margin-top: 30px;
+  /* margin-bottom: 30px; */
+}
+.new-modal-pop .terms table.labeling {
+  margin-top: 60px;
+}
+.new-modal-pop .terms table.labeling td::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 63px;
+  margin: 0 auto 20px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.new-modal-pop .terms table td.c1::before {
+  background-image: url(../../img/common/personal_info_01.jpg);
+}
+.new-modal-pop .terms table td.c2::before {
+  background-image: url(../../img/common/personal_info_02.jpg);
+}
+.new-modal-pop .terms table td.c3::before {
+  background-image: url(../../img/common/personal_info_03.jpg);
+}
+.new-modal-pop .terms table td.c4::before {
+  background-image: url(../../img/common/personal_info_04.jpg);
+}
+.new-modal-pop .terms table td.c5::before {
+  background-image: url(../../img/common/personal_info_05.jpg);
+}
+.new-modal-pop .terms table td.c6::before {
+  background-image: url(../../img/common/personal_info_06.jpg);
+}
+.new-modal-pop .terms table.privacy_list td {
+  text-align: left;
+}
+.new-modal-pop .terms table.privacy_list td a:where(:hover, :focus) {
+  text-decoration: underline;
+}
+/* 230322 모바일 터치 아이콘 스타일 */
+.msg_touch_help {
+  display: none;
+}
+
+.btn-md {
+  font-size: 1.1rem;
+}

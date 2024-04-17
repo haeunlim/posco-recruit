@@ -1,0 +1,157 @@
+html.fixed,
+body.fixed {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+
+#common_container button:focus {
+  outline: 2px solid #252525;
+}
+
+#common_container button:focus:not(:focus-visible) {
+  outline: 0;
+}
+#common_container strong{
+  font-weight: 700;
+}
+#common_container figure{
+  margin: 0;
+}
+#common_container {
+  min-width: 1248px;
+}
+#common_container *::before,
+#common_container *::after,
+#common_container *{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  letter-spacing: -0.04em;
+}
+#common_container a{
+  color: inherit;
+  text-decoration: none;
+}
+.ff-tit {
+  font-family: "ONE-Mobile-Title", sans-serif;
+}
+.ff-en {
+  font-family: "Inter", sans-serif;
+}
+.common_inner {
+  position: relative;
+  margin: 0 auto;
+  width: -webkit-calc(100% - 40px);
+  width: -moz-calc(100% - 40px);
+  width: calc(100% - 40px);
+  max-width: 1200px;
+}
+*[data-bs-toggle="popup"],
+*[data-bs-dismiss*="pop"] {
+  cursor: pointer;
+}
+#common_container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#common_container {
+  position: relative;
+}
+
+#common_container.sub > .common_inner {
+  display: block;
+}
+.bg-pos {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.move_arrow img {
+  vertical-align: middle;
+width: 13px;
+height: 13px;
+}
+.move_arrow {
+  display: inline-block;
+  margin-left: 10px;
+  -webkit-transition: all 500ms cubic-bezier(0.86, 0.235, 0.06, 0.82);
+  -moz-transition: all 500ms cubic-bezier(0.86, 0.235, 0.06, 0.82);
+  -ms-transition: all 500ms cubic-bezier(0.86, 0.235, 0.06, 0.82);
+  -o-transition: all 500ms cubic-bezier(0.86, 0.235, 0.06, 0.82);
+  transition: all 500ms cubic-bezier(0.86, 0.235, 0.06, 0.82);
+}
+
+/* 변경된부분 more_story:hover에서 button:hover로  start */
+button:hover .move_arrow {
+  transform: rotate(-90deg);
+  /* -webkit-filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1); */
+}
+/* 변경된부분 more_story:hover에서 button:hover로  end */
+
+
+
+.swiper-btn-wrap .swiper-button-next,
+.swiper-btn-wrap .swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  width:60px;
+  height:60px;
+  margin-top: -30px;
+  border-radius: 50%;
+  background: #fff url(../../img/btn/common_next.png) no-repeat center ;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.09);
+}
+.swiper-btn-wrap .swiper-button-next {
+  right: 30px;
+}
+.swiper-btn-wrap .swiper-button-prev {
+  left: 30px;
+  background-image: url(../../img/btn/common_prev.png);
+}
+.swiper-btn-wrap .swiper-button-next:after,
+.swiper-btn-wrap .swiper-button-prev:after {
+  display: none;
+}
+.swiper-btn-wrap
+  .swiper-button-next.swiper-btn-wrap
+  .swiper-button-disabled,
+.swiper-btn-wrap
+  .swiper-button-prev.swiper-btn-wrap
+  .swiper-button-disabled {
+  opacity: 0.1;
+  pointer-events: auto;
+}
+
+@media (min-width: 841px) {
+  .custom-scrollbars * {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    scrollbar-width: thin;
+    scrollbar-color: #999 #eee;
+  }
+  ::-webkit-scrollbar,
+  .custom-scrollbars ::-webkit-scrollbar {
+    height: 0.8rem;
+    width: 0.4rem;
+  }
+  ::-webkit-scrollbar-track,
+  .custom-scrollbars ::-webkit-scrollbar-track {
+    background: #eee;
+  }
+  ::-webkit-scrollbar-thumb,
+  .custom-scrollbars ::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 0.9rem;
+    cursor: pointer !important;
+  }
+}

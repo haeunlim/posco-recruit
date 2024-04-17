@@ -1,0 +1,577 @@
+/* life common */
+.life {
+overflow: hidden;
+}
+.life .sect-ttl-box {
+  margin-bottom: 1.4286rem;
+}
+
+.life .sect-ttl-box h3 {
+  margin-top: 0;
+  font-size: 1.3571rem;
+}
+.life .sect-ttl-box p{
+  font-size: .9286rem;
+  color: #666;
+}
+.life button {
+  font-family: var(--bs-font-point);
+}
+.life .show_btn {
+  font-size: 1.0714rem;
+  text-align: left;
+  font-weight: 700;
+}
+
+.show_btn i{
+  margin-left: .3571rem;
+  width: 1.5714rem;
+  height: 1.5714rem;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../../img/life/mo_info_view_ico.png) no-repeat center / contain ;
+}
+
+.show_btn.video i{
+background-image: url(../../img/life/mo_video_view_ico.png);
+}
+.life .down_btn{
+  /* position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%); */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.8571rem;
+  border: 1px solid #999;
+  border-radius: 1.4286rem;
+  padding: 0 1.4286rem;
+  font-size: 1rem;
+}
+.life .down_btn:before {
+  content: '';
+  margin-right: .3571rem;
+  width: .75rem;
+  height: .8214rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../img/ico/ico_down_blu.png);
+}
+.life .bot_text  p{
+  margin: 1.4286rem 0 ;
+  line-height: 1.3846;
+}
+
+.life .swiper-slide-btn {
+  margin-top: 1.4286rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.life .swiper-slide-btn .swiper-button-next::after,
+.life .swiper-slide-btn .swiper-button-prev::after {
+  display: none;
+}
+.life .slash {
+  display: inline-block;
+  margin: 0 .3571rem;
+}
+.life .total-num {
+  color: #999999;
+}
+.life .swiper-pagination {
+  position: static;
+  font-weight: 700;
+  width: auto;
+  margin: 0 1.0714rem;
+  font-size: 1.0714rem;
+}
+.life .swiper-slide-btn .swiper-button-next,
+.life .swiper-slide-btn .swiper-button-prev {
+  position: static;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+  background: #fff url(../../img/btn/interview_next2.png) no-repeat center / .5714rem auto;
+  border: 1px solid #dadcdf;
+  box-shadow: 0 .0714rem .1786rem rgba(0, 0, 0, 0.09);
+  border-radius: 50%;
+}
+.life .swiper-slide-btn .swiper-button-prev {
+  background-image: url(../../img/btn/interview_prev2.png);
+}
+/* benefit */
+.sub-ttl-box .bot-txt {
+  font-size: 1.0714rem;
+  color: #757575;
+  line-height: 1.6153;
+  margin-top: 1.4286rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.role_model_sect::after{
+  content: '';
+  width: 100vw;
+  margin-left: -6vw;
+  background-color: #dbdbdb;
+  display: block;
+  height: 1px;
+  margin-top: 2.8571rem;
+  }
+
+  
+.role_model_sect .bot_text {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.role_model_sect .card {
+  border: 1px solid #dbdbdb;
+  padding: 3.5714rem 3.5714rem 3.2143rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.role_model_visual {
+  margin: 0 auto 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.role_model_visual .hex {
+  width: 11.4286rem;
+  height: 12.8571rem;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.0714rem;
+  font-weight: 500;
+  position: relative;
+}
+.role_model_visual .hex > * {
+  z-index: 10;
+}
+.role_model_visual .hex .bg {
+  background: var(--bg) no-repeat center / cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.role_model_visual .hex::before {
+  content: "";
+  position: absolute;
+  width: 170%;
+  height: 156.8%;
+  top: -1.0714rem;
+  background: url(../../img/life/benefit_img_shadow.png) no-repeat center /  cover
+  ;
+  z-index: 0;
+}
+.role_model_visual .hex .ico {
+  margin-top: .3571rem;
+  width: 2.1429rem;
+  height: 2.1429rem;
+  display: block;
+  background:no-repeat center / cover;
+}
+.role_model_visual .hex + .hex {
+  margin-left: -1.0714rem;
+}
+.role_model_visual .hex01 {
+  --bg: url(../../img/life/benefit_bg01.png);
+}
+.role_model_visual .hex02 {
+  --bg: url(../../img/life/benefit_bg02.png);
+}
+.role_model_visual .hex03 {
+  --bg: url(../../img/life/benefit_bg03.png);
+}
+.role_model_visual .hex04 {
+  --bg: url(../../img/life/benefit_bg04.png);
+}
+.role_model_visual .hex05 {
+  --bg: url(../../img/life/benefit_bg05.png);
+}
+.role_model_desc .role_ttl {
+  font-size: 1.2143rem;
+  margin-bottom: .7143rem;
+  margin-top: 0;
+}
+.role_model_desc ul li{
+  padding-left: 1.0714rem;
+}
+/* mobile 전용 */
+
+.role_model_sect figure {
+  border: 1px solid #dbdbdb;
+}
+.role_model_sect figure img{
+  width: 92vw;
+  height: 52vw;
+}
+.welfare_system_sect {
+  padding-top: 2.8571rem;
+}
+#common_container .welfare_system_sect .slide_tab button {
+  text-align: center;
+  display: block;
+  height: 2.8571rem;
+  font-size: 1.1429rem;
+  font-weight: 700;
+  color: #454545;
+  border: 1px solid #dbdbdb;
+  border-radius: 1.4286rem;
+}
+#common_container .welfare_system_sect .slide_tab {
+  margin-bottom: 2.1429rem;
+}
+#common_container .welfare_system_sect .slide_tab button.active {
+  background-color: var(--bs-point);
+  border-color: var(--bs-point);
+  color: #fff;
+  box-shadow: 0 .3571rem 1.1071rem rgba(11, 57, 85, 0.33);
+}
+.life .welfare_system_sect .sect-ttl-box h3 {
+  margin-bottom: .7143rem;
+}
+.welfare_system_sect .swiper {
+  
+  overflow: hidden;
+}
+.welfare_system_sect .swiper-slide {
+  height: 23.5714rem;
+  width: 20.7143rem;
+}
+
+.welfare_system_sect .card {
+  border: 1px solid #dbdbdb;
+  padding: 1.4286rem 1.0714rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.welfare_system_sect .card .ico {
+  display: block;
+  width: 2.8571rem;
+  height: 2.8571rem;
+  background: url(../../img/life/ico_refresh01.png) no-repeat center / cover;
+  margin-bottom: 1.4286rem;
+}
+
+.welfare_system_sect .card .family.ico01 {
+  background-image: url(../../img/life/ico_family01.png);
+}
+
+.welfare_system_sect .card .family.ico02 {
+  background-image: url(../../img/life/ico_family02.png);
+}
+.welfare_system_sect .card .family.ico03 {
+  background-image: url(../../img/life/ico_family03.png);
+}
+.welfare_system_sect .card .family.ico04 {
+  background-image: url(../../img/life/ico_family04.png);
+}
+.welfare_system_sect .card .family.ico05 {
+  background-image: url(../../img/life/ico_family05.png);
+}
+
+.welfare_system_sect .card .refresh.ico01 {
+  background-image: url(../../img/life/ico_refresh01.png);
+}
+
+.welfare_system_sect .card .refresh.ico02 {
+  background-image: url(../../img/life/ico_refresh02.png);
+}
+.welfare_system_sect .card .refresh.ico03 {
+  background-image: url(../../img/life/ico_refresh03.png);
+}
+.welfare_system_sect .card .refresh.ico04 {
+  background-image: url(../../img/life/ico_refresh04.png);
+}
+.welfare_system_sect .card .refresh.ico05 {
+  background-image: url(../../img/life/ico_refresh05.png);
+}
+
+.welfare_system_sect .card .living.ico01 {
+  background-image: url(../../img/life/ico_living01.png);
+}
+
+.welfare_system_sect .card .living.ico02 {
+  background-image: url(../../img/life/ico_living02.png);
+}
+.welfare_system_sect .card .living.ico03 {
+  background-image: url(../../img/life/ico_living03.png);
+}
+.welfare_system_sect .card .living.ico04 {
+  background-image: url(../../img/life/ico_living04.png);
+}
+.welfare_system_sect .card .living.ico05 {
+  background-image: url(../../img/life/ico_living05.png);
+}
+
+.welfare_system_sect .card .health.ico01 {
+  background-image: url(../../img/life/ico_health01.png);
+}
+
+.welfare_system_sect .card .health.ico02 {
+  background-image: url(../../img/life/ico_health02.png);
+}
+.welfare_system_sect .card .health.ico03 {
+  background-image: url(../../img/life/ico_health03.png);
+}
+.welfare_system_sect .card .health.ico04 {
+  background-image: url(../../img/life/ico_health04.png);
+}
+.welfare_system_sect .card .health.ico05 {
+  background-image: url(../../img/life/ico_health05.png);
+}
+
+.welfare_system_sect .card-ttl {
+  font-size: 1.1429rem;
+  line-height: 1.4166;
+  margin-top: 0;
+  margin-bottom: .7143rem;
+}
+
+.welfare_system_sect .add_text {
+  font-size: .9286rem;
+  font-weight: 400;
+  margin-top: 1.4286rem;
+}
+.tab_slider_wrap {
+  width: calc(100% + 1.0714rem);
+}
+.welfare_system_sect .swiper-slide-btn,
+.welfare_system_sect .system_slider {
+  display: none;
+}
+.welfare_system_sect .swiper-slide-btn.active {
+  display: flex;
+}
+.welfare_system_sect .system_slider.active {
+  display: block;
+}
+
+/* careers */
+.careers_slider_sect {
+  padding-bottom: 4.2857rem;
+  overflow: hidden;
+}
+.careers_slider_sect .swiper {
+  overflow: visible;
+}
+.careers_slider_sect .swiper .swiper-wrapper{
+  align-items: stretch;
+}
+.careers_slider_sect .swiper .swiper-slide{
+  width: 20.3571rem;
+  height: 100%;
+}
+.careers_slider_sect .swiper .card {
+  display: block;
+  overflow: hidden;
+  box-shadow: 0 7px 100px rgba(0, 0, 0, 0.11);
+}
+.careers_slider_sect .swiper figure {
+  width: 100%;
+  padding-top: 56.1403%;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+}
+.careers_slider_sect .swiper figure img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.careers_slider_sect.first_ani .swiper .text-area {
+  height: 20.7143rem;
+}
+.careers_slider_sect .swiper .text-area {
+  padding: 2.1429rem 1.4286rem 1.4286rem;
+  font-size: 1rem;
+  height: 22.8571rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.careers_slider_sect .swiper .text-area .text-top p+p{
+  margin-top: 0.5rem;
+}
+.careers_slider_sect .swiper .card-ttl {
+  font-size: 1.1429rem;
+  margin-bottom: 1.0714rem;
+  margin-top: 0;
+}
+.learning_journey_sect{
+  overflow: hidden;
+}
+.learning_journey_tab{
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 1.0714rem;
+
+}
+.learning_journey_tab button{
+  color: #999;
+  font-size: 1.0714rem;
+  font-weight: 700;
+  font-family: var(--bs-font-point);
+}
+.learning_journey_tab button.active{
+  color: var(--bs-point);
+}
+.learning_journey_tab button+button::before{
+  content: '·';
+  display: inline-block;
+  width: 10px;
+  height: 100%;
+  margin-right:.7143rem;
+  font-weight: 400;
+}
+.learning_journey_tab button+button{
+  margin-left:.7143rem;
+  position: relative;
+}
+#common_container .choice_buttons button.active.essntial {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bceaa2+0,bceaa2+49,bceaa2+100 */
+  background: #bceaa2; /* Old browsers */
+  background: -moz-linear-gradient(
+    -45deg,
+    #bceaa2 0%,
+    #bceaa2 49%,
+    #bceaa2 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #bceaa2 0%,
+    #bceaa2 49%,
+    #bceaa2 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #bceaa2 0%,
+    #bceaa2 49%,
+    #bceaa2 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bceaa2', endColorstr='#bceaa2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+#common_container .choice_buttons button.active.pick_out {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffda69+0,ffda69+49,ffc61a+100 */
+  background: #ffda69; /* Old browsers */
+  background: -moz-linear-gradient(
+    -45deg,
+    #ffda69 0%,
+    #ffda69 49%,
+    #ffc61a 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #ffda69 0%,
+    #ffda69 49%,
+    #ffc61a 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #ffda69 0%,
+    #ffda69 49%,
+    #ffc61a 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffda69', endColorstr='#ffc61a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+#common_container .choice_buttons button.active.choice {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#90d1e1+1,90d1e1+49,6fc8dd+100 */
+  background: #90d1e1; /* Old browsers */
+  background: -moz-linear-gradient(
+    -45deg,
+    #90d1e1 1%,
+    #90d1e1 49%,
+    #6fc8dd 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #90d1e1 1%,
+    #90d1e1 49%,
+    #6fc8dd 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #90d1e1 1%,
+    #90d1e1 49%,
+    #6fc8dd 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90d1e1', endColorstr='#6fc8dd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+#common_container .choice_buttons button.active {
+  color: #333333;
+}
+#common_container .choice_buttons button {
+  width: 68px;
+  height: 34px;
+  text-align: center;
+  border-radius: 17px;
+  font-weight: 700;
+  font-weight: 16px;
+  background-color: #f1f1f1;
+  color: #999999;
+}
+
+
+
+.learning_journey_table_wrap{
+  height: 105vw;
+}
+
+.learning_journey_table_wrap.export{
+   height: 62.76635vw;
+}
+#common_container figure{
+  overflow: hidden;
+
+
+}
+.learning_journey_table_wrap img{
+  width: 100%;
+  height: 100%;
+}
+.pinch-zoom-parent {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 940px) {
+  
+.role_model_visual .hex {
+  width: 9.5714rem;
+  height: 10.7143rem;}
+
+  
+
+}
+
+@media screen and (max-width: 840px) {
+  .sub-ttl-box .bot-txt{max-width: 100%;}
+  .learning_journey_table_wrap{
+    height: 28.2143rem;
+  }
+  
+  .learning_journey_table_wrap.export{
+     height: 16.7857rem;
+  }
+}

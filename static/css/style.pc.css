@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* 공통으로 모든 페이지에서 들어가야하는 css */
+@import url(./common/icommon.css);
+@import url(./common/root.css);
+/* @import url(./reset.css); */
+@import url(./common/font.css);
+@import url(./pc/new_common.css);
+@import url(./common/coustom.css);
+@import url(./common/ani_custom.css);
+@import url(./pc/sub_common.css);
+/* 공통으로 모든 페이지에서 들어가야하는 css */
+
+/* 여기부터 부분 적으로 들어가는 css */
+@import url(./pc/header.css);
+@import url(./pc/footer.css);
+@import url(./pc/interview.css);
+@import url(./pc/introduction_jobs.css);
+@import url(./pc/modal.css);
+@import url(./pc/business.css);
+@import url(./pc/life.css);
+@import url(./pc/apply.css);

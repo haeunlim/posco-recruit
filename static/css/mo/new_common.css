@@ -1,0 +1,196 @@
+html.fixed,
+body.fixed {
+  overflow: hidden !important;
+  touch-action: none;
+}
+#common_container *:focus {
+  outline: 2px solid #252525;
+}
+
+#common_container *:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+.new_html {
+  font-size: 15px;
+  word-break: keep-all;
+}
+
+.new_html body{
+  font-size: inherit;
+}
+#common_container img{
+  max-width: 100%;
+}
+#common_container strong{
+  font-weight: 700;
+}
+#common_container figure{
+  margin: 0;
+}
+#common_container figure img{
+  width: 100%;
+}
+#common_container *::before,
+#common_container *::after,
+#common_container *{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  letter-spacing: -0.04em;
+}
+#common_container a{
+  color: inherit;
+  text-decoration: none;
+}
+.ff-tit {
+  font-family: "ONE-Mobile-Title", sans-serif;
+}
+.ff-en {
+  font-family: "Inter", sans-serif;
+}
+.common_inner {
+  margin: 0 auto;
+  width: -webkit-calc(100% - 8.5333vw);
+  width: -moz-calc(100% - 8.5333vw);
+  width: calc(100% - 8.5333vw);
+}
+*[data-bs-toggle="popup"],
+*[data-bs-dismiss*="pop"] {
+  cursor: pointer;
+}
+#common_container {
+  width: 100%;
+  position: relative;
+}
+#common_container.sub > .common_inner {
+  display: block;
+}
+.bg-pos {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+#common_container .close_btn{
+  width:2.8571rem;
+  height:2.8571rem;
+  background: rgba(0, 0, 0, 0.8) url(../../img/btn/mo_common_close.png) no-repeat center / 1.1071rem 1.1429rem;
+  border-radius: 50%;
+
+}
+
+.slick-arrow,
+.swiper-btn-wrap .swiper-button-next,
+.swiper-btn-wrap .swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  width:2.8571rem;
+  height:2.8571rem;
+  margin-top: -1.7857rem;
+  border-radius: 50%;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.8) url(../../img/btn/mo_common_next.png) no-repeat center / .6786rem 1rem;
+  cursor: pointer;
+  font-size: 0;
+  -webkit-backface-visibility:hidden;
+	-webkit-transform:translateZ(0);
+	-webkit-transform:translate3d(0, 0, 0);
+}
+
+.slick-next,
+.swiper-btn-wrap .swiper-button-next {
+  right: 1.0714rem;
+}
+.slick-prev,
+.swiper-btn-wrap .swiper-button-prev {
+  left: 1.0714rem;
+  background-image: url(../../img/btn/mo_common_prev.png);
+}
+.swiper-btn-wrap .swiper-button-next:after,
+.swiper-btn-wrap .swiper-button-prev:after {
+  display: none;
+}
+.swiper-btn-wrap
+  .swiper-button-next.swiper-btn-wrap
+  .swiper-button-disabled,
+.swiper-btn-wrap
+  .swiper-button-prev.swiper-btn-wrap
+  .swiper-button-disabled {
+  opacity: 0.1;
+  pointer-events: auto;
+}
+
+
+
+#common_container .more_story {
+  font-weight: 700;
+  font-size: 0.9285rem;
+  background-color: #fff;
+  border-radius: 1.3571rem;
+  color: #9b8a62;
+  height: 2.8571rem;
+  padding: 0 1.6071rem;
+  font-family: var(--bs-font-point);
+
+}
+
+
+.interviewer_text{
+  background-color: #9b8a62;
+  padding: 1.7857rem;
+  color: #fff;
+  font-family: var(--bs-font-point);
+  position: relative;
+  z-index: 10;
+ 
+}
+.interviewer_text .people_info strong{
+font-size: 1.2857rem;
+display: block;
+}
+.interviewer_text .people_info p{
+  font-size: 0.9285rem;
+  margin: .5rem 0 1.0714rem;
+}
+
+
+@media (min-width: 841px) {
+  .custom-scrollbars * {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    scrollbar-width: thin;
+    scrollbar-color: #999 #eee;
+  }
+  ::-webkit-scrollbar,
+  .custom-scrollbars ::-webkit-scrollbar {
+    height: .1786rem;
+    width:  .1786rem;
+  }
+  ::-webkit-scrollbar-track,
+  .custom-scrollbars ::-webkit-scrollbar-track {
+    background: #eee;
+  }
+  ::-webkit-scrollbar-thumb,
+  .custom-scrollbars ::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: .7143rem;
+    cursor: pointer !important;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .new_html {
+    font-size: 3.7333vw;
+  }
+  .common_inner {
+  margin: 0 auto;
+  width: -webkit-calc(100% - 2.14285rem);
+  width: -moz-calc(100% - 2.14285rem);
+  width: calc(100% - 2.14285rem);
+}
+}

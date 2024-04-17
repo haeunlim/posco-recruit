@@ -1,0 +1,5995 @@
+@charset "utf-8";
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #222;
+  word-break: keep-all;
+  letter-spacing: -0.3px;
+}
+body {
+  /* padding-top: 145px; */
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+  font-size: 1em;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th,
+td {
+  word-wrap: break-word;
+}
+a {
+  color: #222;
+  text-decoration: none;
+  /* outline: none; */
+}
+a:hover {
+  text-decoration: underline;
+}
+img {
+  margin: 0;
+  vertical-align: top;
+  font-size: 0;
+  line-height: 0;
+  border: none;
+}
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+form,
+fieldset,
+legend,
+pre {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+fieldset,
+legend {
+  border: none;
+}
+input,
+select:not(.ui-datepicker-year):not(.ui-datepicker-month),
+textarea,
+button {
+  box-sizing: border-box;
+  min-height: 16px;
+  margin: 0;
+  padding: 0;
+  /* outline: none; */
+  vertical-align: baseline;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1em;
+  color: #222;
+}
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+}
+button:disabled {
+  cursor: default;
+}
+p {
+  margin: 0;
+}
+em,
+i,
+address {
+  font-style: normal;
+}
+strong {
+  font-weight: 500;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ::-webkit-scrollbar { width:5px; } 
+::-webkit-scrollbar-track { background:transparent; } 
+::-webkit-scrollbar-thumb { background:#ddd; border-radius:3px; } 
+::-webkit-scrollbar-thumb:hover { background:#ccc; } */
+
+input::-webkit-input-placeholder {
+  font-weight: 300;
+  color: #999 !important;
+}
+input::-moz-placeholder {
+  font-weight: 300;
+  color: #999 !important;
+}
+input:-ms-input-placeholder {
+  font-weight: 300;
+  color: #999 !important;
+}
+textarea::-webkit-input-placeholder {
+  font-weight: 300;
+  color: #999 !important;
+}
+textarea::-moz-placeholder {
+  font-weight: 300;
+  color: #999 !important;
+}
+textarea:-ms-input-placeholder {
+  font-weight: 300;
+  color: #999 !important;
+}
+input::-ms-clear {
+  display: none;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  overflow: auto;
+  padding: 14px 16px;
+  vertical-align: top;
+  font-size: 1rem;
+  color: #222;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  box-sizing: border-box;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+  color: #222;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+/* input[type=text]:focus,input[type=email]:focus,input[type=password]:focus,textarea:focus,select:focus { border-color:#121d30 !important; } */
+input[type="text"]:not(.date-picker-day):not(.input-search):read-only,
+textarea:read-only {
+  background-color: #f8f8f8;
+}
+input[type="text"]:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: #f8f8f8;
+  opacity: 0.4;
+}
+input[type="text"].error,
+input[type="password"].error,
+textarea.error,
+select.error {
+  border-color: #ee9191;
+}
+
+select:not(.ui-datepicker-year):not(.ui-datepicker-month) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 48px;
+  padding: 0 46px 0 16px;
+  font-size: 1rem;
+  color: #222;
+  background: #fff url(https://recruit.posco.com/h22a01-front/static/img/pc_arr_select.png) no-repeat right 11px top 50%;
+  border: 1px solid #ccc;
+}
+select::-ms-expand {
+  display: none;
+}
+/* select:hover { border-color:#121d30; } */
+select:required:invalid {
+  color: #888 !important;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: #222;
+}
+
+label {
+  display: inline-block;
+  white-space: nowrap;
+}
+td label {
+  margin: 12px 0;
+}
+label > em {
+  color: #2064f9;
+}
+label > i {
+  color: #888;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+}
+.input-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-top: -4px;
+  vertical-align: middle;
+}
+label > .input-checkbox {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.input-checkbox > input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.input-checkbox > input + i {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+.input-checkbox > input[type="radio"] + i {
+  border-radius: 50%;
+}
+.input-checkbox > input:focus + i {
+  border-color: #222;
+}
+.input-checkbox > input[type="checkbox"]:checked + i {
+  background: #034a92 url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -384px 0;
+  border: none;
+}
+.input-checkbox > input[type="radio"]:checked + i {
+  border: none;
+}
+.input-checkbox > input[type="radio"]:checked + i:before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  margin: -1px; /* for IE11 (background-color 삐져나옴 가리기, background-clip은 원이 이쁘지 않음) */
+  background-color: white;
+  border: 6px solid #034a92;
+  border-radius: 50%;
+}
+
+.input-checkbox.keep {
+  width: 24px;
+  height: 24px;
+}
+.input-checkbox.keep > input[type="checkbox"] {
+  cursor: pointer;
+}
+.input-checkbox.keep > input[type="checkbox"] + i {
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -416px 0;
+  border: none;
+}
+.input-checkbox.keep > input[type="checkbox"]:checked + i {
+  background-position: -448px 0;
+}
+
+.checkbox-group {
+  display: block;
+  margin: 8px 0;
+}
+.checkbox-group > label {
+  margin: 4px 32px 4px 0 !important;
+}
+
+.input-sep {
+  line-height: 48px;
+}
+
+.input-search {
+  padding-right: 46px !important;
+  background: white url(https://recruit.posco.com/h22a01-front/static/img/pc_ic_search.png) no-repeat right 11px top 50%;
+}
+
+/* input-button */
+/* .input-button {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-right: 8px;
+  border: 1px solid #ccc;
+}
+.input-button > input {
+  flex: 1;
+  min-width: 0;
+  height: 54px;
+  border: none;
+}
+.input-button > button {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #eee;
+} */
+
+/* input-file */
+.input-file {
+  position: relative;
+  display: inline-block;
+}
+.input-file > input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.input-file > .btn-tertiary {
+  background-color: #eee;
+}
+.input-file:hover > .btn-tertiary:not(:disabled) {
+  background-color: #ddd;
+}
+.attached-files {
+  display: inline-block;
+}
+.input-file + .attached-files {
+  margin-left: 16px !important;
+}
+.attached-files:only-child {
+  margin: 14px 0;
+}
+.attached-files > i {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #0578ec;
+}
+.attached-files > i:not(:last-child) {
+  margin-right: 16px;
+}
+/* .attached-files > i > a {
+  color: #1a75ff;
+} */
+.attached-files > i > .delete {
+  position: relative;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0 8px;
+  vertical-align: top;
+  text-indent: -9999px;
+  background-color: #eee;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+.attached-files > i > .delete:hover {
+  background-color: #ddd;
+}
+.attached-files > i > .delete:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -992px 0;
+}
+
+/* button-group */
+.button-group {
+  display: flex;
+}
+.button-group.top {
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+.button-group.bottom {
+  justify-content: center;
+  margin-top: 32px;
+}
+.board-view + .button-group.bottom {
+  justify-content: flex-start;
+}
+.button-group > .left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+.button-group > .right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end !important;
+}
+.button-group .count > em {
+  font-weight: 400;
+  color: #034a92;
+}
+.button-group button:not(:first-child),
+.button-group a:not(:first-child) {
+  margin-left: 8px;
+}
+.button-group .btn-sm:not(:first-child) {
+  margin-left: 4px;
+}
+.btn-xlg {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 184px;
+  height: 68px;
+  padding: 0 24px;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 66px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+.btn-lg {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 140px;
+  height: 56px;
+  padding: 0 16px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 54px;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+.btn-md {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 116px;
+  height: 48px;
+  padding: 0 12px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 46px;
+  font-weight: 400;
+  border: 1px solid transparent;
+}
+.btn-sm {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 72px;
+  height: 32px;
+  padding: 0 8px;
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 30px;
+  font-weight: 400;
+  border: 1px solid transparent;
+}
+.btn-primary {
+  color: white;
+  text-decoration: none !important;
+  background-color: #034a92;
+}
+.btn-primary:not(:disabled):hover {
+  background-color: #0461bf;
+}
+.btn-primary.btn-xlg {
+  font-weight: 500;
+}
+.btn-primary:disabled {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #888;
+}
+.btn-secondary {
+  color: #222;
+  text-decoration: none !important;
+  background-color: white;
+  border-color: #ddd;
+}
+.btn-secondary:not(:disabled):hover {
+  background-color: #fbfbfb;
+}
+.btn-tertiary {
+  color: #222;
+  text-decoration: none !important;
+  background-color: #ddd;
+}
+.btn-tertiary:not(:disabled):hover {
+  background-color: #ccc;
+}
+
+.btn-group {
+  display: flex;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.btn-group > button {
+  background: #f8f8f8;
+}
+.btn-group > button:not(:first-child) {
+  border-left: 1px solid #eee;
+}
+.btn-group > button.active {
+  cursor: default;
+  color: #fff;
+  background-color: #034a92;
+}
+.btn-group-md > button {
+  height: 48px;
+  padding: 0 32px;
+}
+
+.btn-lg.prev {
+  padding-left: 0;
+  text-align: left;
+  font-size: 1.125rem;
+  background-color: transparent;
+}
+.btn-lg.next {
+  padding-right: 0;
+  text-align: right;
+  font-size: 1.125rem;
+  background-color: transparent;
+}
+.btn-lg.prev:before,
+.btn-lg.next:after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: 15px 0 0 4px;
+  vertical-align: top;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -544px 0;
+}
+.btn-lg.prev:before {
+  margin: 15px 4px 0 0;
+  transform: rotate(180deg);
+}
+.btn-md.more {
+  padding-right: 0;
+  background-color: transparent;
+}
+.btn-md.more:after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: 11px 0 0 4px;
+  vertical-align: top;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -544px 0;
+}
+.button-group .right:only-child .btn-md.more:only-child {
+  margin-top: -16px;
+}
+
+/* individual */
+.ta-left {
+  text-align: left !important;
+}
+.ta-center {
+  text-align: center !important;
+}
+.ta-right {
+  text-align: right !important;
+}
+.fw-normal {
+  font-weight: 400 !important;
+}
+.fw-bold {
+  font-weight: 700 !important;
+}
+.flex1 {
+  flex: 1;
+}
+
+/* layout */
+/* body.gnb-opened,
+body.lnb-opened,
+body.modal-opened {
+  overflow: hidden !important;
+} */
+
+#wrap {
+  box-sizing: border-box;
+  min-width: 1248px;
+}
+
+/* header {
+  pointer-events: none;
+  z-index: 100;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -144px;
+  padding-bottom: 64px;
+}
+header > .inner {
+  position: relative;
+  display: flex;
+  max-width: calc(100% - 160px);
+  min-width: 1200px;
+  margin: 0 auto;
+}
+header .logo {
+  pointer-events: all;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+header .logo > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 28px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}
+header .logo > a > i {
+  width: 160px;
+  height: 100%;
+  margin-right: 8px;
+  text-indent: -9999px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_logo.png) no-repeat 0 50%;
+  background-size: 100% auto;
+}
+
+header .global {
+  pointer-events: all;
+  position: absolute;
+  right: 0;
+  top: 16px;
+  display: flex;
+  align-items: center;
+}
+header .global > li {
+  position: relative;
+  margin-left: 24px;
+}
+header .global > li > a,
+header .global > li > span {
+  display: block;
+  font-size: 14px;
+  line-height: 48px;
+  font-weight: 400;
+  color: white;
+}
+header .global > li > span > i {
+  font-weight: 300;
+  opacity: 0.8;
+}
+header .global .login:before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: 12px 4px 0 0;
+  vertical-align: top;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat;
+}
+header .global .map {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  margin: 10px;
+  text-indent: -9999px;
+  background-color: transparent;
+  background-image: linear-gradient(transparent 13px, white 13px, white 15px, transparent 15px);
+  background-repeat: no-repeat;
+  background-position: 0;
+  transition: background-position 0.2s;
+}
+header .global .map.opened {
+  background-position: 28px 0;
+}
+header .global .map:before,
+header .global .map:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform-origin: 50%;
+  transition: all 0.2s;
+}
+header .global .map:before {
+  top: 3px;
+}
+header .global .map:after {
+  top: 23px;
+  width: 50%;
+}
+header .global .map.opened:before {
+  transform: translateY(10px) rotate(45deg) scaleX(1.21);
+}
+header .global .map.opened:after {
+  width: 100%;
+  transform: translateY(-10px) rotate(-45deg) scaleX(1.21);
+} */
+
+/* gnb */
+#gnb {
+  pointer-events: all;
+  flex: 1;
+}
+#gnb > nav {
+  display: flex;
+  justify-content: center;
+}
+#gnb > nav > ul {
+  display: flex;
+  float: left;
+}
+#gnb > nav > ul > li {
+  position: relative;
+}
+#gnb > nav > ul > li > a {
+  z-index: 1;
+  position: relative;
+  display: block;
+  padding: 0 30px;
+  font-size: 18px;
+  line-height: 80px;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#gnb > nav > ul > li > a:before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to left, transparent 60px, white 60px); /* for IE11 (calc() transition 미지원) */
+  transition: width 0.3s;
+}
+/* #gnb > nav > ul:not(:hover) > li.active > a,
+#gnb > nav > ul > li:hover > a {
+  color: #3b4396;
+} */
+#gnb > nav > ul:not(:hover) > li.active > a:before,
+#gnb > nav > ul > li:hover > a:before {
+  width: 100%;
+}
+
+#gnb > nav > ul > li > ul {
+  pointer-events: none;
+  /* z-index: 1; */
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 80px 100vw 0;
+  background-color: rgba(0, 0, 0, 0.16);
+  /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+}
+#gnb > nav > ul > li > ul:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 79px;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#gnb:not(.disabled) > nav > ul > li:hover > ul {
+  pointer-events: all;
+  /* z-index: 30; */
+  opacity: 1;
+}
+#gnb > nav > ul > li > ul > li {
+  margin: 0 16px;
+}
+#gnb > nav > ul > li > ul > li > a {
+  display: block;
+  line-height: 64px;
+  color: white;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.3s, transform 0.3s;
+  white-space: nowrap;
+}
+#gnb:not(.disabled) > nav > ul > li:hover > ul > li > a {
+  opacity: 1;
+  transform: translateX(0);
+}
+#gnb > nav > ul > li > ul > li > a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: width 0.3s;
+}
+#gnb > nav > ul > li > ul:not(:hover) > li.active > a:before,
+#gnb > nav > ul > li > ul > li:hover > a:before {
+  width: 100%;
+}
+
+/* headline */
+#headline {
+  height: 280px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+}
+#headline.c01 {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_bg_header_c01.jpg);
+}
+#headline.c02 {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_bg_header_c02.jpg);
+}
+#headline.c03 {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_bg_header_c03.jpg);
+}
+#headline.c04 {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_bg_header_c04.jpg);
+}
+#headline.e00 {
+  background: linear-gradient(to right, #004a97, #00a89b);
+}
+
+/* location */
+#location {
+  z-index: 50;
+  position: sticky;
+  top: 0;
+  margin-top: -56px;
+}
+#location:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 56px;
+  background: linear-gradient(to right, #004a97, #00a89b);
+  /* opacity: 0.8;
+  transition: opacity 0.3s; */
+}
+/* #location.fixed:before {
+  opacity: 1;
+} */
+#location > ul {
+  display: flex;
+  box-sizing: border-box;
+  width: 1200px;
+  margin: auto;
+}
+#location > ul > li {
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+#location > ul > li > a,
+#location > ul > li > button,
+#location > ul > li > span {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 224px;
+  padding: 0 56px 0 24px;
+  text-align: left;
+  /* font-size: 18px; */
+  line-height: 56px;
+  font-weight: 400;
+  color: white;
+  background-color: transparent;
+}
+#location > ul > li:first-child > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  padding: 0;
+  text-indent: -9999px;
+}
+#location > ul > li:first-child > a:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -32px 0;
+}
+#location > ul > li > span {
+  padding-right: 24px;
+}
+#location > ul > li > button:after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -64px 0;
+  transition: transform 0.3s;
+}
+#location > ul > li > button.active:after {
+  transform: rotate(-180deg);
+}
+#location > ul > li > ul {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 100%;
+  box-sizing: border-box;
+  width: calc(100% + 2px);
+  margin: 0 -1px;
+  padding: 12px 0;
+  background: white;
+  border: 1px solid #888;
+  border-width: 0 1px 1px;
+  box-shadow: 0 16px 24px 0 rgba(0, 0, 0, 0.08);
+}
+#location > ul > li > ul > li > a {
+  display: block;
+  padding: 0 16px;
+  font-size: 14px;
+  line-height: 32px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#location > ul > li > ul > li > a:hover {
+  background-color: #f8f8f8;
+}
+
+/* container */
+#container {
+  /* z-index: 1; */
+  position: relative;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+#headline.e00 ~ #container {
+  background-color: #f6f6f6;
+}
+#container > .inner {
+  display: flex;
+  box-sizing: border-box;
+  width: 1200px;
+  margin: 0 auto;
+}
+/* #container > .inner > aside {
+  box-sizing: border-box; 
+  width: 220px;
+} */
+
+/* content */
+#content {
+  flex: 1;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: calc(100vh - 280px);
+  padding: 60px 0 80px;
+}
+#headline.e00 ~ #container #content {
+  margin: -120px 0 80px;
+  padding: 60px;
+  min-height: calc(100vh - 490px);
+  background-color: white;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.05);
+}
+#content.bg-c010301 {
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_bg_c010301.jpg) no-repeat 100% 0;
+}
+#content > h1 {
+  margin: 0 0 24px;
+  font-size: 42px;
+  line-height: 52px;
+  font-weight: 700;
+}
+#headline.e00 ~ #container #content > h1 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+#content > h1 > i {
+  display: block;
+  margin: 12px 0 40px;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 300;
+}
+
+.tab-bar {
+  margin: 0 0 24px;
+}
+/* h1 + .tab-bar {
+  margin-top: 40px;
+} */
+.tab-bar > ul {
+  display: flex;
+}
+.tab-bar > ul > li {
+  flex: 1;
+  position: relative;
+}
+.tab-bar > ul > li > a {
+  position: relative;
+  display: block;
+  line-height: 53px;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #f8f8f8;
+  border-width: 2px 0 1px;
+  border-style: solid;
+  border-color: transparent transparent #eee;
+}
+.tab-bar > ul > li.active > a {
+  color: #034a92;
+  background-color: white;
+  border-color: #034a92 transparent transparent;
+}
+.tab-bar > ul > li > a:hover {
+  color: #034a92;
+}
+
+.tab-list {
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  margin: 24px 0;
+}
+.tab-list > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tab-list > ul > li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+/* .tab-list > ul > li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to top, transparent 0.2272em, #abafde 0.2272em, #abafde 0.5em, transparent 0.5em);
+  transition: width 0.3s;
+}
+.tab-list > ul > li.active:before,
+.tab-list > ul > li:hover:before {
+  width: 100%;
+} */
+.tab-list > ul > li:not(:last-child) {
+  margin-right: 17px;
+}
+.tab-list > ul > li:not(:last-child):after {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  width: 1px;
+  height: 16px;
+  background-color: #eee;
+  transform: translateY(-50%);
+}
+.tab-list > ul > li > a {
+  /* position: relative; */
+  display: block;
+  padding: 0 16px;
+  font-size: 1.125rem;
+  line-height: 48px;
+  font-weight: 700;
+  color: #888;
+  text-decoration: none;
+  white-space: nowrap;
+  /* transition: color 0.3s; */
+}
+.tab-list > ul > li.active > a,
+.tab-list > ul > li > a:hover {
+  color: #034a92;
+}
+
+.tab-list > ul.sort {
+  align-self: flex-end;
+  margin: 0 16px;
+}
+.tab-list > ul.sort:only-child {
+  flex: 1;
+  justify-content: flex-end;
+}
+.tab-list > ul.sort > li {
+  font-size: 1rem;
+  line-height: 1.3333;
+}
+.tab-list > ul.sort > li:not(:last-child) {
+  margin-right: 25px;
+}
+.tab-list > ul.sort > li:not(:last-child):after {
+  right: -13px;
+  height: 14px;
+}
+.tab-list > ul.sort > li > button {
+  height: 32px;
+  font-size: 0.875rem;
+  color: #888;
+  background: none;
+}
+.tab-list > ul.sort > li.active > button,
+.tab-list > ul.sort > li > button:hover {
+  color: #222;
+}
+
+.tab-list + hr {
+  height: 1px;
+  margin: 0 0 32px;
+  background-color: #444;
+  border: none;
+}
+
+/* dl-content layout */
+.dl-content {
+}
+.dl-content:not(:first-child) {
+  margin-top: 40px;
+}
+.dl-content > dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dl-content > dl > dt {
+  box-sizing: border-box;
+  width: 320px;
+  padding-right: 40px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #034a92;
+}
+.dl-content > dl > dt:before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  margin-bottom: 16px;
+  background-color: #034a92;
+}
+.dl-content > dl > dd {
+  width: calc(100% - 320px);
+}
+.dl-content > dl > dd:first-child,
+.dl-content > dl > dd + dd {
+  margin-left: 320px;
+}
+.dl-content > dl > dd ~ dt,
+.dl-content > dl > dd ~ dd {
+  margin-top: 40px;
+}
+
+/* box type */
+.company-intro {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 240px;
+  margin-bottom: 40px;
+  padding: 0 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.company-intro:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.company-intro > .inner {
+  position: relative;
+  color: white;
+}
+.company-intro > .inner > i:first-child {
+  display: block;
+  margin: 8px 0;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.company-intro > .inner > h2 {
+  margin: 4px 0 12px 0;
+  font-size: 52px;
+  line-height: 60px;
+}
+.company-intro > .inner > a:last-child {
+  display: inline-flex;
+  align-items: center;
+  margin: 12px 0;
+  color: white;
+}
+.company-intro > .inner > a:last-child > em {
+  margin-left: 12px;
+  font-weight: 500;
+}
+.company-intro > .inner > a:last-child:after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -1088px 0;
+}
+
+.grow-intro {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  padding: 0 80px;
+}
+.grow-intro:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.grow-intro.intro1:before {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_grow_intro01.jpg);
+}
+.grow-intro.intro2:before {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_grow_intro02.jpg);
+}
+.grow-intro.intro3:before {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_grow_intro03.jpg);
+}
+.grow-intro.intro4:before {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_grow_intro04.jpg);
+}
+.grow-intro > .inner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.grow-intro > .inner > h2 {
+  overflow: hidden;
+  margin: 8px 0;
+  font-size: 60px;
+  /* line-height: 68px; */
+}
+.grow-intro > .inner > span {
+  display: block;
+  overflow: hidden;
+  margin: 8px 0;
+  font-size: 20px;
+  /* line-height: 28px; */
+  font-weight: 700;
+}
+.grow-intro i {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 0.6s;
+}
+.grow-intro i.active {
+  transform: translateY(0) rotate(0.001deg);
+}
+
+.global-map-tab {
+  position: relative;
+  display: flex;
+  height: 560px;
+}
+.global-map-tab:before {
+  /* content: "지도이미지를 CSS적용할 예정입니다. (본 메시지는 CSS에서 삽입되었습니다. HTML은 변경없이 적용해 주세요.)"; */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_global_map0101.png) no-repeat;
+}
+.global-map-tab > a {
+  z-index: 1;
+  /* display: flex; */
+  text-indent: -9999px;
+}
+.global-map-tab > a:nth-child(1) {
+  width: 25%;
+}
+.global-map-tab > a:nth-child(2) {
+  width: 32%;
+}
+.global-map-tab > a:nth-child(3) {
+  flex: 1;
+}
+.global-map-tab > a:before {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; */
+  width: 100%;
+  height: 100%;
+  /* padding-top: 40px;
+  font-size: 0.875rem; */
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.global-map-tab > a:hover:before {
+  opacity: 1;
+}
+.global-map-tab > a:nth-child(1):before {
+  /* content: "Europe & Africa 영역 활성"; */
+  content: "";
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_global_map0101.png) no-repeat 0 -560px;
+}
+.global-map-tab > a:nth-child(2):before {
+  /* content: "Asia 영역 활성"; */
+  content: "";
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_global_map0101.png) no-repeat 0 -1120px;
+}
+.global-map-tab > a:nth-child(3):before {
+  /* content: "America 영역 활성"; */
+  content: "";
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_global_map0101.png) no-repeat 0 -1680px;
+}
+
+.global-map {
+  display: block;
+  background-color: #fbfbfb;
+}
+.global-map > img {
+  max-width: 100%;
+}
+
+.img-box {
+  padding: 60px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+.img-box:not(:first-child) {
+  margin-top: 16px;
+}
+.img-box > img {
+  max-width: 100%;
+}
+
+.text-box {
+  padding: 40px;
+  text-align: center;
+  background-color: #fbfbfb;
+}
+.text-box:not(:first-child) {
+  margin-top: 16px;
+}
+
+.preview-box1 {
+  padding: 16px;
+  font-size: 0.82rem; /* 13px(0.8125) 이하는 '름, 별' 등의 표현문제로 조정 (지원서미리보기) */
+  border: 1px solid #eee;
+}
+
+/* list type */
+ul.link-list:not(.col2) {
+  border-top: 1px solid #eee;
+}
+ul.link-list > li {
+  border-bottom: 1px solid #eee;
+}
+ul.link-list.col2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+}
+ul.link-list.col2 > li {
+  /*flex: 1;*/
+  min-width: calc(50% - 16px);
+  margin: 0 8px;
+}
+ul.link-list.col2 > li:nth-child(1),
+ul.link-list.col2 > li:nth-child(2) {
+  border-top: 1px solid #eee;
+}
+ul.link-list > li > a {
+  display: flex;
+  align-items: center;
+  height: 96px;
+  padding: 0 24px 0 16px;
+  text-decoration: none;
+}
+ul.link-list > li > a:hover {
+  background-color: #fbfbfb;
+}
+ul.link-list > li > a:after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  margin-left: 24px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -704px 0;
+  transform: rotate(-90deg);
+}
+ul.link-list > li > a > span {
+  flex: 1;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+ol.progress {
+  display: flex;
+  justify-content: center;
+  counter-reset: li;
+  margin-bottom: 40px;
+}
+#headline.e00 ~ #container #content > h1 + ol.progress {
+  margin-top: -16px;
+}
+ol.progress > li {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #aaa;
+}
+ol.progress > li:not(:last-child):after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 1px;
+  margin: 0 8px;
+  background-color: #d8d8d8;
+}
+ol.progress > li:before {
+  content: counter(li, decimal);
+  counter-increment: li;
+  box-sizing: border-box;
+  height: 32px;
+  width: 32px;
+  margin-right: 8px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 28px;
+  font-weight: 500;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+}
+ol.progress > li.current,
+ol.progress > li.complete {
+  font-weight: 500;
+  color: #034a92;
+}
+ol.progress > li.current:before,
+ol.progress > li.complete:before {
+  border-color: #034a92;
+}
+ol.progress > li.complete:before {
+  text-indent: -9999px;
+  background: #034a92 url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -864px 0;
+  border-width: 8px;
+}
+
+ol.recruit-progress {
+  display: flex;
+  justify-content: center;
+  counter-reset: li;
+  margin-bottom: 24px;
+}
+ol.recruit-progress > li {
+  position: relative;
+  flex: 1;
+  padding: 32px;
+}
+ol.recruit-progress > li:not(:last-child) {
+  margin-right: 48px;
+}
+ol.recruit-progress > li:not(:last-child):after {
+  content: "";
+  position: absolute;
+  right: -48px;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  margin-top: -24px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_ic_progress.png) no-repeat;
+}
+ol.recruit-progress > li:before {
+  content: counter(li, decimal-leading-zero);
+  counter-increment: li;
+  display: block;
+  box-sizing: border-box;
+  height: 48px;
+  width: 48px;
+  margin: 0 auto 12px;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 44px;
+  font-weight: 500;
+  border: 2px solid #222;
+  border-radius: 50%;
+}
+ol.recruit-progress > li > em {
+  display: block;
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+ol.recruit-progress > li > em:before {
+  content: "";
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 8px;
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_ic_progress.png);
+  background-repeat: no-repeat;
+}
+ol.recruit-progress > li:nth-child(1) > em:before {
+  background-position: -96px 0;
+}
+ol.recruit-progress > li:nth-child(2) > em:before {
+  background-position: -192px 0;
+}
+ol.recruit-progress > li:nth-child(3) > em:before {
+  background-position: -288px 0;
+}
+ol.recruit-progress > li:nth-child(4) > em:before {
+  background-position: -384px 0;
+}
+ol.recruit-progress > li > em > i {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #888;
+}
+
+ol.recruit-progress.detail {
+  display: block;
+  margin: 80px 0 0;
+}
+ol.recruit-progress.detail > li {
+  padding: 0;
+  margin: 0;
+}
+ol.recruit-progress.detail > li:not(:last-child):after {
+  position: static;
+  display: block;
+  width: 100%;
+  height: 14px;
+  margin: 60px 0;
+  background: none;
+  border-top: 1px solid #ddd;
+}
+ol.recruit-progress.detail > li:before {
+  margin-bottom: 8px;
+}
+ol.recruit-progress.detail > li > em {
+  margin-bottom: 12px;
+  font-size: 36px;
+  color: #034a92;
+}
+ol.recruit-progress.detail > li > em:before {
+  width: 2px;
+  height: 16px;
+  background: #222;
+}
+ol.recruit-progress.detail > li:not(:last-child) > em:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 19px;
+  height: 19px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-width: 0 0 1px 1px;
+  transform: scaleX(1.4) rotate(-45deg);
+  transform-origin: 0% 100%;
+}
+ol.recruit-progress.detail > li > em > i {
+  font-size: 20px;
+  font-weight: 500;
+  color: #222;
+}
+ol.recruit-progress.detail > li > p {
+  text-align: center;
+}
+ol.recruit-progress.detail > li > p:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+ol.keyword-list {
+  display: table;
+  width: 100%;
+  counter-reset: li;
+  border-top: 1px solid #ddd;
+}
+p.xxlg + ol.keyword-list {
+  margin-top: 152px;
+}
+ol.keyword-list > li {
+  display: table-row;
+}
+ol.keyword-list > li:before {
+  content: counter(li, decimal-leading-zero);
+  counter-increment: li;
+  display: table-cell;
+  width: 0;
+  padding: 0 80px;
+  vertical-align: middle;
+  font-size: 44px;
+  line-height: 52px;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+}
+ol.keyword-list > li > em {
+  display: table-cell;
+  box-sizing: border-box;
+  width: 0;
+  height: 200px;
+  padding: 40px 80px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 44px;
+  line-height: 52px;
+  font-weight: 500;
+  white-space: nowrap;
+  border-bottom: 1px solid #ddd;
+}
+ol.keyword-list > li > i {
+  display: table-cell;
+  padding: 40px 80px;
+  vertical-align: middle;
+  font-size: 20px;
+  line-height: 28px;
+  border-bottom: 1px solid #ddd;
+}
+ol.keyword-list > li > i > b {
+  font-weight: 500;
+}
+
+ul.type1 {
+}
+ul.type1:not(:first-child) {
+  margin-top: 8px;
+}
+ul.type1 > li {
+  position: relative;
+  padding-left: 10px;
+}
+ul.type1 > li:not(:first-child) {
+  margin-top: 8px;
+}
+ul.type1 > li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 2px;
+  height: 2px;
+  background-color: #222;
+}
+ul.type1 > li > em {
+  font-weight: 500;
+  color: #0578ec;
+}
+ul.type1 > li > .arr {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 12px;
+  font-weight: 400;
+  color: #248ffa;
+}
+ul.type1 > li > .arr:after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -928px 0;
+}
+
+ul.table {
+  display: table;
+}
+p + ul.table {
+  margin-top: 32px;
+}
+ul.table > li {
+  display: table-row;
+}
+ul.table > li > strong {
+  position: relative;
+  display: table-cell;
+  padding: 0 56px 0 10px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+ul.table > li > strong:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 2px;
+  height: 2px;
+  background-color: #222;
+}
+ul.table > li > i {
+  display: table-cell;
+}
+ul.table > li:not(:last-child) > strong,
+ul.table > li:not(:last-child) > i {
+  padding-bottom: 4px;
+}
+ul.table .outlink {
+  display: inline-flex;
+  align-items: center;
+  color: #248ffa;
+}
+ul.table .outlink:after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -1056px 0;
+}
+
+/* ul.type1.sm, */
+.info ul.type1,
+.table-guide ul.type1 {
+  font-size: 0.875rem;
+}
+.info ul.type1 {
+  font-weight: 400;
+}
+ul.type1.sm > li,
+.info ul.type1 > li,
+.table-guide ul.type1 > li {
+  padding-left: 14px;
+}
+ul.type1.sm > li:not(:first-child),
+.info ul.type1 > li:not(:first-child),
+.table-guide ul.type1 > li:not(:first-child) {
+  margin-top: 4px;
+}
+ul.type1.sm > li:before,
+.info ul.type1 > li:before,
+.table-guide ul.type1 > li:before {
+  left: 4px;
+  top: 10px;
+}
+
+.toggle-list {
+  border-top: 1px solid #eee;
+}
+.toggle-list > li {
+  border-bottom: 1px solid #eee;
+}
+.toggle-list .head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 96px;
+  padding: 24px 72px 24px 16px;
+  text-align: left;
+  font-weight: 300;
+  background: none;
+}
+.toggle-list .head:hover {
+  background-color: #fbfbfb;
+}
+.toggle-list .head:after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -704px 0;
+  transition: transform 0.3s;
+}
+.toggle-list .head.active:after {
+  transform: rotate(-180deg);
+}
+.toggle-list .head > span:only-child {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+}
+.toggle-list .body {
+  display: none;
+  padding: 40px 0;
+}
+.toggle-list .body > .global-map:first-child,
+.toggle-list .body > table:first-child {
+  margin-top: -40px;
+}
+
+.toggle-list.interviews .head {
+  padding-left: 24px;
+}
+.toggle-list.interviews .head .img {
+  width: 86px;
+  height: 86px;
+  overflow: hidden;
+  margin-right: 24px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: -webkit-optimize-contrast;
+}
+.toggle-list.interviews .head .summary {
+  flex: 1;
+}
+.toggle-list.interviews .head .summary > i {
+  display: block;
+  font-size: 0.875rem;
+}
+.toggle-list.interviews .head .summary > em {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.toggle-list.interviews .head .summary > em > i {
+  font-weight: 300;
+}
+.toggle-list.interviews .body {
+  counter-reset: h5;
+}
+.toggle-list.interviews .body > h5 {
+  display: block
+}
+.toggle-list.interviews .body > h5:before {
+  content: "Q" counter(h5, decimal) ".";
+  counter-increment: h5;
+  margin-right: 5px;
+}
+
+/* separate */
+.heading2 {
+
+}
+.heading2:first-child {
+  margin-top: 0;
+}
+.heading3 {
+
+}
+.heading3:first-child {
+  margin-top: 0;
+}
+.heading4 {
+  display: flex;
+  align-items: center;
+  margin: 40px 0 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.75;
+}
+.heading3 + .heading4,
+.heading4:first-child {
+  margin-top: 0;
+}
+.heading4 > em {
+  margin-left: 12px;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+.heading4 > em.right {
+  flex: 1;
+  align-self: flex-end;
+  text-align: right;
+}
+.heading4 > em > b {
+  font-weight: 300;
+  color: #e03838;
+}
+.heading4 > em > label {
+  font-size: 1rem;
+  /* font-weight: 400; */
+}
+.heading4 > i {
+  font-weight: 400;
+}
+.heading5 {
+  display: flex;
+  align-items: center;
+  margin: 24px 0 14px;
+  font-size: 1.125rem;
+  line-height: 1.3334;
+  font-weight: 700;
+}
+.heading5:first-child {
+  margin-top: 0;
+}
+.heading5.toggle {
+  position: relative;
+  margin-bottom: 0;
+  padding-right: 48px;
+  cursor: pointer;
+}
+.heading5.toggle + *:not(:first-child) {
+  margin-top: 14px;
+}
+.heading5.toggle:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -608px 0;
+  transition: transform 0.3s;
+}
+.heading5.toggle.opened:after {
+  transform: rotate(-180deg);
+}
+
+p.type1 {
+}
+p.type1:not(:first-child) {
+  margin-top: 8px;
+}
+p.type1.border-top {
+  padding-top: 24px;
+  border-top: 1px solid #222;
+}
+p.type1 strong {
+  font-weight: 400;
+}
+p.type1 em {
+  color: #248ffa;
+}
+
+p.type1.sm {
+  font-size: 0.875rem;
+}
+
+p.guide1 {
+  margin-top: 4px;
+  font-size: 0.875rem !important;
+  font-weight: 300;
+  /* color: #444; */
+}
+ul + p.guide1,
+table + p.guide1 {
+  margin-top: 12px;
+}
+p.guide1.boxed {
+  padding: 14px 16px;
+  background-color: #f4f9ff;
+}
+p.guide1.boxed:not(:last-child) {
+  margin-bottom: 24px;
+}
+.box p.guide1.boxed:not(:last-child) {
+  margin-bottom: 12px;
+}
+p.guide1 > span {
+  position: relative;
+  display: block;
+  padding-left: 24px;
+}
+p.guide1 > span:not(:first-child) {
+  margin-top: 4px;
+}
+p.guide1 > span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -736px 0;
+}
+p.guide1.error {
+  font-size: 0.75rem !important;
+  color: #e44e4e;
+}
+p.guide1.error > span:before {
+  top: 2px;
+  background-position: -896px 0;
+}
+
+p.message1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+p.message1 > span {
+  flex: 1;
+  font-size: 24px;
+  font-weight: 500;
+}
+p.message1 > span > i {
+  font-weight: 300;
+}
+
+p.notice {
+  margin-bottom: 24px;
+  padding: 16px 24px;
+  text-align: center;
+  font-weight: 400;
+  color: #248ffa;
+  background-color: #fbfbfb;
+}
+/* h1 + p.notice {
+  margin-top: 40px;
+} */
+
+p.flex-guide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 24px;
+}
+p.flex-guide.m-certify:before {
+  content: "";
+  width: 80px;
+  height: 80px;
+  margin-right: 16px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_img_guides.png) no-repeat 0 0;
+}
+p.flex-guide > span:not(:last-child) {
+  margin-right: 32px;
+}
+p.flex-guide > span > em {
+  display: block;
+  font-weight: 500;
+}
+p.flex-guide > span > i {
+  display: block;
+  font-size: 0.875rem;
+}
+p.flex-guide > span > i:not(:first-child) {
+  margin-top: 4px;
+}
+p.flex-guide .btn-md:not(:first-of-type) {
+  margin-left: 8px;
+}
+
+p.welcome {
+  margin-top: 84px;
+  text-align: center;
+}
+p.welcome:before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_img_welcome.png) no-repeat;
+}
+p.welcome > strong {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+p.welcome > strong > em {
+  font-weight: 700;
+  color: #034a92;
+}
+p.welcome > i {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+
+p.complete {
+  margin-top: 72px;
+  text-align: center;
+}
+p.complete:before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_img_complete.png) no-repeat;
+}
+p.complete > strong {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+p.complete > strong > em {
+  font-weight: 700;
+  color: #034a92;
+}
+p.complete > i {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+p.complete + .button-group {
+  margin-bottom: 48px;
+}
+
+p.guide2 {
+  margin-top: 16px;
+  padding: 24px;
+  /* font-size: 0.875rem; */
+  background-color: #fbfbfb;
+}
+p.guide2 > em {
+  display: block;
+  /* font-size: 1rem; */
+  font-weight: 400;
+}
+p.guide2 > em:only-child {
+  font-weight: 300;
+}
+/* p.guide2 > em:before {
+  content: "※ ";
+} */
+p.guide2 > i {
+  display: block;
+  margin-top: 8px;
+}
+
+p.xlg {
+  margin: 32px 0;
+  padding: 0 16px;
+  text-align: center;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+p.xlg.deco:before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_deco_xlg.png) no-repeat 0 0;
+}
+p.xlg.deco:after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 8px auto 0;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_deco_xlg.png) no-repeat -48px 0;
+}
+p.xlg > em {
+  color: #0578ec;
+}
+p.xxlg {
+  margin: 56px 0;
+  font-size: 60px;
+  line-height: 68px;
+  font-weight: 700;
+}
+h1 + p.xxlg {
+  margin-top: 88px;
+}
+p.xxlg > em {
+  color: #034a92;
+}
+p.xxlg > i {
+  font-weight: 300;
+}
+
+p.deco-c01040101 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #034a92;
+}
+p.deco-c01040101:before {
+  content: "";
+  width: 80px;
+  height: 60px;
+  margin-right: 16px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_img_c01040102.png) no-repeat;
+}
+
+/* table type */
+table.type1 {
+  font-size: 0.875rem;
+  border-style: solid hidden;
+  border-width: 2px 0 0;
+  border-top-color: #222;
+}
+table.type1:not(:first-child) {
+  margin-top: 24px;
+}
+h3 + table.type1,
+h4 + table.type1,
+h5 + table.type1 {
+  margin-top: 0 !important;
+}
+table.type1 th,
+table.type1 td {
+  padding: 13px 16px;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+table.type1 th {
+  font-weight: 400;
+  background-color: #f8f8f8;
+}
+table.type1 thead th {
+  height: 28px;
+}
+
+table.type2 {
+  font-size: 0.82rem; /* 13px(0.8125) 이하는 '름, 별' 등의 표현문제로 조정 (지원서미리보기) */
+  border-style: solid hidden;
+  border-width: 1px 0 0;
+  border-top-color: #ccc;
+}
+table.type2:not(:first-child) {
+  margin-top: 12px;
+}
+h3 + table.type2,
+h4 + table.type2,
+h5 + table.type2 {
+  margin-top: 0 !important;
+}
+table.type2 th,
+table.type2 td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+table.type2 th {
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  color: #3e3f5a;
+  background-color: #f8f8f8;
+}
+table.type2 td > em,
+table.type2 td > a {
+  color: #248ffa;
+}
+
+table.write {
+  border-top: 1px solid #ccc;
+}
+table.write th,
+table.write td {
+  height: 48px;
+  padding: 8px 12px;
+  font-weight: 400;
+  border-bottom: 1px solid #eee;
+}
+table.write th {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+  line-height: 1.25;
+  color: #3e3f5a;
+  background-color: #f8f8f8;
+}
+table.write td > p:not(.guide1),
+table.write td > p:not(.guide1) > .flex {
+  display: flex;
+  align-items: center;
+}
+table.write td > p:not(:first-child) {
+  margin-top: 8px;
+}
+table.write td > p:not(.guide1) > *:not(:first-child),
+table.write td > p:not(.guide1) > .flex >  *:not(:first-child) {
+  margin-left: 8px;
+}
+table.write td > p input:not([style*="width"]),
+table.write td > p select:not([style*="width"]) {
+  flex: 1;
+  min-width: 0;
+}
+table.write tr.sm td {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 0.875rem;
+}
+table.write .btn-init {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin: 0 !important;
+  text-indent: -9999px;
+  background: transparent;
+  border: 12px solid transparent;
+}
+table.write .btn-init:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -1184px 0;
+}
+
+table.form-secondary {
+  font-size: 0.875rem;
+}
+table.form-secondary th,
+table.form-secondary td {
+  height: 24px;
+  padding: 8px 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+table.form-secondary th {
+  font-weight: 400;
+  color: #3e3f5a;
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+table.form-secondary td > select,
+table.form-secondary td > input[type="text"] {
+  width: calc(100% + 24px);
+  height: calc(100% + 16px);
+  margin: -8px -12px;
+  padding: 0 12px;
+  font-size: 0.875rem;
+  border: none;
+}
+table.form-secondary td > select {
+  padding-right: 40px;
+  background: #fff url(https://recruit.posco.com/h22a01-front/static/img/pc_arr_select_sm.png) no-repeat right 12px top 50%;
+}
+table.form-secondary td > input[type="text"] {
+  text-align: center;
+}
+table.form-secondary td > .attached-files {
+  width: 100%;
+  margin: 0;
+}
+table.form-secondary td > .attached-files > i {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+table.form-secondary td > .attached-files > i > em,
+table.form-secondary td > .attached-files > i > a {
+  flex: 1;
+  text-align: left;
+  color: #222;
+}
+table.form-secondary td > .input-file > button {
+  color: #248ffa;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.essential-mark {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  color: #e03838 !important;
+}
+table.write th > .essential-mark:first-child {
+  display: inline-block;
+  width: 8px;
+  margin: -8px 0 0 -8px;
+  vertical-align: top;
+}
+
+/* board type */
+.board-search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+  padding: 16px;
+  background-color: #fbfbfb;
+}
+.board-search-bar > form {
+  display: flex;
+  justify-content: center;
+}
+.board-search-bar *:not(:first-child) {
+  margin-left: 8px;
+}
+.board-search-bar select {
+  min-width: 200px;
+}
+.board-search-bar .keyword {
+  display: flex;
+  width: 400px;
+  border: 1px solid #ccc;
+}
+.board-search-bar .keyword > input[type="text"] {
+  flex: 1;
+  height: 46px;
+  border: none;
+}
+.board-search-bar .keyword > button {
+  width: 46px;
+  height: 46px;
+  margin-left: 1px;
+  text-indent: -9999px;
+  background: white url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -224px 0;
+  border: 11px solid white;
+}
+
+.board-list,
+.board-view,
+.board-write,
+.board-faq {
+  border-top: 1px solid #444;
+}
+.board-list th,
+.board-list td {
+  height: 40px;
+  padding: 14px 16px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+.board-list th {
+  height: 27px;
+  font-weight: 500;
+  color: #666;
+  border-color: #ddd;
+}
+.board-list .title {
+  display: block;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.board-list .d-day {
+  margin: 0 -16px;
+  font-weight: 500;
+  color: #034a92;
+}
+.board-list .d-day.day0 {
+  font-size: 0.875rem;
+  color: #e03838;
+}
+.board-list .position {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 90px;
+  padding: 0 8px;
+  font-size: 0.875rem;
+  line-height: 40px;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 20px;
+}
+.board-list .position.p1,
+.board-list .position.p7 {
+  color: #00a89b;
+  background-color: #e4f9f7;
+}
+.board-list .position.p2 {
+  color: #248ffa;
+  background-color: #d8ebfe;
+}
+.board-list .position.p3 {
+  color: #5f618b;
+  background-color: #dbdbe5;
+}
+.board-list .position.p4 {
+  color: #f4901e;
+  background-color: #fce4c8;
+}
+.board-list .position.p5 {
+  color: #67c858;
+  background-color: #dbf5d7;
+}
+.board-list .position.p6 {
+  color: #9769f4;
+  background-color: #e7ddfd;
+}
+.board-list .position.p8 {
+  color: #888;
+  background-color: #eee;
+}
+
+/* p + .board-write {
+  margin-top: 24px;
+}
+ul + .board-write {
+  margin-top: 16px;
+}
+.board-write th,
+.board-write td {
+  height: 48px;
+  padding: 12px 24px;
+  font-size: 1.125em;
+  border-bottom: 1px solid #eee;
+}
+.board-write th {
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: left;
+  font-weight: 500;
+  background-color: #fbfbfb;
+}
+.board-write td > p:not(:first-child) {
+  margin-top: 8px;
+}
+.board-write td > p:only-child {
+  margin: 15px 0;
+}
+.board-write td > em {
+  color: #3988ff;
+}
+
+.board-write.secondary {
+  border-top: 1px solid #eee;
+}
+table + .board-write.secondary {
+  margin-top: 24px;
+}
+.board-write.secondary th {
+  color: #1a75ff;
+  background-color: #fafcff;
+} */
+
+.board-view .head {
+  display: flex;
+  align-items: flex-start;
+  padding: 32px;
+  border-bottom: 1px solid #eee;
+}
+.board-view .head .title {
+  flex: 1;
+}
+.board-view .head .title > h2 {
+  font-size: 1.75rem;
+  line-height: 1.2858;
+  font-weight: 500;
+  margin: 0;
+}
+.board-view .head .title > dl {
+  display: flex;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+.board-view .head .title > dl > dt {
+  display: none;
+}
+.board-view .head .title > dl > dd {
+  display: flex;
+}
+.board-view .head .title > dl > dd:not(:last-child):after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  margin: 5px 12px 0 12px;
+  vertical-align: top;
+  background-color: #ddd;
+}
+.board-view .head .title > dl > dd .d-day {
+  font-weight: 500;
+  color: #034a92;
+}
+.board-view .head .title > dl > dd .d-day.day0 {
+  color: #e03838;
+}
+.board-view .head .title > dl > dd .d-day:before {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  margin: 11px 8px 0 8px;
+  vertical-align: top;
+  background-color: #d8d8d8;
+}
+.board-view .head .util {
+  display: flex;
+  margin: -8px -8px 0 24px;
+}
+.board-view .head .util button {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  margin: 0 0 0 8px;
+  text-indent: -9999px;
+  background: white url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat;
+  border: 12px solid white;
+  border-radius: 50%;
+  box-shadow: #eee 0 0 0 1px;
+}
+.board-view .head .util button:hover {
+  background-color: #fbfbfb;
+  border-color: #fbfbfb;
+}
+.board-view .head .util button.share {
+  background-position: -480px 0;
+}
+.board-view .head .util button.share.active {
+  background-position: -672px 0;
+  background-color: #eee;
+  border-color: #eee;
+}
+.board-view .head .util .dropdown-wrap {
+  position: relative;
+}
+.board-view .head .util .dropdown-list {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid #444;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.board-view .head .util .share + .dropdown-list {
+  padding: 16px;
+}
+.board-view .head .util .share + .dropdown-list > em {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+/* .board-view .head .util .share + .dropdown-list > ul {
+  display: flex;
+} */
+.board-view .head .util .share + .dropdown-list > ul > li:not(:first-child) {
+  margin-top: 8px;
+} 
+.board-view .head .util .share + .dropdown-list > ul > li > button {
+  position: relative;
+  width: 108px;
+  height: 32px;
+  margin: 0;
+  padding-left: 44px;
+  text-align: left;
+  text-indent: 0;
+  font-size: 0.875rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.board-view .head .util .share + .dropdown-list > ul > li > button:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat;
+}
+.board-view .head .util .share + .dropdown-list > ul > li > button.nv:before {
+  background-position: -1216px 0;
+}
+.board-view .head .util .share + .dropdown-list > ul > li > button.cc:before {
+  background-position: -1248px 0;
+}
+.board-view .head .util .share + .dropdown-list > ul > li > button.gg:before {
+  background-position: -1280px 0;
+}
+
+.board-view .body {
+  border-bottom: 1px solid #eee;
+}
+.board-view .content {
+  padding: 32px 32px 60px;
+}
+.board-view .content img {
+  max-width: 100%;
+  height: auto;
+}
+.board-view .content img:only-child {
+  display: block;
+  margin: 0 auto;
+}
+.board-view .content .button-group {
+  justify-content: center;
+}
+.board-view .files {
+  display: flex;
+  align-items: flex-start;
+  padding: 22px 24px;
+  font-size: 0.875rem;
+  line-height: 1.4286;
+  background-color: #fbfbfb;
+}
+.board-view .files > dt {
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+  font-weight: 400;
+}
+.board-view .files > dt:after {
+  content: "";
+  width: 1px;
+  height: 14px;
+  margin: 0 16px 0;
+  background-color: #ddd;
+}
+.board-view .files > dd { 
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+.board-view .files > dd > a {
+  margin: 2px 15px 2px 0;
+  word-break: break-all;
+}
+.board-view .files > dd > a:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 2px 4px 0 0;
+  vertical-align: top;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -1312px 0;
+}
+.board-view .foot {
+}
+.board-view .foot > dl {
+  display: table;
+  width: 100%;
+}
+.board-view .foot > dl > span {
+  display: table-row;
+}
+.board-view .foot > dl > span > dt,
+.board-view .foot > dl > span > dd {
+  display: table-cell;
+  height: 40px;
+  overflow: hidden;
+  padding: 14px 0;
+  vertical-align: middle;
+  border-bottom: 1px solid #eee;
+}
+.board-view .foot > dl > span > dt {
+  width: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.board-view .foot > dl > span > dd > a {
+}
+
+.board-faq > li {
+  border-bottom: 1px solid #eee;
+}
+.board-faq > li > .a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 22px 68px 22px 0;
+  text-align: left;
+  background: none;
+}
+.board-faq > li > .a.active {
+  font-weight: 500;
+}
+.board-faq > li > .a:after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -704px 0;
+  transition: transform 0.3s;
+}
+.board-faq > li > .a.active:after {
+  transform: rotate(-180deg);
+}
+.board-faq > li > .a > i {
+  width: 180px;
+  text-align: center;
+}
+.board-faq > li > .a > span {
+  flex: 1;
+}
+.board-faq > li > .a:hover > span {
+  text-decoration: underline;
+}
+.board-faq > li > .q {
+  display: none;
+  padding: 40px 32px;
+  border-top: 1px solid #eee;
+}
+.board-faq > li > .q img {
+  max-width: 100%;
+}
+
+.card-list > li {
+  box-sizing: border-box;
+  padding: 32px 40px;
+  border: 1px solid #ddd;
+}
+.card-list > li:not(:first-child) {
+  margin-top: 24px;
+}
+.card-list > li.closed {
+  background-color: #f6f6f6;
+}
+.card-list > li.blank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+.card-list .head {
+  display: flex;
+  align-items: flex-start;
+}
+.card-list .head .title {
+  flex: 1;
+}
+.card-list .head .title > strong {
+  display: block;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+}
+.card-list .head .title > strong > a {
+  display: block;
+  text-decoration-thickness: 1px;
+}
+.card-list .head .title > dl {
+  display: flex;
+  margin-top: 12px;
+  line-height: 32px;
+}
+.card-list .head .title > dl > dt {
+  display: none;
+}
+.card-list .head .title > dl > dd {
+  display: flex;
+}
+.card-list .head .title > dl > dd:not(:last-child):after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  margin: 9px 12px 0 12px;
+  vertical-align: top;
+  background-color: #ddd;
+}
+.card-list .head .title > dl > dd > b {
+  font-weight: 500;
+}
+.card-list .head .title > dl > dd .d-day {
+  box-sizing: border-box;
+  min-width: 76px;
+  margin-left: 12px;
+  padding: 0 8px;
+  text-align: center;
+  font-weight: 500;
+  color: white;
+  background-color: #034a92;
+  border-radius: 16px;
+}
+.card-list .head .title > dl > dd .d-day.day0 {
+  font-size: 0.875rem;
+  background-color: #e03838;
+}
+.card-list .head .title > dl > dd .d-day.closed {
+  font-size: 0.875rem;
+  background-color: #666;
+}
+.card-list .head .util {
+  display: flex;
+}
+.card-list .head .util > * {
+  margin-left: 24px;
+}
+.card-list .head .util .del {
+  width: 24px;
+  height: 24px;
+  text-indent: -9999px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -672px 0;
+}
+.card-list .head .util > i {
+  font-weight: 700;
+  color: #248ffa;
+}
+.card-list .head .util > i > em {
+  color: #888;
+}
+.card-list .body {
+  margin-top: 32px;
+}
+.card-list .foot + .body {
+  margin-top: 24px;
+}
+.card-list .body.hidden {
+  display: none;
+}
+.card-list .body .form-unit {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  background-color: #fbfbfb;
+}
+.card-list .body .form-unit > *:not(:first-child) {
+  margin-left: 8px;
+}
+.card-list .body .form-unit .btn-md {
+  min-width: 0;
+  padding: 0 24px;
+}
+.card-list .body .form-unit > input:not([style*="width"]),
+.card-list .body .form-unit > select:not([style*="width"]) {
+  flex: 1;
+  min-width: 0;
+}
+.card-list .body .form-unit + .buttons {
+  margin-top: 8px;
+  justify-content: flex-end;
+  display: flex;
+}
+.card-list .body .form-unit + .buttons > *:not(:first-child) {
+  margin-left: 8px;
+}
+.card-list .body .files > li:not(:first-child) {
+  margin-top: 24px;
+}
+/* .card-list .body .files > li:not(:first-child) {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 2px dashed #d4d4d4;
+}
+.card-list .body .files > li > p {
+  display: flex;
+}
+.card-list .body .files > li > p + p {
+  align-items: center;
+  margin-top: 16px;
+}
+.card-list .body .files > li > p > *:not(:first-child) {
+  margin-left: 8px;
+}
+.card-list .body .files > li > p > input:not([style*="width"]),
+.card-list .body .files > li > p > select:not([style*="width"]) {
+  flex: 1;
+  min-width: 0;
+}
+.card-list .body .files > li > p > .attached-files {
+  flex: 1;
+  margin: 0 16px 0 0;
+}
+.card-list .body .files > li > p > .btn-sm {
+  align-self: flex-end;
+} */
+.card-list .body .q {
+  display: block;
+}
+.card-list .body .a {
+  display: block;
+  margin-top: 16px;
+  padding: 24px 32px;
+  background-color: #f8f8f8;
+}
+.card-list .body .a > em {
+  display: flex;
+  margin-bottom: 12px;
+  font-weight: 500;
+  color: #034a92;
+}
+.card-list .body .a > em > i {
+  margin-left: 12px;
+  font-weight: 300;
+  color: #888;
+}
+.card-list .body .button-group.top {
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.card-list .body.selection-result {
+  padding-bottom: 28px;
+  text-align: center;
+}
+.card-list .body.selection-result > p:not(:last-child) {
+  margin-bottom: 24px;
+}
+.card-list .body.selection-result > p > span {
+  z-index: 1;
+  position: relative;
+}
+.card-list .body.selection-result > p > span > strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.card-list .body.selection-result > p > span > strong > em {
+  font-weight: 700;
+  color: #034a92;
+}
+.card-list .body.selection-result > p > span > em {
+  font-weight: 700;
+  color: #248ffa;
+}
+.card-list .body.selection-result > p.pass:before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: -8px auto 16px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_img_pass.png) no-repeat;
+}
+.card-list .body.selection-result > p.pass-final {
+  position: relative;
+  box-sizing: border-box;
+  width: 796px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 40px 240px;
+  background-color: #e5edf6;
+  border-radius: 24px
+}
+.card-list .body.selection-result > p.pass-final:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_img_pass_final.png) no-repeat;
+}
+.card-list .body.selection-result > p.pass-final:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 262px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_img_pass_final.png) no-repeat 0 100%;
+}
+.card-list .foot {
+  display: flex;
+  align-items: flex-end;
+  min-height: 48px;
+  margin-top: 12px;
+}
+.card-list .foot > dl {
+  display: flex;
+}
+.card-list .foot > dl > dt:after {
+  content: ":";
+  margin: 0 4px;
+}
+.card-list .foot > dl > dd {
+  margin-right: 24px;
+}
+.card-list .foot .buttons {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.card-list .foot .buttons > a,
+.card-list .foot .buttons > button,
+.card-list .foot .buttons > .btn-group {
+  margin-left: 8px;
+}
+.card-list .btn-toggle,
+.card-list .btn-add {
+  display: block;
+  width: calc(100% + 80px);
+  height: 48px;
+  margin: 32px -40px -32px;
+  font-size: 0.875rem;
+  line-height: 46px;
+  font-weight: 400;
+  background-color: white;
+  border-top: 1px solid #ddd;
+}
+.card-list .btn-toggle:hover,
+.card-list .btn-add:hover {
+  background-color: #fbfbfb;
+}
+.card-list .btn-toggle:before {
+  content: "열기";
+}
+.card-list .btn-toggle.active:before {
+  content: "닫기";
+}
+.card-list .btn-toggle:after,
+.card-list .btn-add:after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 15px 0 0 2px;
+  vertical-align: top;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -960px 0;
+  /* transition: transform 0.3s; */
+}
+.card-list .btn-toggle.active:after {
+  transform: rotate(-180deg);
+}
+.card-list .btn-add:after {
+  background-position: -640px 0;
+}
+
+.card-list.sm {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -12px;
+}
+.card-list.sm > li {
+  width: calc(50% - 24px);
+  margin: 12px;
+  padding: 24px;
+}
+.card-list.sm .head .title > strong {
+  display: flex;
+  align-items: flex-start;
+}
+.card-list.sm .head .title > strong > a {
+  flex: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 64px;
+  overflow: hidden;
+  word-break: break-all;
+}
+.card-list.sm .head .title > strong > .input-checkbox {
+  margin: 0 0 0 24px;
+}
+.card-list.sm .head .title > dl {
+  margin-top: 32px;
+}
+
+.box-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px -24px;
+}
+.box-list:not(:first-child) {
+  margin-top: 24px;
+}
+.box-list > li {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  box-sizing: border-box;
+  width: calc(50% - 24px);
+  margin: 0 12px 24px;
+  padding: 24px 32px;
+  background-color: #f8f8f8;
+}
+.box-list.col1 > li {
+  width: calc(100% - 24px);
+}
+.box-list:not(.normal) > li {
+  min-height: 220px;
+}
+.box-list .body {
+  height: 100%;
+}
+.box-list .body > em {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.box-list .body > em > i {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+}
+.box-list .body.ic {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.box-list .body.ic > .type1 {
+ min-height: 88px;
+ margin-top: 0;
+ padding-right: 120px;
+}
+.box-list .body.ic:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  content: "";
+  width: 96px;
+  height: 96px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_img_welfare.png) no-repeat;
+}
+.box-list .body.ic-welfare1::after {
+  background-position: 0px 0;
+}
+.box-list .body.ic-welfare2::after {
+  background-position: -96px 0;
+}
+.box-list .body.ic-welfare3::after {
+  background-position: -192px 0;
+}
+.box-list .body.ic-welfare4::after {
+  background-position: -288px 0;
+}
+.box-list .body.ic-welfare5::after {
+  background-position: -384px 0;
+}
+.box-list .body.ic-welfare6::after {
+  background-position: -480px 0;
+}
+
+.box-list .foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+.box-list .foot > span {
+  flex: 1;
+  display: flex;
+}
+.box-list .foot > span > i:not(:first-child):before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  margin: 5px 8px 0;
+  vertical-align: top;
+  background-color: #ddd;
+}
+
+.gallery-list {
+  overflow: hidden;
+}
+.gallery-list:not(:first-child) {
+  margin-top: 24px;
+}
+.gallery-list > ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -16px -12px;
+}
+.gallery-list > ul > li {
+  width: calc(33.3333% - 24px);
+  margin: 16px 12px;
+}
+.gallery-list > ul > li > a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+.gallery-list .img {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 16px;
+  padding-top: 56.25%;
+  background-color: #eee;
+}
+.gallery-list .img > img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s;
+}
+.gallery-list a:hover .img > img {
+  width: 106%;
+}
+.gallery-list .title {
+  display: block; /* for IE11 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 52px;
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+  word-break: break-all;
+}
+.gallery-list a:hover .title {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+.gallery-list .date {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.875em;
+  line-height: 1.4286;
+  color: #666;
+}
+.gallery-list .tag {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  font-size: 0.875em;
+  line-height: 1.4286;
+  color: #034a92;
+}
+.gallery-list .tag > i:not(:last-child) {
+  margin-right: 8px;
+}
+
+.gallery-list.newsroom > ul > li:first-child {
+  width: calc(100% - 24px);
+  margin-bottom: 28px;
+}
+.gallery-list.newsroom > ul > li:first-child > a {
+  overflow: hidden;
+}
+.gallery-list.newsroom > ul > li:first-child .img {
+  float: left;
+  width: 640px;
+  height: 360px;
+  margin: 0 40px 0 0;
+  padding: 0;
+}
+.gallery-list.newsroom > ul > li:first-child > a:hover .img > img {
+  width: 104%;
+}
+.gallery-list.newsroom > ul > li:first-child .title {
+  -webkit-line-clamp: 3;
+  max-height: 156px;
+  margin-top: 32px;
+  font-size: 44px;
+  line-height: 52px;
+  font-weight: 700;
+}
+.gallery-list.newsroom > ul > li:first-child .summary {
+  display: block; /* for IE11 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  max-height: 4.5em;
+  overflow: hidden;
+  margin-top: 24px;
+}
+.gallery-list.newsroom > ul > li:first-child .date {
+  margin-top: 24px;
+}
+
+.gallery-list.video .img:before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gallery-list.video a:hover .img:before {
+  opacity: 0.15;
+}
+.gallery-list.video .img:after {
+  z-index: 2;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_ic_play.svg) no-repeat;
+  opacity: 0;
+  transform: translate(-50%, -40%);
+  transition: all 0.3s;
+}
+.gallery-list.video a:hover .img:after {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.gallery-list.company > ul {
+  margin: -12px;
+}
+.gallery-list.company > ul > li {
+  margin: 12px;
+}
+.gallery-list.company > ul > li > a:before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.gallery-list.company .img {
+  margin-bottom: 0;
+  padding-top: 73%;
+}
+.gallery-list.company .img > i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  image-rendering: -webkit-optimize-contrast;
+  transform: translate(-50%, -50%) scale(1.0001);
+  transition: width 0.3s, height 0.3s;
+}
+.gallery-list.company a:hover .img > i {
+  width: 106%;
+  height: 106%;
+}
+.gallery-list.company .title {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  max-height: none;
+  padding: 32px;
+  color: white;
+  text-decoration: none !important;
+}
+.gallery-list.company .title > i {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 300;
+}
+.gallery-list.company .title > em {
+  display: block;
+  margin-top: 4px;
+  font-size: 28px;
+  line-height: 36px;
+}
+/* .gallery-list.company a:hover .title > em {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+} */
+.gallery-list.company .mark {
+  z-index: 2;
+  position: absolute;
+  left: 32px;
+  top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 64px;
+  height: 64px;
+  padding: 8px;
+  color: white;
+  background: linear-gradient(to right, rgba(0, 74, 151, 0.6), rgba(0, 168, 155, 0.6));
+  border-radius: 50%;
+}
+.gallery-list.company .mark > i {
+  text-align: center;
+  line-height: 1.25;
+  font-weight: 400;
+  word-break: break-all;
+}
+
+button.btn-list-more {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin-top: 32px;
+  font-size: 0.875rem;
+  line-height: 46px;
+  font-weight: 400;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+button.btn-list-more:hover {
+  background-color: #fbfbfb;
+}
+button.btn-list-more:after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 15px 0 0 2px;
+  vertical-align: top;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -640px 0;
+}
+
+.video-viewer-wrap {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.8);
+}
+.video-viewer-wrap > .video-box {
+  position: relative;
+  overflow: hidden;
+  width: 60%;
+  padding-bottom: 33.75%;
+}
+.video-viewer-wrap > .video-box > iframe {
+  position: absolute;
+  width: calc(100% + 2px) !important;
+  height: calc(100% + 2px) !important;
+  margin: -1px;
+  border: none;
+}
+.video-viewer-wrap > .close {
+  /* position: absolute;
+  top: 40px;
+  right: 40px; */
+  width: 56px;
+  height: 56px;
+  margin-top: 60px;
+  text-indent: -9999px;
+  background: white url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -672px 0;
+  border: 16px solid white;
+  border-radius: 50%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  text-align: center;
+}
+.pagination > a,
+.pagination > span {
+  box-sizing: border-box;
+  width: 40px;
+  margin: 0 2px;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 38px;
+  color: #888;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.pagination .current,
+.pagination a:not(.first):not(.prev):not(.next):not(.last):hover {
+  font-weight: 400;
+  color: #222;
+  border-color: #222;
+}
+.pagination .first,
+.pagination .prev,
+.pagination .next,
+.pagination .last {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-indent: -9999px;
+}
+.pagination .first:before,
+.pagination .prev:before,
+.pagination .next:before,
+.pagination .last:before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat;
+}
+.pagination .first:before {
+  background-position: -256px 0;
+}
+.pagination .prev:before {
+  background-position: -288px 0;
+}
+.pagination .next:before {
+  background-position: -320px 0;
+}
+.pagination .last:before {
+  background-position: -352px 0;
+}
+
+/* util-bottom */
+.util-bottom {
+  z-index: 101;
+  position: fixed;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.util-bottom > .inner {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+.util-bottom .btn-top {
+  position: absolute;
+  right: 24px;
+  top: -38px;
+  box-sizing: border-box;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  text-indent: -9999px;
+  opacity: 0;
+  background: #121d30 url(https://recruit.posco.com/h22a01-front/static/img/pc_ic_top.png) no-repeat 50% 48px;
+  background-size: 48px;
+  border-radius: 50%;
+  transform-origin: center;
+  transform: translate(50%, -50%);
+  transition: all 0.5s;
+}
+.util-bottom.show .btn-top {
+  width: 48px;
+  height: 48px;
+  opacity: 1;
+  background-position: 50%;
+}
+
+/* footer */
+/* footer {
+  z-index: 100;
+  position: relative;
+  color: #222;
+  background-color: #eee;
+}
+footer > .inner {
+  position: relative;
+  box-sizing: border-box;
+  max-width: calc(100% - 160px);
+  min-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+footer > .inner:before {
+  content: "POSCO";
+  display: block;
+  width: 140px;
+  height: 48px;
+  text-indent: -9999px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_logo_footer.png) no-repeat;
+}
+footer .global {
+  display: flex;
+  margin: 24px 0 20px;
+}
+footer .global > li:not(:first-child) {
+  margin-left: 32px;
+}
+footer .global > li > a {
+  display: block;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 400;
+}
+footer .sns {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  display: flex;
+}
+footer .sns > li {
+  margin-left: 20px;
+}
+footer .sns > li > a {
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background-color: rgba(102, 102, 102, 0.04);
+  border-radius: 50%;
+}
+footer .sns > li > a:before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 32px;
+  height: 32px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat;
+}
+footer .sns .ig:before {
+  background-position: -128px 0;
+}
+footer .sns .yt:before {
+  background-position: -160px 0;
+}
+footer .sns .fb:before {
+  background-position: -192px 0;
+}
+footer .family {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 56px;
+  width: 240px;
+  height: 42px;
+  padding: 0;
+  font-weight: 400;
+  background: transparent url(https://recruit.posco.com/h22a01-front/static/img/pc_arr_select_family.png) no-repeat 100% 50%;
+  border: none;
+  border-bottom: 1px solid #222;
+}
+footer .contact {
+  display: flex;
+  font-size: 14px;
+}
+footer .contact address {
+  display: inline-block;
+}
+footer .contact > i {
+}
+footer .contact > i:before {
+  content: "/";
+  margin: 0 10px;
+}
+footer .copyright {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  opacity: 0.6;
+} */
+
+/* login */
+.login-box {
+  width: 440px;
+  margin: 0 auto;
+}
+.login-box input[type="text"],
+.login-box input[type="password"],
+.login-box .btn-xlg {
+  width: 100%;
+}
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  height: 56px;
+  border-color: #ddd;
+}
+.login-box input[type="password"] {
+  margin-top: 8px;
+}
+.login-box .btn-xlg {
+  margin-top: 12px;
+}
+.login-box .options {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 16px 0 24px;
+  padding-bottom: 24px;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #eee;
+}
+.login-box .options > label {
+  margin-right: 16px;
+}
+.login-box .options .input-checkbox {
+  margin-left: 0;
+}
+.login-box .options > ul {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.login-box .options > ul > li:not(:first-child):before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin: 5px 8px 0;
+  vertical-align: top;
+  background-color: #ddd;
+}
+.login-box .options .others {
+  display: flex;
+  width: 100%;
+  margin-top: 24px;
+}
+.login-box .options .others > button {
+  flex: 1;
+}
+.login-box .options .others > button:not(:first-child) {
+  margin-left: 4px;
+}
+.login-box .options .btn-secondary {
+  border-color: #eee;
+}
+.login-box .options .btn-lg:before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin: 11px 8px 0 0;
+  vertical-align: top;
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png);
+  background-repeat: no-repeat;
+}
+.login-box .options .btn-lg.naver:before {
+  background-position: -768px 0;
+}
+.login-box .options .btn-lg.kakao:before {
+  background-position: -800px 0;
+}
+.login-box .options .btn-lg.google:before {
+  background-position: -832px 0;
+}
+.login-box .join {
+  display: flex;
+  align-items: flex-start;
+}
+.login-box .join > i {
+  flex: 1;
+  line-height: 1.25;
+}
+.login-box .join .btn-md {
+  min-width: 0;
+  padding: 0;
+  font-weight: 500;
+}
+.login-box .join .btn-md:after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: 11px 0 0 4px;
+  vertical-align: top;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -544px 0;
+}
+
+/* modal */
+body.modal-opened {
+  overflow: hidden !important;
+}
+.modal-wrap {
+  z-index: 300;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-self: safe center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.modal-wrap.opened {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-box {
+  /* max-width: 80%; */
+  margin: auto;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.modal-wrap.opened .modal-box {
+  opacity: 1;
+  transform: scale(1);
+}
+.modal-pop {
+  position: relative;
+  box-sizing: border-box;
+  min-width: 360px;
+  margin: 40px;
+  padding: 24px;
+  background-color: white;
+}
+.pop-head {
+  display: flex;
+  margin: -24px -24px 24px;
+  padding: 16px 18px 16px 24px;
+  color: #2d2e42;
+  border-bottom: 1px solid #eee;
+}
+.pop-head > h2 {
+  flex: 1;
+  display: inline-block;
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
+.pop-head > .close {
+  width: 24px;
+  height: 24px;
+  margin: 2px 0 0 24px;
+  text-indent: -9999px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -672px 0;
+}
+.pop-body.ta-center {
+  padding: 8px;
+}
+.pop-foot {
+  margin-top: 24px;
+  justify-content: flex-end;
+}
+.pop-foot > .button-group {
+  margin-top: 0;
+  justify-content: flex-end;
+}
+.pop-foot > .button-group > button:not(:first-child),
+.pop-foot > .button-group > a:not(:first-child) {
+  margin-left: 4px;
+}
+.pop-foot .btn-md {
+  min-width: 78px;
+  padding: 0 24px;
+}
+
+.pop-body h3 {
+  margin: 32px 0 16px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.pop-body h3:first-child {
+  margin-top: 0;
+}
+.pop-body h4 {
+  margin: 16px 0 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.input-file ~ p.type1 {
+  margin-top: 12px;
+}
+
+.flex-inputs,
+.flex-inputs > form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.flex-inputs:not(:first-child) {
+  margin-top: 16px;
+}
+.flex-inputs *:not(:first-child) {
+  margin-left: 4px;
+}
+.flex-inputs input:not([style*="width"]) {
+  flex: 1;
+  min-width: 0;
+}
+.flex-inputs .btn-md {
+  min-width: 72px;
+}
+
+.searched-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 206px;
+  padding: 24px 32px;
+  margin-top: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+/* .searched-box.no-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  min-height: 204px;
+  padding: 24px 32px;
+  text-align: center;
+} */
+.searched-box > ul {
+  margin: -24px -32px;
+  height: 204px;
+  overflow-y: auto;
+}
+.searched-box > ul > li > button {
+  width: 100%;
+  height: 28px;
+  padding: 0 12px;
+  text-align: left;
+  font-size: 0.875rem;
+  background: none;
+}
+.searched-box > ul > li > button:hover {
+  background-color: #f8f8f8;
+}
+.searched-box > ul > li > button > i {
+  font-weight: 300;
+  color: #aaa;
+}
+.searched-box .keyword {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.125rem;
+  line-height: 1.3334;
+  font-weight: 700;
+  color: #0578ec;
+}
+.searched-box .keyword:before {
+  content: "“";
+}
+.searched-box .keyword:after {
+  content: "”";
+}
+.searched-box > p {
+  font-size: 0.875rem;
+  line-height: 1.4286;
+}
+
+/* policies */
+.policies {
+  padding: 0 0 8px 0;
+  font-size: 0.875rem;
+}
+.policies > h3 {
+  margin: 32px 0 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.policies > h3:first-child {
+  margin-top: 0;
+}
+.policies > h4 {
+  margin: 12px 0 8px;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.policies > p:not(:first-child),
+.policies > ul:not(:first-child),
+.policies > ol:not(:first-child) {
+  margin-top: 12px;
+}
+.policies > h4 + p,
+.policies > h4 + p + p,
+.policies > h4 + p + ul,
+.policies > h4 + p + ol,
+.policies > h4 + ul,
+.policies > h4 + ol {
+  margin-top: 8px !important;
+}
+.policies > p > em {
+  color: #248ffa;
+}
+.policies ul > li {
+  position: relative;
+  padding-left: 18px;
+}
+.policies ul > li:before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  width: 2px;
+  height: 2px;
+  background-color: #222;
+}
+.policies ol {
+  counter-reset: li;
+}
+.policies ol > li {
+  display: flex;
+  flex-wrap: wrap;
+}
+.policies ol > li:before {
+  content: counter(li, decimal) ".";
+  counter-increment: li;
+  margin-right: 4px;
+}
+.policies ol > li > span {
+  flex: 1;
+}
+.policies ol > li > ul,
+.policies ol > li > ol {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 16px;
+}
+.policies li:not(:first-child) {
+  margin-top: 8px;
+}
+.policies li li {
+  margin-top: 8px !important;
+}
+.policies li > ul > li {
+  padding-left: 10px;
+}
+.policies li > ul > li:before {
+  content: "-";
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  background: none;
+}
+.policies ol ol > li:nth-child(1):before,
+.policies ol.circle > li:nth-child(1):before {
+  content: "①";
+}
+.policies ol ol > li:nth-child(2):before,
+.policies ol.circle > li:nth-child(2):before {
+  content: "②";
+}
+.policies ol ol > li:nth-child(3):before,
+.policies ol.circle > li:nth-child(3):before {
+  content: "③";
+}
+.policies ol ol > li:nth-child(4):before,
+.policies ol.circle > li:nth-child(4):before {
+  content: "④";
+}
+.policies ol ol > li:nth-child(5):before,
+.policies ol.circle > li:nth-child(5):before {
+  content: "⑤";
+}
+.policies ol ol > li:nth-child(6):before,
+.policies ol.circle > li:nth-child(6):before {
+  content: "⑥";
+}
+.policies ol ol > li:nth-child(7):before,
+.policies ol.circle > li:nth-child(7):before {
+  content: "⑦";
+}
+.policies ol ol > li:nth-child(8):before,
+.policies ol.circle > li:nth-child(8):before {
+  content: "⑧";
+}
+.policies ol ol > li:nth-child(9):before,
+.policies ol.circle > li:nth-child(9):before {
+  content: "⑨";
+}
+.policies ol ol > li:nth-child(10):before,
+.policies ol.circle > li:nth-child(10):before {
+  content: "⑩";
+}
+.policies ol ol > li:nth-child(11):before,
+.policies ol.circle > li:nth-child(11):before {
+  content: "⑪";
+}
+.policies ol ol > li:nth-child(12):before,
+.policies ol.circle > li:nth-child(12):before {
+  content: "⑫";
+}
+.policies ol ol > li:nth-child(13):before,
+.policies ol.circle > li:nth-child(13):before {
+  content: "⑬";
+}
+.policies ol ol > li:nth-child(14):before,
+.policies ol.circle > li:nth-child(14):before {
+  content: "⑭";
+}
+.policies ol ol > li:nth-child(15):before,
+.policies ol.circle > li:nth-child(15):before {
+  content: "⑮";
+}
+.policies .lg {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.policies .lg:not(:first-child) {
+  margin-top: 32px;
+}
+.policies .lg > li:not(:first-child) {
+  margin-top: 12px;
+}
+.policies > hr {
+  height: 1px;
+  margin: 40px 0;
+  background-color: #eee;
+  border: none;
+}
+
+/* test sample */
+.test-sample {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.test-sample > *:first-child {
+  margin-top: 0 !important;
+}
+.test-sample > p {
+  margin: 12px 0;
+  font-weight: 500;
+  word-break: break-all;
+}
+.test-sample > p > em {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #034a92;
+}
+.test-sample > div {
+  margin: 12px 0;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.test-sample > div > p {
+  padding: 8px;
+  text-align: left;
+  word-break: break-all;
+}
+.test-sample > div > img {
+  max-width: 100%;
+}
+.test-sample > ol {
+  counter-reset: li;
+  margin-top: 12px;
+}
+.test-sample > ol > li {
+  display: flex;
+  flex-wrap: wrap;
+}
+.test-sample > ol > li:before {
+  content: counter(li, decimal) ".";
+  counter-increment: li;
+  padding: 8px 4px 8px 8px;
+  border-radius: 4px 0 0 4px;
+}
+.test-sample > ol > li > span {
+  flex: 1;
+  padding: 8px 8px 8px 0;
+  word-break: break-all;
+  border-radius: 0 4px 4px 0;
+}
+.test-sample > ol:not(.yn) > li:hover:before,
+.test-sample > ol:not(.yn) > li:hover > span {
+  background-color: #f8f8f8;
+}
+.test-sample > ol > li > i {
+  display: flex;
+  width: 100%;
+  margin: 4px 0 12px;
+}
+.test-sample > ol > li:last-child > i {
+  margin-bottom: 0;
+}
+.test-sample > ol > li > i > button {
+  flex: 1;
+  height: 36px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+}
+.test-sample > ol > li > i > button:not(:last-child) {
+  margin-right: 4px;
+}
+.test-sample > ol > li > i > button.active {
+  color: #034a92;
+  background-color: #d8ebfe;
+}
+.test-sample > ol + p {
+  color: #034a92;
+}
+.test-sample > hr {
+  height: 0;
+  margin: 16px 0;
+  background-color: #eee;
+  border: none;
+}
+
+/* sitemap (modal) */
+.modal-box.sitemap-box {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 560px;
+  height: 100%;
+  overflow: auto;
+  background: linear-gradient(to right, #004a97, #00a89b);
+  transform: scale(1);
+}
+.sitemap {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+.sitemap .head {
+  display: flex;
+  justify-content: flex-end;
+  padding: 32px 32px 0;
+}
+.sitemap .head > em {
+  display: none;
+  /* display: flex;
+  align-items: center;
+  height: 64px;
+  font-size: 28px;
+  font-weight: 500;
+  color: white; */
+}
+/* .sitemap .head > em > i {
+  width: 160px;
+  height: 100%;
+  margin-right: 8px;
+  text-indent: -9999px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_logo.png) no-repeat 0 50%;
+  background-size: 100% auto;
+} */
+.sitemap .head > h2 {
+  display: none;
+}
+.sitemap .head .close {
+  width: 48px;
+  height: 48px;
+  text-indent: -9999px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_ic_close.png) no-repeat;
+}
+.sitemap .body {
+  padding: 40px;
+}
+.sitemap .body > ul {
+
+}
+.sitemap .body > ul > li:not(:first-child) {
+  margin-top: 32px;
+}
+.sitemap .body > ul > li > a,
+.sitemap .body > ul > li > span {
+  position: relative;
+  display: inline-block;
+  font-size: 28px;
+  line-height: 52px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+}
+.sitemap .body > ul > li > a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 7px;
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: width 0.3s;
+}
+.sitemap .body > ul > li > a:hover:after {
+  width: 100%;
+}
+.sitemap .body > ul > li > ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.sitemap .body > ul > li > ul > li {
+  width: 33.3333%;
+}
+.sitemap .body > ul > li > ul > li > a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.sitemap .body > ul > li > ul > li > a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 7px;
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: width 0.3s;
+}
+.sitemap .body > ul > li > ul > li > a:hover:after {
+  width: 100%;
+}
+
+/* error message */
+.error-message {
+  margin: 100px 100px 160px;
+  text-align: center;
+}
+.error-message .code {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  text-indent: -9999px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_ic_error.png) no-repeat;
+}
+/* .error-message .code404 {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_ic_code404.png);
+} */
+.error-message > strong {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.error-message > p {
+  margin-top: 8px;
+}
+
+/* main */
+body.main {
+  background-color: #eee;
+}
+.main #content {
+  position: relative;
+  height: 100vh;
+  max-height: 970px;
+  min-height: 800px;
+  padding: 0;
+  background: white;
+}
+.main .util-bottom > .inner {
+  width: calc(100% - 160px);
+  max-width: 1390px;
+  min-width: 1200px;
+}
+
+.main-copy {
+  height: 100%;
+}
+.main-copy > li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 100px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0s;
+  transition-delay: 1.2s;
+}
+.main-copy > li.active {
+  z-index: 1;
+  padding: 0;
+  opacity: 1;
+  transition: opacity 1.2s;
+  transition-delay: 0s;
+}
+.main-copy > li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  transform: scale(1) rotate(0);
+  transition: transform 2.4s;
+}
+.main-copy > li.active:before {
+  transform: scale(1.02) rotate(0.001deg);
+}
+.main-copy > li:nth-child(1):before {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_main_section01_1.jpg);
+}
+.main-copy > li:nth-child(2):before {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_main_section02.jpg);
+}
+.main-copy > li:nth-child(3):before {
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_main_section03_1.jpg);
+}
+.main-copy > li > p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 64px;
+  line-height: 72px;
+  font-weight: 700;
+  color: white;
+  opacity: 0;
+  transition: opacity 2.4s;
+  transition-delay: 0s;
+}
+.main-copy > li.active > p {
+  opacity: 1;
+  transition-delay: 0.6s;
+}
+.main-copy > li > p > span {
+  display: block;
+  width: calc(100% - 160px);
+  max-width: 1390px;
+  min-width: 1200px;
+  height: 576px;
+  margin-top: 60px;
+}
+
+.main-content {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 240px;
+}
+.copy-pagination {
+  display: flex;
+  width: calc(100% - 160px);
+  max-width: 1390px;
+  min-width: 1200px;
+  margin: 32px auto 0;
+}
+.copy-pagination > i {
+  box-sizing: border-box;
+  width: 32px;
+  height: 9px;
+  margin: -3px 8px -3px 0;
+  padding: 3px 0;
+  cursor: pointer;
+}
+.copy-pagination > i:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s;
+}
+.copy-pagination > i.active:before {
+  background-color: rgba(255, 255, 255, 1);
+}
+.copy-controller {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  overflow: hidden;
+  margin: -40px auto 0;
+}
+.copy-controller > span {
+  display: flex;
+  justify-content: space-between;
+  /* width: calc(100% - 160px);
+  min-width: 1200px;
+  margin: 0 auto; */
+}
+.copy-prev,
+.copy-next {
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background-color: transparent;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+.copy-prev:hover,
+.copy-next:hover {
+  opacity: 1;
+}
+.copy-prev:before,
+.copy-next:before {
+  content: "";
+  width: 32px;
+  height: 32px;
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png);
+  background-repeat: no-repeat;
+}
+.copy-prev:before {
+  background-position: -1120px 0;
+}
+.copy-next:before {
+  background-position: -1152px 0;
+}
+@media (max-width: 1378px) {
+  .copy-prev {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  .copy-next {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+.main-content > ul {
+  display: flex;
+  width: calc(100% - 160px);
+  max-width: 1390px;
+  min-width: 1200px;
+  min-height: 262px;
+  margin: 92px auto 0;
+}
+.main-content > ul > li {
+  flex: 1;
+}
+.main-content > ul > li:not(:last-child) {
+  margin-right: 20px;
+}
+.main-content > ul > li > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+}
+.main-content > ul > li > a > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  height: 85%;
+  padding:24px 16px 32px 24px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.main-content > ul > li:nth-child(4) > a > span {
+  padding:24px 16px 32px 24px;
+}
+.main-content > ul > li > a:hover > span {
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateY(-16px);
+}
+.main-content > ul > li > a > span > em:first-child > b {
+  position: relative;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+}
+.main-content > ul > li > a > span > em:first-child > i {
+  display:inline-block;
+  position: relative;
+  word-break: break-all;
+  padding-right:20px;
+}
+.main-content > ul > li > a > span > em:first-child > i::after {
+  content:"";
+  position: absolute;
+  right:0;
+  top:5px;
+  width:16px;
+  height:16px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -1330px 0;
+}
+.main-content > ul > li > a > span > em:last-child {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.main-content > ul > li > a > span > em:last-child > b {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 400;
+  color: #034a92;
+}
+.main-content > ul > li > a > span > em:last-child > i {
+  margin-left: 6px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* 공고지원 */
+.apply header {
+  z-index: 101;
+  position: sticky;
+  top: 0;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+}
+.apply header > .inner {
+  height: 80px;
+}
+.apply header .global {
+  top: 16px;
+}
+
+#apply-title {
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  margin-top: 56px;
+}
+#apply-title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 340px;
+  background: linear-gradient(to right, #004a97, #00a89b);
+}
+#apply-title > .inner {
+  position: relative;
+  width: 1200px;
+  height: 204px;
+  margin: 0 auto;
+}
+
+#apply-title > .inner > h1 {
+  pointer-events: all;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  color: white;
+  transform: translateY(-32px);
+}
+#apply-title > .inner > h1 > em:first-child {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+#apply-title > .inner > h1 > em:first-child > i {
+  margin: 0 2px;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 40px;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+#apply-title > .inner > h1 > span {
+  font-size: 32px;
+  text-align: left;
+  line-height: 1.2223;
+}
+
+#apply-title.fixed > .inner > h1 > span {
+  display:block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width:930px;
+  margin:0 auto;
+}
+
+
+#apply-title > .inner > h1 > em:last-child {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+#apply-title > .inner > h1 > em:last-child > i {
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 300;
+}
+#apply-title > .inner > h1 > em:last-child > i:not(:first-child):before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  margin: 4px 12px 0;
+  vertical-align: top;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#apply-title > .inner > h1 > em:last-child > i > strong {
+  font-weight: 700;
+}
+
+#apply-title.fixed > .inner > h1 {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: center;
+  transform: translateY(80px);
+}
+#apply-title.fixed > .inner > h1 > em:first-child {
+  margin: 0 0 0 4px;
+}
+#apply-title.fixed > .inner > h1 > em:last-child {
+  display: none;
+}
+
+#apply-title > .inner > ul {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+#apply-title > .inner > ul > li {
+  flex: 1;
+}
+#apply-title > .inner > ul > li > a {
+  display: block;
+  font-size: 18px;
+  line-height: 56px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s;
+}
+#apply-title > .inner > ul > li.active > a,
+#apply-title > .inner > ul > li > a:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.apply #container {
+  background-color: #f6f6f6;
+}
+.apply #content {
+  min-height: calc(100vh - 340px);
+  padding-top: 40px;
+}
+.apply #content .box {
+  padding: 32px;
+  background-color: white;
+}
+.apply #content .box:not(:first-child) {
+  margin-top: 24px;
+}
+.apply #content .box.info {
+  padding: 24px 32px;
+  background-color: #f4f4f9;
+  border: 1px solid #a3a5c0;
+}
+.apply #content .box.info .heading5 {
+  color: #3e3f5a;
+}
+.apply #content .my-basic {
+  display: flex;
+}
+.apply #content .my-basic:not(:last-child) {
+  margin-bottom: 32px;
+}
+.apply #content .my-basic .picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  margin-right: 16px;
+  background-color: #f8f8f8;
+}
+.apply #content .my-basic .picture .img {
+  position: relative;
+  box-sizing: border-box;
+  width: 150px;
+  height: 200px;
+  background: white url(https://recruit.posco.com/h22a01-front/static/img/pc_id_picture_default.png) no-repeat 50%;
+  border: 1px solid #ddd;
+}
+.apply #content .my-basic .picture .img > img {
+  width: 150px !important;
+  height: 200px !important;
+  margin: -1px;
+}
+.apply #content .my-basic .picture .img .del {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 24px;
+  height: 24px;
+  text-indent: -9999px;
+  background: black url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -576px 0;
+}
+.apply #content .my-basic .picture .btn-sm {
+  width: 100px;
+  margin-top: 8px;
+}
+.apply #content .my-basic .picture > i {
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #666;
+}
+.apply #content .my-basic .table {
+  flex: 1;
+}
+
+.apply #content .box .added {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 2px dashed #d4d4d4;
+}
+.apply #content .box .btn-add {
+  display: block;
+  width: calc(100% + 64px);
+  height: 48px;
+  margin: 32px -32px -32px;
+  font-size: 0.875rem;
+  line-height: 46px;
+  font-weight: 400;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+.apply #content .box .btn-add:hover {
+  background-color: #fbfbfb;
+}
+.apply #content .box .btn-add:after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 15px 0 0 2px;
+  vertical-align: top;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -640px 0;
+}
+
+.table-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+.heading4 + .table-buttons {
+  margin-top: -44px;
+}
+.table-buttons > .btn-sm {
+  margin-left: 4px;
+}
+
+.table-guide {
+  margin-top: 16px;
+}
+.box-list + .table-guide {
+  margin-top: 24px;
+}
+.table-guide:not(:last-child) {
+  margin-bottom: 16px;
+}
+.table-guide > h5 {
+  margin: 24px 0 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+}
+.table-guide.boxed {
+  padding: 24px 32px;
+  border: 1px solid #ddd;
+}
+.table-guide.boxed > h5 {
+  margin-top: 0;
+}
+
+.consent-list {
+  border-top: 1px solid #222;
+}
+.consent-list + .consent-list {
+  margin-top: 24px;
+}
+.consent-list > li {
+  display: flex;
+  padding: 20px 24px;
+  border-bottom: 1px solid #eee;
+}
+.consent-list > li > em {
+  flex: 1;
+}
+.consent-list > li > em > b {
+  font-weight: 300;
+  color: #e44e4e;
+}
+.consent-list > li > span {
+  display: flex;
+}
+.consent-list > li > span > a {
+  margin: 0 24px;
+  color: #248ffa;
+  text-decoration: underline;
+}
+.consent-list.boxed {
+  padding: 24px;
+  border: none;
+  background-color: #fbfbfb;
+}
+.consent-list.boxed > li {
+  position: relative;
+  padding: 0 0 0 10px;
+  border: none;
+}
+.consent-list.boxed > li:not(:first-child) {
+  margin-top: 10px;
+}
+.consent-list.boxed > li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 2px;
+  height: 2px;
+  background-color: #222;
+}
+
+.button-group-flag {
+  margin-top: 40px;
+}
+.button-group-flag:before {
+  content: "";
+  display: block;
+  height: 56px;
+}
+.button-group-flag > .inner {
+  margin-top: -56px;
+}
+.button-group-flag.fixed > .inner {
+  position: fixed;
+  left: 50%;
+  bottom: -72px;
+  width: 1200px;
+  padding: 12px 0;
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateX(-50%);
+  transition: bottom 0.3s;
+}
+.button-group-flag.fixed.show > .inner {
+  bottom: 0;
+}
+.apply .button-group {
+  /* justify-content: center; */
+  margin-top: 40px;
+}
+.button-group-flag .button-group {
+  margin-top: 0;
+}
+
+.button-group-flag.fixed .button-group .left,
+.button-group-flag.fixed .button-group .right {
+  display: none;
+}
+.button-group-flag.fixed .button-group button,
+.button-group-flag.fixed .button-group a {
+  height: 48px;
+  line-height: 46px;
+}
+.button-group-flag.fixed .btn-secondary {
+  border-color: transparent;
+}
+/* .button-group-flag.fixed .btn-primary {
+  color: #222;
+  background-color: white;
+}
+.button-group-flag.fixed .btn-secondary {
+  color: white;
+  background-color: transparent; 
+} */
+
+/* date picker */
+.flatpickr-calendar {
+  opacity: 0;
+  display: none;
+  text-align: center;
+  visibility: hidden;
+  padding: 0;
+  -webkit-animation: none;
+  animation: none;
+  direction: ltr;
+  border: 0;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  border-radius: 4px;
+  position: absolute;
+  /* width: 307.875px; */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  background: #fff;
+  border: 1px solid #3e3f5a;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.12);
+  /* -webkit-box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0, 0, 0, 0.08); */
+}
+.flatpickr-calendar.open,
+.flatpickr-calendar.inline {
+  opacity: 1;
+  max-height: 640px;
+  visibility: visible;
+}
+.flatpickr-calendar.open {
+  display: inline-block;
+  z-index: 99999;
+}
+.flatpickr-calendar.animate.open {
+  -webkit-animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.flatpickr-calendar.inline {
+  display: block;
+  position: relative;
+  top: 2px;
+}
+.flatpickr-calendar.static {
+  position: absolute;
+  top: calc(100% + 2px);
+}
+.flatpickr-calendar.static.open {
+  z-index: 999;
+  display: block;
+}
+.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n + 1) .flatpickr-day.inRange:nth-child(7n + 7) {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n + 2) .flatpickr-day.inRange:nth-child(7n + 1) {
+  -webkit-box-shadow: -2px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;
+  box-shadow: -2px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;
+}
+.flatpickr-calendar .hasWeeks .dayContainer,
+.flatpickr-calendar .hasTime .dayContainer {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.flatpickr-calendar .hasWeeks .dayContainer {
+  border-left: 0;
+}
+.flatpickr-calendar.hasTime .flatpickr-time {
+  height: 40px;
+  border-top: 1px solid #e6e6e6;
+}
+.flatpickr-calendar.noCalendar.hasTime .flatpickr-time {
+  height: auto;
+}
+.flatpickr-calendar:before,
+.flatpickr-calendar:after {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  left: 22px;
+}
+.flatpickr-calendar.rightMost:before,
+.flatpickr-calendar.arrowRight:before,
+.flatpickr-calendar.rightMost:after,
+.flatpickr-calendar.arrowRight:after {
+  left: auto;
+  right: 22px;
+}
+.flatpickr-calendar.arrowCenter:before,
+.flatpickr-calendar.arrowCenter:after {
+  left: 50%;
+  right: 50%;
+}
+.flatpickr-calendar:before {
+  border-width: 5px;
+  margin: 0 -5px;
+}
+.flatpickr-calendar:after {
+  border-width: 4px;
+  margin: 0 -4px;
+}
+.flatpickr-calendar.arrowTop:before,
+.flatpickr-calendar.arrowTop:after {
+  bottom: 100%;
+}
+.flatpickr-calendar.arrowTop:before {
+  border-bottom-color: #3e3f5a;
+}
+.flatpickr-calendar.arrowTop:after {
+  border-bottom-color: #fff;
+}
+.flatpickr-calendar.arrowBottom:before,
+.flatpickr-calendar.arrowBottom:after {
+  top: 100%;
+}
+.flatpickr-calendar.arrowBottom:before {
+  border-top-color: #3e3f5a;
+}
+.flatpickr-calendar.arrowBottom:after {
+  border-top-color: #fff;
+}
+.flatpickr-calendar:focus {
+  outline: 0;
+}
+.flatpickr-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.flatpickr-months {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flatpickr-months .flatpickr-month {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.9);
+  fill: rgba(0, 0, 0, 0.9);
+  height: 34px;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  height: 34px;
+  padding: 10px;
+  z-index: 3;
+  color: rgba(0, 0, 0, 0.9);
+  fill: rgba(0, 0, 0, 0.9);
+}
+.flatpickr-months .flatpickr-prev-month.flatpickr-disabled,
+.flatpickr-months .flatpickr-next-month.flatpickr-disabled {
+  display: none;
+}
+.flatpickr-months .flatpickr-prev-month i,
+.flatpickr-months .flatpickr-next-month i {
+  position: relative;
+}
+.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month.flatpickr-prev-month {
+  left: 0;
+}
+.flatpickr-months .flatpickr-prev-month.flatpickr-next-month,
+.flatpickr-months .flatpickr-next-month.flatpickr-next-month {
+  right: 0;
+}
+.flatpickr-months .flatpickr-prev-month:hover,
+.flatpickr-months .flatpickr-next-month:hover {
+  color: #959ea9;
+}
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  fill: #f64747;
+}
+.flatpickr-months .flatpickr-prev-month svg,
+.flatpickr-months .flatpickr-next-month svg {
+  width: 14px;
+  height: 14px;
+}
+.flatpickr-months .flatpickr-prev-month svg path,
+.flatpickr-months .flatpickr-next-month svg path {
+  -webkit-transition: fill 0.1s;
+  transition: fill 0.1s;
+  fill: inherit;
+}
+.numInputWrapper {
+  position: relative;
+  height: auto;
+}
+.numInputWrapper input,
+/* .numInputWrapper span {
+  display: inline-block;
+} */
+.numInputWrapper input {
+  width: 100%;
+}
+.numInputWrapper input::-ms-clear {
+  display: none;
+}
+.numInputWrapper input::-webkit-outer-spin-button,
+.numInputWrapper input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+/* .numInputWrapper span {
+  position: absolute;
+  right: 0;
+  width: 14px;
+  padding: 0 4px 0 2px;
+  height: 50%;
+  line-height: 50%;
+  opacity: 0;
+  cursor: pointer;
+  border: 1px solid rgba(57, 57, 57, 0.15);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.numInputWrapper span:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.numInputWrapper span:active {
+  background: rgba(0, 0, 0, 0.2);
+} */
+/* .numInputWrapper span:after {
+  display: block;
+  content: "";
+  position: absolute;
+} */
+.numInputWrapper span.arrowUp {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_arr_datepicker.png) no-repeat 50%;
+  background-size: 16px;
+  transform: translateY(-7px) rotate(-90deg);
+}
+/* .numInputWrapper span.arrowUp:after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid rgba(57, 57, 57, 0.6);
+  top: 26%;
+} */
+.numInputWrapper span.arrowDown {
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_arr_datepicker.png) no-repeat 50%;
+  background-size: 16px;
+  transform: translateY(-7px) rotate(90deg);
+}
+/* .numInputWrapper span.arrowDown:after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgba(57, 57, 57, 0.6);
+  top: 40%;
+} */
+.numInputWrapper span svg {
+  width: inherit;
+  height: auto;
+}
+.numInputWrapper span svg path {
+  fill: rgba(0, 0, 0, 0.5);
+}
+.numInputWrapper:hover {
+  /* background: rgba(0, 0, 0, 0.05); */
+}
+.numInputWrapper:hover span {
+  opacity: 1;
+}
+.flatpickr-current-month {
+  font-size: 135%;
+  line-height: inherit;
+  font-weight: 300;
+  color: inherit;
+  position: absolute;
+  width: 75%;
+  left: 12.5%;
+  padding: 7.48px 0 0 0;
+  line-height: 1;
+  height: 34px;
+  display: inline-block;
+  text-align: center;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.flatpickr-current-month span.cur-month {
+  font-family: inherit;
+  font-weight: 700;
+  color: inherit;
+  display: inline-block;
+  margin-left: 0.5ch;
+  padding: 0;
+}
+.flatpickr-current-month span.cur-month:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+.flatpickr-current-month .numInputWrapper {
+  width: 45px;
+  padding: 0 20px;
+  display: inline-block;
+}
+/* .flatpickr-current-month .numInputWrapper span.arrowUp:after {
+  border-bottom-color: rgba(0, 0, 0, 0.9);
+}
+.flatpickr-current-month .numInputWrapper span.arrowDown:after {
+  border-top-color: rgba(0, 0, 0, 0.9);
+} */
+.flatpickr-current-month input.cur-year {
+  background: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #3e3f5a;
+  cursor: text;
+  /* padding: 0 0 0 0.5ch; */
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  height: 24px;
+  border: 0;
+  vertical-align: initial;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.flatpickr-current-month input.cur-year:focus {
+  outline: 0;
+}
+.flatpickr-current-month input.cur-year[disabled],
+.flatpickr-current-month input.cur-year[disabled]:hover {
+  font-size: 100%;
+  color: rgba(0, 0, 0, 0.5);
+  background: transparent;
+  pointer-events: none;
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  /* appearance: menulist;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 300;
+  height: auto;
+  line-height: inherit;
+  margin: -1px 0 0 0;
+  outline: none;
+  padding: 0 0 0 0.5ch;
+  position: relative;
+  vertical-align: initial;
+  -webkit-box-sizing: border-box;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  width: auto; */
+  height: 24px;
+  padding: 0 24px 0 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3e3f5a;
+  background-image: url(https://recruit.posco.com/h22a01-front/static/img/pc_arr_datepicker.png);
+  background-position: right 4px top 50%;
+  border: none;
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months:focus,
+.flatpickr-current-month .flatpickr-monthDropdown-months:active {
+  outline: none;
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months:hover {
+  /* background: rgba(0, 0, 0, 0.05); */
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {
+  background-color: transparent;
+  outline: none;
+  padding: 0;
+}
+.flatpickr-weekdays {
+  background: transparent;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 28px;
+}
+.flatpickr-weekdays .flatpickr-weekdaycontainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+span.flatpickr-weekday {
+  cursor: default;
+  font-weight: 500;
+  background: transparent;
+  color: #3e3f5a;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-weight: bolder;
+}
+.dayContainer,
+.flatpickr-weeks {
+  padding: 1px 0 0 0;
+}
+.flatpickr-days {
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  /* width: 307.875px; */
+}
+.flatpickr-days:focus {
+  outline: 0;
+}
+.dayContainer {
+  padding: 0;
+  outline: 0;
+  text-align: left;
+  width: 182px;
+  min-width: 182px;
+  max-width: 182px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+.dayContainer + .dayContainer {
+  -webkit-box-shadow: -1px 0 0 #e6e6e6;
+  box-shadow: -1px 0 0 #e6e6e6;
+}
+.flatpickr-day {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #222;
+  cursor: pointer;
+  /* width: 14.2858143%;
+  -webkit-flex-basis: 14.2858143%;
+  -ms-flex-preferred-size: 14.2858143%;
+  flex-basis: 14.2858143%; */
+  width: 24px;
+  height: 24px;
+  line-height: 22px;
+  margin: 1px;
+  display: inline-block;
+  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+.flatpickr-day.inRange,
+.flatpickr-day.prevMonthDay.inRange,
+.flatpickr-day.nextMonthDay.inRange,
+.flatpickr-day.today.inRange,
+.flatpickr-day.prevMonthDay.today.inRange,
+.flatpickr-day.nextMonthDay.today.inRange,
+.flatpickr-day:hover,
+.flatpickr-day.prevMonthDay:hover,
+.flatpickr-day.nextMonthDay:hover,
+.flatpickr-day:focus,
+.flatpickr-day.prevMonthDay:focus,
+.flatpickr-day.nextMonthDay:focus {
+  cursor: pointer;
+  outline: 0;
+  color: white !important;
+  background: #3e3f5a !important;
+  border-color: transparent !important;
+}
+.flatpickr-day.today {
+  background-color: #ececf2;
+}
+.flatpickr-day.today:hover,
+.flatpickr-day.today:focus {
+  /* border-color: #959ea9;
+  background: #959ea9;
+  color: #fff; */
+}
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+  background: #3e3f5a;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #fff;
+}
+.flatpickr-day.selected.startRange,
+.flatpickr-day.startRange.startRange,
+.flatpickr-day.endRange.startRange {
+  border-radius: 50px 0 0 50px;
+}
+.flatpickr-day.selected.endRange,
+.flatpickr-day.startRange.endRange,
+.flatpickr-day.endRange.endRange {
+  border-radius: 0 50px 50px 0;
+}
+.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
+  -webkit-box-shadow: -10px 0 0 #569ff7;
+  box-shadow: -10px 0 0 #569ff7;
+}
+.flatpickr-day.selected.startRange.endRange,
+.flatpickr-day.startRange.startRange.endRange,
+.flatpickr-day.endRange.startRange.endRange {
+  border-radius: 50px;
+}
+.flatpickr-day.inRange {
+  border-radius: 0;
+  -webkit-box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;
+  box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;
+}
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover,
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay,
+.flatpickr-day.notAllowed,
+.flatpickr-day.notAllowed.prevMonthDay,
+.flatpickr-day.notAllowed.nextMonthDay {
+  color: #aaa;
+  background: transparent;
+  border-color: transparent;
+  cursor: default;
+}
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
+  cursor: not-allowed;
+  color: rgba(57, 57, 57, 0.1);
+}
+.flatpickr-day.week.selected {
+  border-radius: 0;
+  -webkit-box-shadow: -5px 0 0 #569ff7, 5px 0 0 #569ff7;
+  box-shadow: -5px 0 0 #569ff7, 5px 0 0 #569ff7;
+}
+.flatpickr-day.hidden {
+  visibility: hidden;
+}
+.rangeMode .flatpickr-day {
+  margin-top: 1px;
+}
+.flatpickr-weekwrapper {
+  float: left;
+}
+.flatpickr-weekwrapper .flatpickr-weeks {
+  padding: 0 12px;
+  -webkit-box-shadow: 1px 0 0 #e6e6e6;
+  box-shadow: 1px 0 0 #e6e6e6;
+}
+.flatpickr-weekwrapper .flatpickr-weekday {
+  float: none;
+  width: 100%;
+  line-height: 28px;
+}
+.flatpickr-weekwrapper span.flatpickr-day,
+.flatpickr-weekwrapper span.flatpickr-day:hover {
+  display: block;
+  width: 100%;
+  max-width: none;
+  color: rgba(57, 57, 57, 0.3);
+  background: transparent;
+  cursor: default;
+  border: none;
+}
+.flatpickr-innerContainer {
+  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.flatpickr-rContainer {
+  display: inline-block;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.flatpickr-time {
+  text-align: center;
+  outline: 0;
+  display: block;
+  height: 0;
+  line-height: 40px;
+  max-height: 40px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flatpickr-time:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.flatpickr-time .numInputWrapper {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 40%;
+  height: 40px;
+  float: left;
+}
+.flatpickr-time .numInputWrapper span.arrowUp:after {
+  border-bottom-color: #393939;
+}
+.flatpickr-time .numInputWrapper span.arrowDown:after {
+  border-top-color: #393939;
+}
+.flatpickr-time.hasSeconds .numInputWrapper {
+  width: 26%;
+}
+.flatpickr-time.time24hr .numInputWrapper {
+  width: 49%;
+}
+.flatpickr-time input {
+  background: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+  border-radius: 0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: inherit;
+  line-height: inherit;
+  color: #393939;
+  font-size: 14px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.flatpickr-time input.flatpickr-hour {
+  font-weight: bold;
+}
+.flatpickr-time input.flatpickr-minute,
+.flatpickr-time input.flatpickr-second {
+  font-weight: 400;
+}
+.flatpickr-time input:focus {
+  outline: 0;
+  border: 0;
+}
+.flatpickr-time .flatpickr-time-separator,
+.flatpickr-time .flatpickr-am-pm {
+  height: inherit;
+  float: left;
+  line-height: inherit;
+  color: #393939;
+  font-weight: bold;
+  width: 2%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+.flatpickr-time .flatpickr-am-pm {
+  outline: 0;
+  width: 18%;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 400;
+}
+.flatpickr-time input:hover,
+.flatpickr-time .flatpickr-am-pm:hover,
+.flatpickr-time input:focus,
+.flatpickr-time .flatpickr-am-pm:focus {
+  background: #eee;
+}
+.flatpickr-input[readonly] {
+  cursor: pointer;
+}
+@-webkit-keyframes fpFadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fpFadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+input.flatpickr-input {
+  /* width: 100px; */
+  padding-right: 46px;
+  background: white url(https://recruit.posco.com/h22a01-front/static/img/pc_ic_calendar.png) no-repeat right 11px top 50%;
+}
+.flatpickr-calendar {
+  font-size: 12px;
+}
+.flatpickr-current-month {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+.count-txt {
+  margin-top:12px;
+  text-align: right;
+  color:#aaa;
+  line-height:100%;
+}
+.count-txt em {
+  color:#666;
+}
+
+/* 20220421 */
+.modal-pop.newst {
+  padding:0;
+}
+.modal-pop.newst .pop-body {
+  position:relative;
+  padding: 15px;
+}
+.modal-pop.newst .close{
+  position:absolute;
+  /*bottom:16px;*/
+  right:16px;
+  z-index:100;
+  width:24px;
+  height:24px;
+  background: #fff url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -630px 0;
+  background-size: auto 30px;  
+  cursor: pointer;
+}
+.pop-img-area img {
+  width:100%;
+  height:100%;
+}
+.pop-bottom {
+  position: absolute;
+  bottom: 0px;
+  padding:18px 16px;
+  background-color: #fff;
+  border-top:1px solid #eee;
+  width: 100%;
+}
+.pop-bottom label {
+  margin-left:5px;
+  font-size:14px;
+  color:#222;
+  font-weight: 400;
+  cursor: pointer;
+}
+/* 20220426추가 */
+.mt-40 {margin-top: 40px !important;}
+
+/* 20220413 추가 */
+.total-text {
+  padding-left: 7px;
+  font-size: 16px;
+  color: #248ffa;
+}
+
+.pop-head > .close1 {
+  width: 24px;
+  height: 24px;
+  margin: 2px 0 0 24px;
+  text-indent: -9999px;
+  background: url(https://recruit.posco.com/h22a01-front/static/img/pc_icons.png) no-repeat -672px 0;
+}

@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+.subPage #container,
+.subPage #common_container {
+  padding-top: 200px;
+}
+#common_container.sub {
+  font-family: "OneMobile", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  padding-bottom: 130px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -ms-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+}
+
+/* contents 감싸기 */
+.contents_area {
+  margin-top: 80px;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  color: #9d9d9d;
+  font-family: var(--bs-font-sans-serif);
+}
+
+.breadcrumb-item.home {
+  font-size: 0;
+  width: 16px;
+  height: 18px;
+  background: url(../../img/ico/ico_home.png) no-repeat center / cover;
+  opacity: 0.3;
+}
+.breadcrumb-item{
+  font-weight: 500;
+}
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: 20px;
+}
+.breadcrumb-item:last-of-type::after {
+  display: none;
+}
+.breadcrumb-item::after {
+  display: inline-block;
+  padding-left: 20px;
+  content: ">";
+  font-family: dotum;
+  font-weight: 900;
+  font-size: 0.9em;
+}
+.breadcrumb-item a:hover,
+.breadcrumb-item a{
+  text-decoration: none;
+}
+.breadcrumb-item.active {
+  font-weight: 700;
+  color: #252525;
+}
+#common_container .depth3_wrap {
+  margin-top: 40px;
+}
+#common_container .depth3_wrap button + button {
+  margin-left: -1px;
+}
+#common_container .depth3_wrap button {
+  height: 56px;
+  font-size: 20px;
+  color: #757575;
+  text-align: center;
+  border: 1px solid #dbdbdb;
+  position: relative;
+  font-family: var(--bs-font-point);
+  font-weight: 700;
+}
+#common_container .depth3_wrap button.active {
+  z-index: 1;
+  background-color: var(--bs-point);
+  border-color: var(--bs-point);
+  color: #fff;
+}
+
+.sect-ttl {
+  font-size: 35px;
+  line-height: 1.2;
+  font-family: "ONE-Mobile-Title";
+  font-weight: 500;
+  margin: 0;
+}
+
+.sub-ttl-box {
+  margin-bottom: 90px;
+}
+
+.sub-ttl-box h2 {
+  font-size: 38px;
+  color: var(--bs-point);
+  text-align: center;
+  line-height: 1.4;
+  font-family: "ONE-Mobile-Title", sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+.text-area {
+  font-size: 18px;
+  line-height: 1.5;
+}
+/* 사업 영역 */

@@ -1,0 +1,731 @@
+
+.interviews{
+  overflow-x: hidden ;
+}
+.interviews figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.interviews .sub-ttl-box{
+  margin-bottom: 1.5625vw;
+}
+.interviews .sub-ttl-box .top-txt {
+  font-size: 1.25vw;
+  margin-bottom: 1.875vw;
+  display: block;
+}
+
+.interviews .sub-ttl-box .sub-ttl {
+  font-size: 2.1875vw;
+  line-height: 1.428;
+  font-family: var(--bs-font-point);
+  margin: 0;
+  color: #252525;
+  font-weight: 700;
+  text-align: left;
+}
+
+
+.interviews .contents_area {
+  width: 100vw;
+  margin: 4.1666vw auto 0;
+  position: relative;
+  font-family: var(--bs-font-point);
+}
+
+
+.interviews .left {
+  width: 45.833vw;
+  height: 45.833vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.interview_thumb_list {
+  width: 45.833vw;
+}
+
+.interview_thumb_list li {
+  width: 11.4583vw;
+  position: relative;
+}
+.interview_thumb_list li:nth-of-type(odd){
+  background-color: #f8f8f8;
+}
+.interview_thumb_list li:nth-of-type(even){
+  background-color: #fff;
+}
+.interview_thumb_list li a {
+  display: block;
+  padding-top: 100%;
+  position: relative;
+}
+
+.interview_thumb_list li a figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.interview_thumb_list li a .hover_text_box {
+  background: rgba(0, 83, 134, 0.9) no-repeat center;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-family: var(--bs-font-sans-serif);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1.5;
+  text-align: center;
+  transition: opacity .3s;
+}
+.interview_thumb_list li a .hover_text_box strong{
+  font-size: 20px;
+  display: block;
+  }
+
+.interview_thumb_list li:hover a .hover_text_box,
+.interview_thumb_list li.active a .hover_text_box {
+  opacity: 1;
+}
+
+.interviews .right {
+  overflow: hidden;
+  width: 54.166vw;
+  height: 100%;
+  position: absolute;
+  left: 45.833vw;
+  top: 0;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  background-color: #f4f2f2;
+}
+.interviews .right > li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.interviews .right li.active {
+  opacity: 1;
+}
+.interviews .right.active {
+  width: 100%;
+  left: 0;
+}
+.interviews .right > div {
+  height: 45.833vw;
+}
+.interviews .right .visual_box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  opacity: 1;
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -ms-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+}
+.interviews .right.active .visual_box {
+  opacity: 0;
+}
+.interviews .right .more_box {
+  display: block;
+  background-color: #fafafa;
+  padding: 7.2916vw 0 0 47.3958vw;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 100%;
+  opacity: 0;
+  z-index: 10;
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -ms-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+}
+.interviews .right.active .more_box {
+  left: 0;
+  opacity: 1;
+  height: 100%;
+}
+.interviews .more_interview_visual {
+  width:54.1666vw;
+  height: 45.833vw;
+  background-color: #f4f2f2;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.interviews .active_visual {
+  width: 54.1666vw;
+  height: 45.833vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.interviews .active_visual.active {
+  opacity: 1;
+}
+.interviews .right .interviewer_text {
+  padding-left: 5.7291vw;
+  position: relative;
+  z-index: 10;
+  width: 55%;
+  max-width: 29.7916vw;
+  /* padding-top: 10.9375vw;
+  height: 100%; */
+  font-weight: 500;
+
+  font-family: var(--bs-font-sans-serif);
+}
+
+.interviews .more_box .card {
+  position: relative;
+  z-index: 10;
+  border-radius: 1.0416vw;
+  padding: 4.1666vw 4.1666vw 4.6875vw;
+  background-color: #fff;
+  width: 44.270vw;
+  height: 31.25vw;
+  box-shadow: 0 0.3125vw 3.3854vw rgba(0, 0, 0, 0.06);
+}
+.interviews .more_box .card .card-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.interviews .more_box .card .qna_box {
+  font-family: var(--bs-font-point);
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 18.75vw;
+}
+/* 여기까지 수정했습니다  */
+.interviews .more_box .card .qna_box li.active {
+  position: relative;
+  opacity: 1;
+
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.interviews .more_box .card .qna_box li {
+  position: absolute;
+  opacity: 0;
+}
+
+.interviews .more_box .card .qna_box .q h3{
+  font-size: 1.45833vw;
+  margin-bottom: 1.5625vw;
+  margin-top: 0;
+}
+.interviews .more_box .card .qna_box .a {
+  font-size: 1.0416vw;
+  line-height: 1.5;
+}
+.interviews .more_box .card .qna_box .a p + p {
+  margin-top: 1.5rem;
+}
+.interviews .people_info {
+  font-size: 1.1458vw;
+  line-height: 1.4545;
+  display: block;
+  margin: 2.08333vw 0 2.6041vw;
+}
+.view_detail_btn  {
+font-weight: 500;
+}
+.view_detail_btn .move_arrow {
+  margin-left: 0.2604vw;
+}
+
+.interviews .control_box {
+  font-weight: 500;
+}
+.interviews .control_box .fraction {
+  font-family: var(--bs-font-point);
+  font-weight: 700;
+  font-size: 1.0416vw;
+}
+
+.interviews .more_box .control_box {
+  margin-top: 2.0833vw;
+  position: relative;
+  z-index: 20;
+}
+
+.interviews .control_box button {
+  cursor: pointer;
+  font-weight: 500;
+  font-family: var(--bs-font-sans-serif);
+}
+.interviews .qna_control_box button img{
+  width: 1.1458vw;
+  height: 1.1458vw;
+}
+.interviews .item_control_box button img{
+  width: 0.4166vw;
+  height: 0.7291vw;
+
+}
+.interviews .control_box strong {
+  display: block;
+  margin: 0 0.5208vw;
+}
+.interviews .control_box .total_num {
+  color: #999;
+}
+
+.interview_visual {
+  position: absolute;
+  left: 10.4166vw;
+  top: 0;
+  width: 54.166vw;
+  height: 100%;
+  background-color: #f4f2f2;
+}
+.interviews .item_control_box {
+  max-width: 62.5vw;
+  margin: 2.6041vw auto 0;
+  position: relative;
+}
+.interviews .item_control_box button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.interviews .item_control_box .control_inner {
+  width: 26.041vw;
+  font-size: 0.9375vw;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #dadcdf;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.09);
+  border-radius: 1.5625vw;
+  /* padding: 0 1.25vw; */
+  font-family: var(--bs-font-sans-serif);
+  font-weight: 600;
+  position: relative;
+}
+
+.interviews .item_control_box .control_inner .next{
+  position: absolute;
+  right: 1.25vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.interviews .item_control_box .control_inner .prev {
+  position: absolute;
+  left: 1.25vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.interviews .work_name {
+  display: none;
+}
+.interviews .item_control_box .control_inner .next img {
+  margin-left: 0.5208vw;
+}
+
+.interviews .item_control_box .control_inner .prev img {
+  margin-right: 0.5208vw;
+}
+.interviews .item_control_box .fraction {
+  height: 3.125vw;
+}
+.interview_back_btn {
+  font-weight: 500;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  opacity: 0;
+}
+.interview_back_btn i {
+  width: 3.125vw;
+  height: 3.125vw;
+  border: 1px solid #dbdbdb;
+  background: url(../../img/btn/common_prev.png) no-repeat center / 36.666%;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.09);
+  display: block;
+  margin-right: 0.5208vw;
+}
+
+.interview_back_btn.active {
+  opacity: 1;
+}
+
+
+
+@media screen and (min-width:1920px) {
+
+.interviews .sub-ttl-box{
+  margin-bottom: 30px;
+}
+.interviews .sub-ttl-box .top-txt {
+  font-size: 24px;
+  margin-bottom: 36px;
+}
+
+.interviews .sub-ttl-box .sub-ttl {
+  font-size: 42px;
+  line-height: 1.428;
+}
+
+
+.interviews .contents_area {
+  width: 1920px;
+  margin: 80px auto 0;
+}
+
+.interviews .left {
+  width: 880px;
+  height: 880px;
+}
+.interview_thumb_list {
+  width: 880px;
+}
+
+.interview_thumb_list li {
+  width: 25%;
+}
+
+.interview_thumb_list li.active a::after {
+  font-size: 12px;
+}
+
+.interviews .right {
+  width: 1040px;
+  left: 880px;
+}
+.interviews .right > div {
+  height: 880px;
+}
+.interviews .right .more_box {
+  padding: 140px 0 0 910px;
+}
+.interviews .more_interview_visual {
+  width: 1040px;
+  height: 880px;
+}
+.interviews .active_visual {
+  width: 1040px;
+  height: 880px;
+}
+.interviews .right .interviewer_text {
+  padding-left: 110px;
+  max-width: 572px;
+  /* padding-top: 210px; */
+}
+
+.interviews .more_box .card {
+  border-radius: 20px;
+  padding: 80px 80px 90px;
+  width: 850px;
+  height: 600px;
+  box-shadow: 0 6px 65px rgba(0, 0, 0, 0.06);
+}
+.interviews .more_box .card .qna_box {
+  height: 360px;
+}
+.interviews .more_box .card .qna_box .q h3{
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+.interviews .more_box .card .qna_box .a {
+  font-size: 20px;
+}
+.interviews .more_box .card .qna_box .a p + p {
+  margin-top: 1.5rem;
+}
+.interviews .people_info {
+  font-size: 22px;
+  margin: 40px 0 50px;
+}
+
+.view_detail_btn .move_arrow {
+  margin-left: 5px;
+}
+
+.interviews .control_box .fraction {
+  font-size: 20px;
+}
+.interviews .item_control_box button img{
+  width: 8px;
+  height: 14px;
+}
+
+.interviews .qna_control_box button img{
+  width: 22px;
+  height: 22px;
+}
+.interviews .more_box .control_box {
+  margin-top: 40px;
+}
+
+.interviews .control_box strong {
+  margin: 0 10px;
+}
+.interview_visual {
+  width: 1040px;
+  left: 200px;
+}
+.interviews .item_control_box {
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+.interviews .item_control_box .control_inner {
+  width: 500px;
+  font-size: 18px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.09);
+  border-radius: 30px;
+}
+
+.interviews .item_control_box .control_inner .next{
+  right: 24px;
+}
+.interviews .item_control_box .control_inner .prev {
+  left: 24px;
+}
+.interviews .item_control_box .control_inner .next img {
+  margin-left: 10px;
+}
+
+.interviews .item_control_box .control_inner .prev img {
+  margin-right: 10px;
+}
+.interviews .item_control_box .fraction {
+  height: 60px;
+}
+.interview_back_btn i {
+  width: 60px;
+  height: 60px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.09);
+  margin-right: 10px;
+}
+
+}
+@media screen and (max-width:1400px) {
+
+.interviews .sub-ttl-box{
+  margin-bottom: 22px;
+}
+.interviews .sub-ttl-box .top-txt {
+  font-size: 16px;
+  margin-bottom: 24px;
+  display: block;
+  text-transform: capitalize;
+}
+
+.interviews .sub-ttl-box .sub-ttl {
+  font-size: 30px;
+  line-height: 1.428;
+  font-family: var(--bs-font-point);
+}
+
+.interviews .people_info{
+  font-size: 16px;
+}
+.view_detail_btn{
+  font-size: 14px;
+}
+.interviews .more_box .card .qna_box .q {
+  font-size: 24px;
+}
+.interviews .control_box .fraction,
+.interviews .more_box .card .qna_box .a {
+font-size: 16px;
+line-height: 1.5;
+}
+.interviews .item_control_box .control_inner{
+font-size: 13px;
+}
+}
+
+@media screen and (max-width:1280px) {
+
+.interviews .sub-ttl-box{
+  margin-bottom: 26px;
+}
+.interviews .sub-ttl-box .top-txt {
+  font-size: 16px;
+  margin-bottom: 26px;
+}
+
+.interviews .sub-ttl-box .sub-ttl {
+  font-size: 28px;
+  line-height: 1.428;
+}
+
+
+.interviews .contents_area {
+  width: 1280px;
+  margin: 60px auto 0;
+}
+
+.interviews .left {
+  width: 585px;
+  height: 585px;
+}
+.interview_thumb_list {
+  width: 585px;
+}
+
+.interview_thumb_list li {
+  width: 25%;
+}
+
+.interviews .right {
+  width: 693px;
+  left: 585px;
+}
+.interviews .right > div {
+  height: 585px;
+}
+.interviews .right .more_box {
+  padding: 90px 0 0 610px;
+}
+.interviews .more_interview_visual {
+  width: 693px;
+  height: 585px;
+}
+.interviews .active_visual {
+  width: 693px;
+  height: 585px;
+}
+.interviews .right .interviewer_text {
+  padding-left: 70px;
+  max-width: 381px;
+  /* padding-top: 140px; */
+}
+
+.interviews .more_box .card {
+  border-radius: 13.33px;
+  padding: 52px 52px 60px;
+  width: 566px;
+  height: 400px;
+  box-shadow: 0 4px 45px rgba(0, 0, 0, 0.06);
+}
+.interviews .more_box .card .qna_box {
+  height: 230px;
+}
+.interviews .more_box .card .qna_box .q h3{
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.interviews .more_box .card .qna_box .a {
+  font-size: 15px;
+}
+.interviews .more_box .card .qna_box .a p + p {
+  margin-top: 1.5rem;
+}
+.interviews .people_info {
+  font-size: 14px;
+  margin: 25px 0 35px;
+}
+.view_detail_btn{
+  font-size: 11px;
+}
+.view_detail_btn .move_arrow {
+  margin-left: 5px;
+}
+.view_detail_btn  .move_arrow img{
+  width: 8px;
+  height: 8px;
+}
+.interviews .control_box .fraction {
+  font-size: 14px;
+}
+
+.interviews .more_box .control_box {
+  margin-top: 20px;
+}
+
+.interviews .control_box strong {
+  margin: 0 6px;
+}
+.interview_visual {
+  width: 695px;
+  left: 125px;
+}
+.interviews .item_control_box {
+  margin: 30px auto 0;
+  font-size: 13px;
+  max-width: 830px;
+}
+.interviews .item_control_box .control_inner {
+  width: 360px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.09);
+  border-radius: 20px;
+}
+
+.interviews .item_control_box .control_inner .next{
+  right: 16px;
+}
+.interviews .item_control_box .control_inner .prev {
+  left: 16px;
+}
+.interviews .item_control_box .control_inner .next img {
+  margin-left: 6px;
+}
+.interviews .item_control_box button img{
+  width: 7px;
+  height: 11px;
+}
+.interviews .qna_control_box button img{
+  width: 16px;
+  height: 16px;
+}
+.interviews .item_control_box .control_inner .prev img {
+  margin-right: 6px;
+}
+.interviews .item_control_box .fraction {
+  height: 40px;
+}
+.interview_back_btn i {
+  width: 40px;
+  height: 40px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.09);
+  margin-right: 6px;
+}
+
+}

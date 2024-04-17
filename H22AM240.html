@@ -1,0 +1,73 @@
+<!--
+/*===============================================
+*Copyright(c) 2021 POSCO/POSCOICT
+*
+*@ProcessChain  	: H22
+*@File          	: H22AM230.html
+*@FileName      	: 포스코TV (모바일Page)
+*
+*Change history
+*@LastModifier : KSJ
+*@수정 날짜;		SCR_NO;		수정자;		수정내용
+* 2022-03-22;	V1.0;		KSJ;		최초
+===============================================*/ 
+-->
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+		<script src="static/js/mobileInclude.js"></script>
+		<script>
+			
+			$(function() {
+				h22Common.getMobileHeader();
+				h22Common.getMobileFooter();
+			});
+		</script>
+    </head>
+    <body>
+    	<!-- #wrap -->
+    	<div id="wrap">			
+	    	<div id="container" class="sub" data-page-name="jobs">
+	    		<ol class="breadcrumb flex_e_c">
+					<li class="breadcrumb-item home"><a href="#!">home</a></li>
+					<li class="breadcrumb-item"><a href="#!">POSCO jobs</a></li>
+					<li class="breadcrumb-item active"><a href="#!">포스코人 스토리</a></li>
+				</ol>
+			<!-- #container -->
+				<!-- .inner -->
+				<div class="inner">
+					<!-- #content section -->
+					<section id="content">
+						<h1>포스코人 스토리</h1>
+						
+						<form name="searchForm" id="searchForm" method="post" action="">
+							<input type="hidden" name="currPage" id="currPage" value="1" />
+							<input type="hidden" name="rowCount" id="rowCount" value="10" />
+			    			<input type="hidden" name="offset" id="offset" value="0" />
+						</form>
+						
+						<div class="gallery-list video">
+							<ul id="listArea">
+							</ul>
+						</div>
+						
+						<button type="button" class="btn-list-more" id="btnMore">더보기</button>
+					</section>
+					<!-- //#content section -->
+				</div>
+				<!-- //.inner -->
+			<!-- //#container -->
+			<button type="button" class="btn_top_fix" aria-label="맨 위로 올라가기">
+      		  <img src="./static/img/common/mo_top_btn.png" alt="위 화살표" />
+     		</button>
+    	</div>
+    	<!-- //#wrap -->
+	</body>
+</html>

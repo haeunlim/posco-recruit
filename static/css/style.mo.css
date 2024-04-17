@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@import url(./common/icommon.css);
+@import url(./common/root.css);
+@import url(./common/font.css);
+@import url(./mo/new_common.css);
+@import url(./common/coustom.css);
+@import url(./common/ani_custom.css);
+@import url(./mo/sub_common.css);
+
+@import url(./mo/header.css);
+@import url(./mo/footer.css);
+@import url(./mo/main.css);
+@import url(./mo/interview.css);
+@import url(./mo/business.css);
+@import url(./mo/introduction_jobs.css);
+@import url(./mo/modal.css);
+@import url(./mo/life.css);
+@import url(./mo/apply.css);

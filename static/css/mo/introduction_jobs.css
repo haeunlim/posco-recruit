@@ -1,0 +1,244 @@
+#common_container.intro_jobs_view .depth3_wrap{
+  border-top: none;
+}
+
+.back_btn{
+  position: fixed;
+  left: .7857rem;
+  z-index: 1100;
+  bottom: 2.5rem;
+  width: 3.2142rem;
+  height: 3.2142rem;
+  border-radius: 50%;
+  border: 1px solid #e3e3e3;
+  font-size: 1px;
+  color: transparent;-webkit-box-shadow: 0 0.357rem 0.5714rem -1px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 0.357rem 0.5714rem -1px rgba(0, 0, 0, 0.09);
+  background: url(../../img/btn/back_btn.svg) rgba(255,255,255,0.98) no-repeat center / 1.2143rem 1.0714rem;
+}
+.introduction_sect_type1 {
+  padding-left: 4.26666vw;
+}
+.introduction_sect_type1 + .introduction_sect_type1 {
+  margin-top: 3.5714rem;
+}
+.introduction_sect_type1 .introduction_list_wrap {
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.introduction_sect_type1 .introduction_list li {
+  width: 20.3571rem;
+  flex-shrink: 0;
+}
+
+.introduction_sect_type1 .introduction_list li + li {
+  margin-left: 1.0714rem;
+}
+.introduction_sect_type2{
+  width: calc(100% - 2.1429rem);
+  margin: 0 auto;
+}
+.introduction_sect_type2 .introduction_list li + li {
+  margin-top: 1.4286rem;
+}
+
+.introduction_list li >a{
+  display: block;
+  width: 100%;
+  padding-top: 106.315%;
+  position: relative;
+  background: no-repeat center / cover;
+}
+.introduction_list li >a > .card{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1.4286rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.introduction_list .card-ttl-box p {
+  font-size: 1rem;
+  font-family: var(--bs-font-sans-serif);
+  color: #999;
+  margin-top: 0.3571rem;
+}
+
+.introduction_list li .txt:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  transform: rotate(-45deg);
+}
+
+.introduction_list li .card-ttl {
+  font-size: 1.1429rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+#common_container .hash_wrap button {
+  display: inline-block;
+  padding: 0 0.5714rem;
+  height: 2.5rem;
+  background-color: #fff;
+  transition: background 300ms;
+  font-family: var(--bs-font-point);
+  font-size: 1rem;
+}
+#common_container .hash_wrap button:hover {
+  background-color: var(--bs-point);
+  color: #fff;
+}
+.introduction .sect-ttl-box {
+  margin-bottom: 1.7857rem;
+}
+
+.introduction .sect-ttl-box .sub-ttl {
+  font-weight: 700;
+  font-size: 1.3571rem;
+  font-family: var(--bs-font-point);
+  margin: 0;
+}
+.introduction .sect-ttl-box .sub-ttl span {
+  color: #999;
+}
+
+.introduction .sect-ttl-box p {
+  font-size: 0.9286rem;
+  color: #999;
+  margin-top: 0.7143rem;
+}
+/*공통 : 하단 퀵 링크*/
+.fot_menu {
+  display: block;
+  width: 20.3571rem;
+  margin-top: 1.7857rem;
+}
+.fot_menu ul {
+  border-top: 1px solid #dbdbdb;
+  width: 100%;
+}
+.fot_menu ul li {
+  width: 100%;
+  font-size: 1rem;
+  position: relative;
+}
+.fot_menu ul li a {
+  display: block;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 1.4286rem;
+  font-weight: 600;
+}
+.fot_menu ul li a span {
+  font-family: var(--bs-font-sans-serif);
+  color: #999;
+  font-weight: 400;
+}
+.fot_menu ul li i {
+  position: absolute;
+  right: 1.4286rem;
+  top: calc(50% - 0.5357rem);
+  font-size: 1.2857rem;
+  color: #454545;
+}
+
+/* introduction */
+.intro_list .contents_area {
+  display: none;
+}
+.intro_list .contents_area.active {
+  display: block;
+}
+
+.intro_jobs_view .en_ttl {
+  font-size: 1.0714rem;
+  display: block;
+  margin-bottom: 1.4286rem;
+}
+.introd_view_list li + li {
+  margin-top: 1.4286rem;
+}
+.introd_view_list {
+  font-size: 1.0714rem;
+}
+.introd_view_list .tit {
+  margin-bottom: 1.0714rem;
+  margin-top: 0;
+  font-size: 1.3571rem;
+  line-height: 1.47368;
+}
+.introd_view_list .txt {
+  line-height: 1.384615;
+}
+.top_banner {
+  padding-top: 3.2143rem;
+  position: relative;
+  background: no-repeat center / cover;
+}
+.top_banner::before{
+  content: '';
+  width: 100%;
+  height:calc(100% - 2.5rem);
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: var(--bs-point)
+
+}
+.top_banner .common_inner{
+  position: relative;
+  z-index: 5;
+  background-color:#fff;
+  border-radius: .3571rem;
+  padding: 2.1429rem .7143rem;
+  box-shadow: 0 .3571rem 1.0714rem rgba(33, 60, 79, 0.11);
+
+}
+.top_banner .sub-ttl-box {
+  
+  margin-bottom: 0;
+  font-size: 1.0714rem;
+  text-align: center;
+}
+.top_banner .sub-ttl-box p{
+  color: #999;
+}
+.top_banner .sub-ttl-box strong{
+  color: #86a9c2;
+}
+.top_banner .sub-ttl-box h2 {
+  font-size: 1.9286rem;
+  color: var(--bs-point);
+  font-family: var(--bs-font-ttl);
+  margin: 0.3571rem auto;
+}
+
+.intro_jobs_view .contents_area {
+  margin-top: 2.5rem;
+}
+.intro_jobs_view article + article {
+  padding-top: 3.2143rem;
+}
+
+.hash_text {
+  color: var(--bs-point);
+  display: block;
+  margin-bottom: 0.7143rem;
+  margin-left: -0.1786rem;
+  line-height: 1.5384;
+}
+.hash_text span {
+  white-space: nowrap;
+  margin: 0 0.1786rem;
+}

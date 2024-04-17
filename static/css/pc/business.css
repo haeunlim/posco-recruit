@@ -1,0 +1,289 @@
+#business-contents section {
+  font-size: 1.666vh;
+  font-family: var(--bs-font-point);
+}
+#common_container.business section {
+  height: 100vh;
+  padding-top: 18.5185vh;
+}
+#common_container.business .intro section{
+  padding-bottom: 4.6296vh;
+}
+#common_container img{
+  max-width: 100%;
+}
+
+html.businessPage #header .menu_btn .line {
+  width: 2.037vh;
+  max-width: 22px;
+}
+html.businessPage #header .menu_btn {
+  width: 5.5555vh;
+  height: 5.5555vh;
+  max-width: 60px;
+  max-height: 60px;
+}
+html.businessPage #header > .common_inner,
+html.businessPage #header .wrap_dep2 .depth2 a {
+  height: 9.2592vh;
+  max-height: 100px;
+}
+
+/* 사업영역 슬라이드 공통 */
+.business .sub-ttl-box {
+  margin-bottom: 0;
+}
+.business .detail .sub-ttl-box{
+  margin-bottom: 1.8518vh;
+}
+.business .breadcrumb {
+  padding: 1.8518vh 0;
+}
+.business .depth3_wrap {
+  margin-top: 0;
+}
+.business .contents_area {
+  margin-top: 7.407vh;
+}
+.business .sub-ttl-box .sub-ttl {
+  font-size: 3.5185vh;
+  /* height: 4.2em; */
+}
+#common_container.business .swiper-container {
+  overflow: visible;
+}
+#common_container.business figure {
+  position: relative;
+  overflow: hidden;
+}
+
+.business .summary {
+  position: relative;
+  z-index: 10;
+}
+.business .summary .card-ttl {
+  font-size: 22px;
+  margin: 0;
+  line-height: 1.3;
+}
+.business .text-area + .card-ttl {
+  margin-top: 5px;
+}
+.business .card-ttl + .text-area {
+  margin-top: 1.8518vh;
+}
+
+.business_card {
+  position: relative;
+  display: block;
+}
+
+/* 사업영역 첫번째 페이지 */
+.business_cont {
+  overflow: hidden;
+  padding-top: 6.4814vh;
+}
+.business_cont .common_inner {
+  max-width: 1630px;
+}
+.business_cont .swiper-container {
+  padding: 7.4074vh 0 4.629vh;
+}
+.business_cont .swiper-slide {
+  width: 27.77vh;
+  height: 37.037vh;
+  -webkit-transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.business_cont .swiper-slide .business_card {
+  height: 100%;
+  overflow: hidden;
+}
+
+.business_card .bg-pos::after {
+  -webkit-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 87, 147, 0.8);
+}
+
+.business_card:focus-within .bg-pos::after,
+.business_card:hover .bg-pos::after {
+  opacity: 1;
+}
+.business_cont .swiper-slide:hover {
+  transform: translateY(-1.85185vh);
+}
+.business_cont .swiper-slide.swiper-slide-next,
+.business_cont .swiper-slide.swiper-slide-prev {
+  transform: translateY(-2.777vh);
+}
+.business_cont .swiper-slide.swiper-slide-active {
+  transform: translateY(-5.555vh);
+}
+.business_cont .swiper-slide.swiper-slide-active:hover {
+  transform: translateY(-7.4074vh);
+}
+.business_cont .swiper-slide.swiper-slide-next:hover,
+.business_cont .swiper-slide.swiper-slide-prev:hover {
+  transform: translateY(-4.629vh);
+}
+
+.business_cont .swiper-slide .summary {
+  padding: 3.7037vh;
+}
+.business .business_cont .summary .card-ttl {
+  font-weight: 400;
+}
+.business_cont .swiper-slide .summary .text-area {
+  font-family: var(--bs-font-sans-serif);
+
+  font-weight: 700;
+}
+
+.business_cont .scroll_info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  transition-duration: 0.7s;
+  animation-timing-function: ease-in;
+}
+
+.business_cont .scroll_info .scroll_info_tl {
+  display: flex;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  transition-duration: 0.3s;
+}
+
+.business_cont .scroll_info .scroll_info_tl li {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #454545;
+  opacity: 0.3;
+  -webkit-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.business_cont .scroll_info .scroll_info_tl li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.business_cont .scroll_info .scroll_info_tl li.siblings2 {
+  /* width: 12px;
+  height: 12px; */
+}
+.business_cont .scroll_info .scroll_info_tl li.siblings {
+  opacity: 0.75;
+  /* width: 16px;
+  height: 16px; */
+}
+.business_cont .scroll_info .scroll_info_tl li.active {
+  /* width: 20px;
+  height: 20px; */
+  opacity: 1;
+}
+/* 사업영역 서브페이지 */
+.detail section {
+  padding-top: 9.2592vh;
+}
+.business_detail_cont {
+  overflow: hidden;
+  padding:5.555vh 0;
+  position: relative;
+}
+.business_detail_cont .swiper-slide {
+  height: 41.6666vh;
+  max-height: 450px;
+}
+.business_detail_cont .business_card {
+  border: 1px solid #dbdbdb;
+  -webkit-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  height: 100%;
+}
+
+.business_detail_cont .business_card .button-wrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2.777vh 2.777vh 0 0;
+  z-index: 30;
+  opacity: 0;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.business_detail_cont .business_card:focus-within,
+.business_detail_cont .business_card:hover {
+  box-shadow: 0 32px 65px rgba(0, 0, 0, 0.06);
+}
+
+.business_detail_cont .business_card:focus-within .button-wrap,
+.business_detail_cont .business_card:hover .button-wrap {
+  opacity: 1;
+}
+.business_detail_cont .business_card .button-wrap img{
+  width: 100%;
+  height: 100%;
+
+}
+
+.business_detail_cont .business_card .button-wrap button{
+  width: 35px;
+  height: 24px;
+}
+
+.business_detail_cont .business_card .button-wrap .golink_btn{
+  width: 24px;
+  margin-left: 20px;
+}
+.business_detail_cont .business_card figure {
+  width: 100%;
+  height:48.8888%;
+  position: relative;
+  overflow: hidden;
+}
+.business_detail_cont .summary {
+  width: 100%;
+  height: 51.111%;
+  padding: 4.629vh 2vh 4.629vh 3.5185vh;
+  
+}
+
+@media screen and (min-height: 1080px) {
+  #common_container.business .detail section{
+    height: auto;
+  }
+}

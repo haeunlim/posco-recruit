@@ -1,0 +1,68 @@
+@import url(../pc/terms.css);
+
+@media screen and (max-width: 840px) {
+  .new-modal-pop .btn-md{
+        height: 3.5714rem;
+        line-height: 3.5rem;
+        font-size: 1.2rem;
+    }
+    .new-modal-pop .pop-head .title{
+        text-align: center;
+        font-size: 30px;
+        font-size: 7.5vw;
+        font-weight: bold;
+    }
+    .new-modal-pop .msg_touch_help {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin-top: -40px;
+        margin-left: -40px;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+        opacity: 0.5;
+        transition: all .5s;
+    }
+   .new-modal-pop .msg_touch_help img { width: 80px; height: 80px; } 
+   .new-modal-pop .table_inner.scroll { position: relative; overflow: hidden; overflow-x: auto; -webkit-overflow-scrolling: touch;}
+   .new-modal-pop .table_inner.scroll iframe {display:block; text-align: none;}
+    #post .msg_touch_help {top: 20%;}
+      
+      /* 230613 개인정보처리방침 */
+    
+   .new-modal-pop input,
+   .new-modal-pop textarea,
+   .new-modal-pop body {
+      font-size: 25px;
+      font-size: 3.33333333vw;
+    }
+
+   .new-modal-pop .terms h3{
+        font-size: 1.4286rem;
+        padding-top: 2.1429rem;
+    }
+ .new-modal-pop .terms h4 {
+    font-size: 1.2143rem;
+    font-size: 4.8vw;
+    padding-top: 1.7857rem;
+  }
+ .new-modal-pop .terms h5 {
+    font-size: 1.0714rem;
+    padding-top: 1.0714rem;}
+.new-modal-pop .terms ul{
+    margin-top: .9286rem;
+}
+.new-modal-pop .terms p,
+  .terms p {
+    margin-top: .9286rem;
+  }
+  .new-modal-pop .terms table{
+    margin-top: 1.4286rem;
+    margin-bottom: 1.4286rem;
+  }
+  .new-modal-pop .terms table.labeling{
+    margin-top: 2.1429rem;
+  }
+}

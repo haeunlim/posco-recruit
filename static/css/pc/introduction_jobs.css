@@ -1,0 +1,145 @@
+.introduction_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.introduction_list li > a {
+  display: block;
+  width: 100%;
+  padding-top: 106.315%;
+  position: relative;
+  background: no-repeat center / cover;
+}
+.introduction_list li .card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 50px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.introduction_list .card-ttl-box p {
+  font-size: 16px;
+  font-family: var(--bs-font-sans-serif);
+  color: #999;
+  margin-top: 10px;
+}
+
+.introduction_list li .txt:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  transform: rotate(-45deg);
+}
+
+.introduction_list li .card-ttl {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+#common_container .hash_wrap button {
+  display: inline-block;
+  padding: 0 15px;
+  height: 40px;
+  background-color: #fff;
+  transition: background 300ms;
+  font-family: var(--bs-font-point);
+  font-size: 16px;
+}
+#common_container .hash_wrap button:hover {
+  background-color: var(--bs-point);
+  color: #fff;
+}
+/* .introduction_top {
+    
+} */
+
+.introduction_top button{
+    color: #999;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--bs-font-point);
+    margin-bottom: 70px;
+}
+.introduction_top button.active{
+    color: var(--bs-point);
+}
+.introduction_top button+button::before{
+    content: '·';
+    display: inline-block;
+    width: 10px;
+    height: 100%;
+    margin-right: 30px;
+    font-weight: 400;
+}
+.introduction_top button+button{
+    margin-left: 30px;
+    position: relative;
+}
+
+/*공통 : 하단 퀵 링크*/
+.fot_menu {
+  display:block;
+  width: 300px;
+  margin-left: auto;
+  margin-top: 90px;
+
+}
+.fot_menu ul {
+  border-top: 1px solid #dbdbdb;
+  width: 100%;
+}
+.fot_menu ul li {
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  position: relative;
+}
+.fot_menu ul li a {
+  display: block;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 16px 28px;
+  font-weight: 600;
+}
+.fot_menu ul li i {
+  position: absolute;
+  right: 28px;
+  top: calc(50% - 13px);
+  font-size: 24px;
+  color: #454545;
+}
+
+#jobModal_1 {
+  width: 820px;
+}
+#jobModal_1 .jobIntroduction > section + section {
+  margin-top: 60px;
+}
+#jobModal_1  .modal_content .title{
+  margin-bottom: 30px;
+}
+.introd_pop_list li + li {
+  margin-top: 50px;
+}
+.introd_pop_list {
+  font-size: 20px;
+}
+.introd_pop_list .tit {
+  color: var(--bs-point);
+  margin-bottom: 30px;
+  margin-top: 0;
+  font-size: inherit;
+}
+.introd_pop_list .txt{
+  line-height: 1.5;
+}

@@ -1,0 +1,293 @@
+<!--
+    /*===============================================
+    *Copyright(c) 2021 POSCO/POSCOICT
+    *
+    *@ProcessChain  	: H22
+    *@File          	: H22A1420P06.html
+    *@FileName      	: 홈페이지 개인정보취급방침 (홈Page)
+    *
+    *Change history
+    *@LastModifier : KSJ
+    *@수정 날짜;		SCR_NO;		수정자;		수정내용
+    * 2022-03-03;	V1.0;		KSJ;		최초
+    ===============================================*/ 
+    -->
+    <script>
+    function closeTerms6() {
+        if ($("#terms2").length > 0) {
+            $("#terms2").prop("checked", true).trigger("click");
+        }
+        $(".modal-wrap").removeClass("opened");
+        setTimeout(function () {
+            $(".modal-wrap").remove();
+            if ($(".modal-wrap").length == 0) $("body").removeClass("modal-opened");
+        }, 300);
+
+        if($('html').hasClass('fp-enabled')){
+          $('body').off('scroll touchmove mousewheel');
+      }
+    }
+        </script>
+        <div class="modal-pop new-modal-pop">
+            <button type="button" class="close" onclick="closeTerms6()">닫기</button>
+            <div class="common_inner">
+                <div class="pop-head">
+                        <h2 class="title">개인정보 처리방침</h2>
+                </div>
+                <!-- .pop-body -->
+                <div class="pop-body">
+                    <div class="sub-page-section" id="privacy">
+                            <div class="terms">
+                                <div>
+                                    <p>
+                                        포스코그룹은 『개인정보보호법』 제30조에 따라 정보주체의 개인정보 및 권익을 보호하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보처리방침을 수립·공개합니다.
+                                    </p>
+                                 
+                                </div>
+                                <div class="table_inner">
+                                    <table class="labeling">
+                                        <caption>주요 개인정보 처리 표시(라벨링) 구성</caption>
+                                        <thead>
+                                            <tr>
+                                                <th colspan="3">[주요 개인정보 처리 표시(라벨링)]</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td width="33.3%" class="c1">일반 개인정보 수집<br><span class="point mt10 text-sm">※ 세부항목은 개인정보처리방침 본문 확인</span></td>
+                                                <td width="33.3%" class="c2">개인정보 처리 목적</td>
+                                                <td width="33.3%" class="c3">개인정보의 보유 기간</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="c4">개인정보의 제공</td>
+                                                <td class="c5">처리 위탁</td>
+                                                <td class="c6">고충처리 부서</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- //table_inner -->
+                
+                                <div class="table_inner scroll">
+                                    <table class="privacy_list">
+                                        <caption>개인정보처리방침 목차</caption>
+                                        <colgroup>
+                                            <col width="*">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">[목차]</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td width="50%"><a href="#privacy_1">1. 개인정보의 처리 목적 및 처리하는 개인정보의 항목</a></td>
+                                                <td width="50%"><a href="#privacy_6">6. 개인정보의 안전성 확보조치에 관한 사항</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%"><a href="#privacy_2">2. 개인정보의 처리 및 보유기간</a></td>
+                                                <td width="50%"><a href="#privacy_7">7. 개인정보보호 책임자에 관한 사항</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%"><a href="#privacy_3">3. 개인정보의 파기 절차 및 방법에 관한 사항</a></td>
+                                                <td width="50%"><a href="#privacy_8">8. 정보주체의 권익침해에 대한 구제방법</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%"><a href="#privacy_4">4. 정보주체와 법정대리인의 권리·의무 및 행사방법에 관한 사항
+                                                </a></td>
+                                                <td width="50%"><a href="#privacy_9">9. 개인정보 처리방침의 변경에 관한 사항</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%"><a href="#privacy_5">5. 개인정보의 열람청구를 접수·처리하는 부서
+    
+                                                </a></td>
+                                                <td width="50%"><a href="#!"></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="msg_touch_help mobile-only">
+                                        <img src="./static/img/common/bg_touch_help.png" alt="touch slide">
+                                    </div>
+                                </div>
+                
+                                <div id="privacy_1">
+                                    <h3>1. 개인정보의 처리 목적 및 처리하는 개인정보의 항목</h3>
+                                    <p>포스코그룹 채용 홈페이지는 회원가입 시 서비스 이용을 위해 필요한 최소한의 개인정보만을 수집합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보 보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행 할 예정입니다.
+                                    </p>
+                                    <h4>회원가입</h4>
+                                    <p>귀하가 포스코그룹 채용 홈페이지의 서비스를 이용하기 위해서는 회원가입 시 기본 인적사항(성명, 휴대전화 번호, E-mail 주소, 비밀번호 등)을 필수적으로 입력하셔야 합니다. 개인정보 항목별
+                                        구체적인 수집목적 및 이용목적은 다음과 같습니다.</p>
+                                        <ul>
+                                            <li>- 성명, 휴대전화 번호, E-mail 주소, 비밀번호 : 회원제 서비스 이용에 따른 본인 식별 절차에 이용</li>
+                                            <li>- E-mail 주소, 휴대전화 번호 : 고지사항 전달, 불만처리 등을 위한 원활한 의사소통 경로의 확보, 새로운 서비스, 채용절차, 채용관련 행정처리 및 입사지원 결과 등의 안내
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li><strong>[필수 수집 항목]</strong></li>
+                                            <li>- 필수 개인정보 항목 : 성명, 휴대전화 번호, E-mail 주소, 비밀번호</li>
+                                        </ul>
+                                </div>
+                                <div id="privacy_2">
+                                    <h3>2. 개인정보의 처리 및 보유기간</h3>
+                                    <p>포스코그룹 채용 홈페이지내 수집된 개인정보의 보유기간은 다음과 같습니다. 회원정보는 해지(탈퇴신청 등)시 즉시 파기되며, 1년간 로그인하지 않을 경우 휴면계정으로 전환하여 분리 보관되며 분리 보관된
+                                        개인정보는 3년 경과 시 파기합니다.</p>
+                                    <p>파기 시 포스코그룹 채용 홈페이지는 회원님의 개인정보를 재생이 불가능한 방법으로 즉시 파기하며(개인정보가 제3자에게 제공된 경우에는 제3자에게도 파기하도록 지시합니다.) 다만 다음 각호의 경우에는
+                                        각 호에 명시한 기간 동안 개인정보를 보유합니다.</p>
+                                    <ul>
+                                        <li><span>①</span> 상법 등 법령의 규정에 의하여 보존할 필요성이 있는 경우에는 법령에서 규정한 보존기간 동안 거래내역과 최소한의 기본정보를 보유함</li>
+                                        <li><span>②</span> 보유기간을 회원님에게 미리 고지하고 그 보유기간이 경과하지 아니한 경우와 개별적으로 회원님의 동의를 받은 경우에는 약속한 보유기간동안 보유함</li>
+                                    </ul>
+                                </div>
+                
+                                <div id="privacy_3">
+                                    <h3>3. 개인정보의 파기 절차 및 방법에 관한 사항</h3>
+                                 
+                                    <p>회사는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체없이 해당 개인정보를 파기합니다. 개인정보 파기의 절차 및 방법은 다음과 같습니다.</p>
+                                    <ul>
+                                        <li>1. 파기절차 : 불필요한 개인정보 및 개인정보파일은 내부지침에 따라 다음과 같이 처리하고 있습니다.
+                                        <li>&nbsp; - 개인정보의 파기 : 보유기간이 경과한 개인정보는 종료일로부터 지체 없이 파기합니다.</li>
+                                        <li>2. 파기방법 : 전자적 파일 형태의 정보는 기록을 재생할 수 없도록 파기하며, 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각하여 파기합니다.</li>
+                                    </ul>
+                                </div>
+                                <div id="privacy_4">
+                                    <h3>4. 정보주체와 법정대리인의 권리·의무 및 행사방법에 관한 사항</h3>
+                                 
+                                    <ul>
+                                        <li><span>①</span> 정보주체는 포스코그룹 채용 홈페이지에 대해 언제든지 개인정보 열람·정정·삭제·처리정지 요구 등의 권리를 행사할 수 있습니다.</li>
+                                        <li><span>②</span> 권리 행사는 포스코그룹 채용 홈페이지에 대해 「개인정보 보호법」 시행령 제41조 제1항에 따라 서면, 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며, 포스코그룹 채용 홈페이지는 이에 대해 지체없이 조치하겠습니다.</li>
+                                        <li><span>③</span> 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수도 있습니다. 이 경우 “개인정보 처리 방법에 관한 고시(제2020-7호)” 별지 제11호 서식에 따른 위임장을 제출하셔야 합니다.</li>
+                                        <li><span>④</span> 개인정보 열람 및 처리정지 요구는 「개인정보 보호법」 제 35조 제4항, 제37조 제2항에 의하여 정보주체의 권리가 제한 될 수 있습니다.</li>
+                                        <li><span>⑤</span> 개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.</li>
+                                        <li><span>⑥</span> 포스코그룹 채용 홈페이지는 정보주체 권리에 따른 열람의 요구, 정정·삭제의 요구, 처리정지의 요구 시 열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.</li>
+                                    </ul>
+                                </div>
+                                <div id="privacy_5">
+                                    <h3>5. 개인정보의 열람청구를 접수·처리하는 부서</h3>
+                                    <p>정보주체는 「개인정보 보호법」 제35조에 따른 개인정보의 열람 청구를 아래의 부서에 할 수 있습니다. 포스코그룹 채용 홈페이지는 정보주체의 개인정보 열람청구가 신속하게 처리되도록 노력하겠습니다.</p>
+                                    <ul>
+                                        <li>▶ 개인정보 열람청구 접수·처리 부서</li>
+                                        <li>부서명 : 포스코 인사문화실</li>
+                                        <li>담당자 : 채용담당</li>
+                                        <li>연락처 : <a href="mailto:hrteam@posco.com">hrteam@posco.com</a></li>
+                                    </ul>
+                                    <span class="point mt10 text-sm">* 포스코 外 그룹사의 경우 각 회사별 채용 담당자에게 문의</span>
+                                </div>
+                                <div id="privacy_6">
+                                    <h3>6. 개인정보의 안전성 확보조치에 관한 사항</h3>
+                                    <p>포스코그룹 채용 홈페이지는 개인정보의 안전성 확보를 위해 다음과 같은 조치를 취하고 있습니다. </p>
+                                    <ul>
+                                        <li><span>1.</span> 관리적 조치: 내부관리계획 수립 및 시행, 전담조직 운영, 정기적 직원 교육</li>
+                                        <li><span>2.</span> 기술적 조치: 개인정보처리시스템 등의 접근권한 관리, 접근통제시스템 설치, 개인정보의 암호화, 보안프로그램 설치 및 갱신</li>
+                                        <li><span>3.</span> 물리적 조치: 전산실, 자료보관실 등의 접근통제</li>
+                                    </ul>
+                                </div>
+                                <div id="privacy_7">
+                                    <!--h3>8. 개인정보보호 책임자 및 부서에 관한 사항 및 의견수렴/불만처리</h3-->
+                                    <h3>7. 개인정보보호 책임자에 관한 사항</h3>
+                                    <p>귀하의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 포스코그룹 채용 홈페이지는 개인정보관리담당자를 두어 귀하의 개인정보를 관리하고 있으며 개인정보보호와 관련하여 귀하가 의견과 불만을 제기할 수 있는 창구를 개설하고 있습니다.</p>
+                                    <div class="table_inner scroll">
+                                        <table>
+                                            <caption>개인정보 보호책임자,개인정보관리 책임자,개인정보관리 담당자 항목으로 구성</caption>
+                                            <colgroup>
+                                                <col width="33%">
+                                                <col width="33%">
+                                                <col width="*">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">개인정보보호 책임자</th>
+                                                    <th scope="col">개인정보관리 책임자</th>
+                                                    <th scope="col">개인정보관리 담당자</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                </tr>
+                                                <tr>
+                                                    <td>소 속 : 디지털혁신실</td>
+                                                    <td>소 속 : 인사문화실</td>
+                                                    <td>소 속 : 인사문화실</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>직 책 : 실장</td>
+                                                    <td>직 책 : 리더</td>
+                                                    <td>직 책 : 대리/과장</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>e-Mail : <a href="mailto:poscoprivacy@posco.com">poscoprivacy@posco.com</a></td>
+                                                    <td>e-Mail : <a href="mailto:hrteam@posco.com">hrteam@posco.com</a></td>
+                                                    <td>e-Mail : <a href="mailto:hrteam@posco.com">hrteam@posco.com</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                
+                
+                                        <div class="msg_touch_help mobile-only">
+                                            <img src="./static/img/common/bg_touch_help.png" alt="touch slide">
+                                        </div>
+                                    </div>
+                                    <span class="point mt10 text-sm">   * 상기 담당자는 포스코 기준입니다. 포스코 外 그룹사의 경우 각 회사별 채용 담당자에게 문의하시기 바랍니다.
+                                    </span>
+                                </div>
+                                <div id="privacy_8">
+                                    <h3>8. 정보주체의 권익침해에 대한 구제방법</h3>
+                                    <p>정보주체는 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다.<br> 이 밖에 기타 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기 바랍니다.</p>
+                
+                                    <h4>1. 개인정보 분쟁조정위원회</h4>
+                                    <ul>
+                                        <li>전화 : (국번없이) 1833-6972</li>
+                                        <li>홈페이지 : www.kopico.go.kr</li>
+                                    </ul>
+                
+                                    <h4>2. 개인정보 침해신고센터</h4>
+                                    <ul>
+                                        <li>전화 : (국번없이) 118</li>
+                                        <li>홈페이지 : privacy.kisa.or.kr</li>
+                                    </ul>
+                
+                                    <h4>3. 대검찰청</h4>
+                                    <ul>
+                                        <li>전화 : (국번없이) 1301</li>
+                                        <li>홈페이지 : www.spo.go.kr</li>
+                                    </ul>
+                
+                                    <h4>4. 경찰청</h4>
+                                    <ul>
+                                        <li>전화 : (국번없이) 182</li>
+                                        <li>홈페이지 : ecrm.cyber.go.kr</li>
+                                    </ul>
+                
+                                    <p>포스코그룹 채용 홈페이지는 정보주체의 개인정보자기결정권을 보장하고, 개인정보침해로 인한 상담 및 피해 구제를 위해 노력하고 있으며, 신고나 상담이 필요한 경우 아래의 담당부서로 연락해 주시기 바랍니다. </p>
+                                    <ul>
+                                        <li>▶ 개인정보보호 관련 고객 상담 및 신고</li>
+                                        <li>부서명 : 포스코 인사문화실</li>
+                                        <li>담당자 : 채용담당</li>
+                                        <li>연락처 : <a href="mailto:hrteam@posco.com">hrteam@posco.com</a></li>
+                                        <li> 
+                                        </li>
+                                    </ul>
+                                    <span class="point mt10 text-sm">* 포스코 外 그룹사의 경우 각 회사별 채용 담당자에게 문의</span>
+                                    <p>「개인정보 보호법」 제35조(개인정보의 열람), 제36조(개인정보의 정정·삭제), 제37조(개인정보의 처리정지 등)의 규정에 의한 요구에 대하여 공공기관의 장이 행한 처분 또는 부작위로 인하여 권리 또는 이익의 침해를 받은 자는 행정심판법이 정하는 바에 따라 행정심판을 청구할 수 있습니다.</p>
+                                    <span class="point mt10 text-sm">중앙행정심판위원회 : (국번없이) 110 (www.simpan.go.kr) </span>
+                                </div>
+                                <div id="privacy_9">
+                                    <h3>9. 개인정보 처리방침의 변경에 관한 사항</h3>
+                                    <p>이 개인정보 처리방침은 2023.9.XX 부터 적용됩니다.<br>이전의 개인정보 처리방침은 아래에서 확인하실 수 있습니다.</p>
+                                    <ul>
+                                        <li><a href="H22AM900P02-old.html" onclick="openModal(this.href); return false;">- ~2023.9.XX 적용 (클릭)</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                
+                
+                            </div><!-- //terms -->
+                        </div> <!-- //sub-page-section -->
+                </div>
+                <!-- //.pop-body -->
+                <div class="pop-foot">
+                    <div class="button-group bottom">
+                        <button type="button" class="btn-md btn-secondary close" onclick="closeTerms6()">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
